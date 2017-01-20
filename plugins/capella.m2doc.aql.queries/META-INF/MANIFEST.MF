@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: capella.m2doc.aql.queries;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: capella.m2doc.aql.queries.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.obeonetwork.m2doc.ui,
+ org.polarsys.capella.common;bundle-version="0.8.0",
+ org.polarsys.capella.core.data.gen;bundle-version="1.0.0",
+ org.obeonetwork.m2doc;bundle-version="0.7.1",
+ org.eclipse.ui,
+ org.eclipse.emf.common.ui;bundle-version="2.7.0"
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-Vendor: %providerName

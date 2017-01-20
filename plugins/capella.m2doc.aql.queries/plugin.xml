@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.obeonetwork.m2doc.services.register">
+      <service
+            serviceClass="capella.m2doc.aql.queries.M2DocGenServicesHolder"
+            serviceToken="default">
+      </service>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="capella.m2doc.aql.queries.examples.category"
+            name="M2Doc"
+            parentCategory="org.eclipse.ui.Examples">
+      </category>
+      <wizard
+            category="capella.m2doc.aql.queries.examples.category"
+            class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
+            icon="icons/new_project_capella.png"
+            id="capella.m2doc.aql.queries.capellam2docproject"
+            name="Capella IFE example with M2Doc templates project"
+            project="true">
+         <description>
+            Creates a sample project based on the IFE project , with M2Doc generation models and the associated Word templates.
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.emf.common.ui.examples">
+      <example
+            id="capella.m2doc.aql.queries.examples.m2doccapella"
+            wizardID="capella.m2doc.aql.queries.capellam2docproject">
+         <projectDescriptor
+               contentURI="zips/m2docife.zip"
+               name="In-Flight Entertainment System With M2Doc">
+         </projectDescriptor>
+      </example>
+   </extension>
+
+</plugin>
