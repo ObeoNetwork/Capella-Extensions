@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="capella.m2doc.aql.queries.feature"
+      id="org.obeonetwork.capella.m2doc.aql.queries.feature"
       label="Capella doc generation utils"
       version="1.0.0.qualifier">
 
@@ -8,12 +8,12 @@
       [Enter Feature Description here.]
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
+   <copyright url="http://www.obeo.fr">
+       Obeo 2017
    </copyright>
 
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
+   <license url="https://www.eclipse.org/legal/epl-v10.html">
+      Eclipse Public License 1.0
    </license>
 
    <requires>
@@ -22,7 +22,7 @@
    </requires>
 
    <plugin
-         id="capella.m2doc.aql.queries"
+         id="org.obeonetwork.capella.m2doc.aql.queries"
          download-size="5"
          install-size="6"
          version="0.0.0"

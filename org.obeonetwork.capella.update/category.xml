@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.obeonetwork.capella.m2doc.aql.queries.feature" version="0.0.0">
+      <category name="generators"/>
+   </feature>        
+   <category-def name="generators" label="Documentation and Code generators">
+      <description>
+         Add-ons to generate documents or code.
+      </description>
+   </category-def>
+</site>
