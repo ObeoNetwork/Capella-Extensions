@@ -6,8 +6,8 @@ jdk:
   - oraclejdk8
 sudo: false
 script:
-- mkdir -p org.obeonetwork.capella.update/result/final/
-- touch org.obeonetwork.capella.update/result/final/update-site.txt
+- mkdir -p org.obeonetwork.capella.update/target/repository/
+- touch org.obeonetwork.capella.update/target/repository/update-site.txt
 - mvn clean package -e 
 - chmod a+x prepare-deploy-local-dir.sh
 - "./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/nightly"
