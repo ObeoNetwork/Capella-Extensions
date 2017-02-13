@@ -5,10 +5,22 @@ env:
 jdk:
   - oraclejdk8
 sudo: false
+# TODO: Gross until Travis support setting maven version or upgrades to 3.3
+before_install:
+  - wget http://apache.claz.org/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+  - tar zxvf apache-maven-3.3.3-bin.tar.gz
+  - chmod +x apache-maven-3.3.3/bin/mvn
+  - export M2_HOME=$PWD/apache-maven-3.3.3
+  - export PATH=$PWD/apache-maven-3.3.3/bin:${PATH}
+  - hash -r
+before_script:
+  - export M2_HOME=$PWD/apache-maven-3.3.3
+  - export PATH=$PWD/apache-maven-3.3.3/bin:${PATH}
+  - hash -r
 script:
 - mkdir -p org.obeonetwork.capella.update/target/repository/
 - touch org.obeonetwork.capella.update/target/repository/update-site.txt
-- mvn clean package -e 
+- mvn clean package -e -Dgpg.skip=true
 - chmod a+x prepare-deploy-local-dir.sh
 - "./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/nightly"
 after_script:
