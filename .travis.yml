@@ -1,0 +1,30 @@
+language: java
+env:
+  global:
+      - MAVEN_OPTS="-XX:MaxPermSize=512m -Xmx2048m -Xms1024m"  
+jdk:
+  - oraclejdk8
+sudo: false
+script:
+- mkdir -p org.obeonetwork.capella.update/result/final/
+- touch org.obeonetwork.capella.update/result/final/update-site.txt
+- mvn clean package -e 
+- chmod a+x prepare-deploy-local-dir.sh
+- "./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/nightly"
+after_script:
+- chmod a+x travis-promote.sh
+- ./travis-promote.sh
+deploy:  
+  - provider: s3
+    access_key_id: AKIAI7GYGSUKTIBLAI6Q
+    secret_access_key:
+      secure: AkQHXay2Qful1BTGlS8EqR5uardszIoZVoxuYykNSQt34FtK43jL5nt/uaKckwDUjoHP4EhFpM/AW6bE6NSm0XVFSC3i3COsPxF4TjWj3cCcMZ8HwyIhm9gl6nb8mZnRWmhRbgoRxxpHkpBAk2bTIdBpKFPQxCNR0m8nrEGWD78=
+    bucket: obeo-networkaggregation-releases
+    local-dir: "${TRAVIS_BUILD_DIR}/nightly"
+    acl: public_read
+    skip_cleanup: true
+    region: eu-west-1
+    upload-dir: capella-extensions/${TRAVIS_BRANCH}
+    on:
+      all_branches: true
+      repo: ObeoNetwork/Capella-Extensions
