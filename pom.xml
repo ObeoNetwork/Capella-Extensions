@@ -44,7 +44,7 @@
 	<repositories>
 		<repository>
 			<id>capella studio 1.0.1</id>
-			<url>http://update.obeo.fr/release/capella-studio/1.0.1</url>
+            <url>https://s3-eu-west-1.amazonaws.com/obeo-mirror-capella-releases/studio/1.0.1/repository/</url>
 			<layout>p2</layout>
 		</repository>
         <repository>
