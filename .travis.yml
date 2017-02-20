@@ -1,21 +1,22 @@
 language: java
 env:
   global:
-  - MAVEN_OPTS="-XX:MaxPermSize=512m -Xmx2048m -Xms1024m"
+      - MAVEN_OPTS="-XX:MaxPermSize=512m -Xmx2048m -Xms1024m"  
 jdk:
-- oraclejdk8
+  - oraclejdk8
 sudo: false
+# TODO: Gross until Travis support setting maven version or upgrades to 3.3
 before_install:
-- wget http://mirrors.ircam.fr/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-- tar zxvf apache-maven-3.3.9-bin.tar.gz
-- chmod +x apache-maven-3.3.9/bin/mvn
-- export M2_HOME=$PWD/apache-maven-3.3.9
-- export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
-- hash -r
+  - wget http://mirrors.ircam.fr/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
+  - tar zxvf apache-maven-3.3.9-bin.tar.gz
+  - chmod +x apache-maven-3.3.9/bin/mvn
+  - export M2_HOME=$PWD/apache-maven-3.3.9
+  - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
+  - hash -r
 before_script:
-- export M2_HOME=$PWD/apache-maven-3.3.9
-- export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
-- hash -r
+  - export M2_HOME=$PWD/apache-maven-3.3.9
+  - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
+  - hash -r
 script:
 - mkdir -p org.obeonetwork.capella.update/target/repository/
 - touch org.obeonetwork.capella.update/target/repository/update-site.txt
@@ -24,13 +25,12 @@ script:
 - "./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/nightly"
 after_script:
 - chmod a+x travis-promote.sh
-- "./travis-promote.sh"
-deploy:
-  matrix:
+- ./travis-promote.sh
+deploy:  
   - provider: s3
     access_key_id: AKIAI7GYGSUKTIBLAI6Q
     secret_access_key:
-    secure: GE0B8oyxO6z3Z/sAmoHbo4oRjAZOEKQ0hwLagaPwYE+RPpOKZHYNeW7WNwTfxN2067Yic7VZpUPXLMNEs/xBlR7pnnZ+sfCQARGGlIPD9Dxaob6hX1jPJye60p217LR6sBX7q7swm0/XheSBU2EPHb1lBXn9Cw6fQtjZEWYBIWqrrJLB+OatOn7hZ119klhHJCbIz1i8QFmI65L+vXpwYDd6WlY6nT6tjxvyEUuRjQq8Yj3eiOm87vfwaoIHXsrylM4wg6BSGdX08WwIwuoIaSDjhAFKgjnFRIq7APufPWkrjEuggFAbha/GYGKAFq2DeA3E0hAnZSvjU3IeM/zaiYR3FH8wzYvsvhYMBGAE5ETD5aeQiKGU481n84x+WwNGvoNzdjWpKebYEb/thHBHHZJsopTf9z8eyrORgsxT2jJhJ5qHwab0bZy0R88mCR/MPchcX5GfzjkXGI0B1aDbjAYUNK91DFmlqAd75SLVGmUZG64RByOQlR291w+lVEoh0GkvKYAkX8swM5ZGMGJLW3MuzWodLOsGXhZwZHjzMT32kMMf+oi3nhFcyRRoG/6THaLdcoL+yXHCc4iU40wAI1TxJg511erh0MiwE5rJekjfdt/dZMvXQv0735n5GFIhRiE0S8aAkSoI1k3ajz/GtPFMFHHctOi6MOC+WAWdNLA=
+      secure: GE0B8oyxO6z3Z/sAmoHbo4oRjAZOEKQ0hwLagaPwYE+RPpOKZHYNeW7WNwTfxN2067Yic7VZpUPXLMNEs/xBlR7pnnZ+sfCQARGGlIPD9Dxaob6hX1jPJye60p217LR6sBX7q7swm0/XheSBU2EPHb1lBXn9Cw6fQtjZEWYBIWqrrJLB+OatOn7hZ119klhHJCbIz1i8QFmI65L+vXpwYDd6WlY6nT6tjxvyEUuRjQq8Yj3eiOm87vfwaoIHXsrylM4wg6BSGdX08WwIwuoIaSDjhAFKgjnFRIq7APufPWkrjEuggFAbha/GYGKAFq2DeA3E0hAnZSvjU3IeM/zaiYR3FH8wzYvsvhYMBGAE5ETD5aeQiKGU481n84x+WwNGvoNzdjWpKebYEb/thHBHHZJsopTf9z8eyrORgsxT2jJhJ5qHwab0bZy0R88mCR/MPchcX5GfzjkXGI0B1aDbjAYUNK91DFmlqAd75SLVGmUZG64RByOQlR291w+lVEoh0GkvKYAkX8swM5ZGMGJLW3MuzWodLOsGXhZwZHjzMT32kMMf+oi3nhFcyRRoG/6THaLdcoL+yXHCc4iU40wAI1TxJg511erh0MiwE5rJekjfdt/dZMvXQv0735n5GFIhRiE0S8aAkSoI1k3ajz/GtPFMFHHctOi6MOC+WAWdNLA=
     bucket: obeo-networkaggregation-releases
     local-dir: "${TRAVIS_BUILD_DIR}/nightly"
     acl: public_read
@@ -40,4 +40,3 @@ deploy:
     on:
       all_branches: true
       repo: ObeoNetwork/Capella-Extensions
-  secret_access_key:
