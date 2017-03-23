@@ -62,6 +62,7 @@
 	<modules>	
         <module>m2doc</module>
         <module>org.obeonetwork.capella.update</module>
+		<module>org.obeonetwork.capella.update.full</module>
 	</modules>
 
 	<build>
