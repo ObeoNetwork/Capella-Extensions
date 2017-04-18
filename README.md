@@ -4,9 +4,7 @@ Collection of plugins adding features to Capella (http://polarsys.org/capella/)
 
 # Download
 
-2 update-sites are built and published for every commit in the repository.
-
-Update site available here:
+An update site is built and published for every commit:
 
 http://obeo-networkaggregation-releases.s3-website-eu-west-1.amazonaws.com/capella-extensions/master
 
