@@ -6,13 +6,17 @@ Collection of plugins adding features to Capella (http://polarsys.org/capella/)
 
 2 update-sites are built and published for every commit in the repository.
 
-Update site containing only the Capella extensions:
+Update site available here:
 
 http://obeo-networkaggregation-releases.s3-website-eu-west-1.amazonaws.com/capella-extensions/master
 
-Update site containing the Capella extensions and their dependancies which are needed for installation in Capella:
+Prerequisites:
+-Install Accelero Query Framework from http://download.eclipse.org/acceleo/updates/releases/3.6/ in Capella
+-Install M2Doc in Capella
 
-http://obeo-networkaggregation-releases.s3-website-eu-west-1.amazonaws.com/capella-extensions/master/full
+Tested with:
+-Capella 1.0.x
+-M2Doc 0.9.y
 
 #Continuous Integration ![](https://travis-ci.org/ObeoNetwork/Capella-Extensions.svg?branch=master)
 
