@@ -9,8 +9,8 @@ An update site is built and published for every commit:
 http://obeo-networkaggregation-releases.s3-website-eu-west-1.amazonaws.com/capella-extensions/master
 
 Prerequisites:<br/>
--Install Accelero Query Framework from http://download.eclipse.org/acceleo/updates/releases/3.6/ in Capella<br/>
--Install M2Doc in Capella from https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/M2Doc_0.9.9/repository<br/>
+-Install Acceleo Query Framework from http://download.eclipse.org/acceleo/updates/releases/3.6/ in Capella<br/>
+-Install M2Doc from https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/M2Doc_0.9.9/repository  in Capella<br/>
 
 Tested with:<br/>
 -Capella 1.0.x<br/>
