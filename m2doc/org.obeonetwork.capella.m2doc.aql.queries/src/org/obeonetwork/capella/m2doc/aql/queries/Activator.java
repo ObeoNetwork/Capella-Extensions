@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package capella.m2doc.aql.queries;
+package org.obeonetwork.capella.m2doc.aql.queries;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
