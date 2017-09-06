@@ -2,9 +2,13 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.obeonetwork.m2doc.services.register">
+         point="org.obeonetwork.m2doc.ide.services.register">
       <service
-            serviceClass="capella.m2doc.aql.queries.M2DocGenServicesHolder"
+            serviceClass="org.obeonetwork.capella.m2doc.aql.queries.M2DocGenServicesHolder"
+            serviceToken="default">
+      </service>
+      <service
+            serviceClass="org.obeonetwork.capella.m2doc.aql.queries.ExtendedImageServiceHolder"
             serviceToken="default">
       </service>
    </extension>
@@ -38,5 +42,4 @@
          </projectDescriptor>
       </example>
    </extension>
-
 </plugin>

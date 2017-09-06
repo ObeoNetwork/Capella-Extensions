@@ -9,17 +9,12 @@
    </description>
 
    <copyright url="http://www.obeo.fr">
-       Obeo 2017
+      Obeo 2017
    </copyright>
 
    <license url="https://www.eclipse.org/legal/epl-v10.html">
       Eclipse Public License 1.0
    </license>
-
-   <requires>
-      <import feature="org.obeonetwork.m2doc.feature" version="0.9.5.201610182106"/>
-      <import feature="org.eclipse.acceleo.query" version="4.1.0.201602090916"/>
-   </requires>
 
    <plugin
          id="org.obeonetwork.capella.m2doc.aql.queries"

@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package capella.m2doc.aql.queries;
+package org.obeonetwork.capella.m2doc.aql.queries;
 
 import java.util.ArrayList;
 import java.util.HashSet;
