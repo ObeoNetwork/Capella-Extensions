@@ -18,8 +18,8 @@ before_script:
   - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
   - hash -r
 script:
-- mkdir -p org.obeonetwork.capella.update/target/repository/
-- touch org.obeonetwork.capella.update/target/repository/update-site.txt
+- mkdir -p releng/org.obeonetwork.capella.update/target/repository/
+- touch releng/org.obeonetwork.capella.update/target/repository/update-site.txt
 - mvn clean package -e -Dgpg.skip=true
 - chmod a+x prepare-deploy-local-dir.sh
 - "./prepare-deploy-local-dir.sh $TRAVIS_BUILD_DIR/nightly"

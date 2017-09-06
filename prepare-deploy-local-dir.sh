@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
-UPDATE_SITE_DIR=org.obeonetwork.capella.update/target/repository
-UPDATE_SITE_DIR_FULL=org.obeonetwork.capella.update.full/target/repository
+UPDATE_SITE_DIR=releng/org.obeonetwork.capella.update/target/repository
+UPDATE_SITE_DIR_FULL=releng/org.obeonetwork.capella.update.full/target/repository
 DEPLOY_LOCAL_DIR=$1
 echo "Prepare deploy local dir = ${DEPLOY_LOCAL_DIR}"
 # Create nightly folder
