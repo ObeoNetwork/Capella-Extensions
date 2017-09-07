@@ -3,14 +3,12 @@
 <plugin>
    <extension
          point="org.obeonetwork.m2doc.ide.services.register">
-      <service
-            serviceClass="org.obeonetwork.capella.m2doc.aql.queries.M2DocGenServicesHolder"
-            serviceToken="default">
-      </service>
-      <service
-            serviceClass="org.obeonetwork.capella.m2doc.aql.queries.ExtendedImageServiceHolder"
-            serviceToken="default">
-      </service>
+      <token
+            name="default">
+         <service
+               class="org.obeonetwork.capella.m2doc.aql.queries.M2DocGenServices">
+         </service>
+      </token>
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
