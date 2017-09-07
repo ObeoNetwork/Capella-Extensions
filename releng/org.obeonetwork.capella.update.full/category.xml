@@ -5,9 +5,9 @@
    </feature>
    <feature id="org.obeonetwork.m2doc.feature" version="0.0.0"/>
    <feature id="org.obeonetwork.m2doc.sirius.feature" version="0.0.0"/>
-   <feature url="features/org.apache.poi.feature_3.16.0.201707131309.jar" id="org.apache.poi.feature" version="3.16.0.201707131309"/>
-   <feature url="features/org.eclipse.acceleo.query_5.0.2.201610060831.jar" id="org.eclipse.acceleo.query" version="5.0.2.201610060831"/>
-   <feature url="features/org.obeonetwork.m2doc.ui.feature_0.12.0.201709060925.jar" id="org.obeonetwork.m2doc.ui.feature" version="0.12.0.201709060925"/>
+   <feature id="org.obeonetwork.m2doc.ui.feature" version="0.0.0"/>
+   <feature id="org.apache.poi.feature" version="0.0.0"/>
+   <feature id="org.eclipse.acceleo.query" version="0.0.0"/>
    <category-def name="generators" label="Documentation and Code generators">
       <description>
          Add-ons to generate documents or code.
