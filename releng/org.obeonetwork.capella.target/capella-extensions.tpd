@@ -16,13 +16,14 @@ location "https://hudson.polarsys.org/capella/view/Capella-v1.1.x/job/capella-v1
 	org.polarsys.capella.core.feature.feature.group lazy
 }
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/1.0.0/repository" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 	org.eclipse.acceleo.query.feature.group lazy
 	org.apache.poi.feature.feature.group lazy
-}
+	org.eclipse.acceleo.query.feature.group [6.0.0,7.0.0)
+} 
 
 
 location "http://download.eclipse.org/releases/mars/" {
