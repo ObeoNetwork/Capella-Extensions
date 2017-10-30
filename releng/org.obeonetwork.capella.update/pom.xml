@@ -34,8 +34,9 @@
                 <version>${tycho-version}</version>
                 <configuration>
                     <createArtifactRepository>true</createArtifactRepository>
-                    <finalName>${project.artifactId}</finalName>
+                    <finalName>repository/${project.artifactId}</finalName>
                     <compress>true</compress>
+                    <repositoryName>Capella Extensions ${unqualifiedVersion}.${buildQualifier}</repositoryName>
                 </configuration>
             </plugin>
 
