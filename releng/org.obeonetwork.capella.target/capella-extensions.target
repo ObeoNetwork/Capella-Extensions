@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Capella M2Doc Extension" sequenceNumber="1509446769">
+<target name="Capella M2Doc Extension" sequenceNumber="1509609774">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
@@ -13,7 +13,7 @@
       <unit id="org.obeonetwork.m2doc.sirius.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.ui.feature.feature.group" version="0.0.0"/>
       <unit id="org.apache.poi.feature.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.query.feature.group" version="6.0.0.201610150614"/>
+      <unit id="org.eclipse.acceleo.query.feature.group" version="0.0.0"/>
       <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
