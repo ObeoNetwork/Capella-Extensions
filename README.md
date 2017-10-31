@@ -9,21 +9,21 @@ An update site is built and published for every commit:
 ## Nightly
 
 * Update site (Extensions only):
-  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/nigthly](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly)
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly/org.obeonetwork.capella.update.zip)
 
 * Full update site (Extensions and dependencies):
-  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/nigthly](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly/full)
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly/full)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly/full/org.obeonetwork.capella.update.full.zip)
 
 ## 1.1.0
 
 * Update site (Extensions only):
-  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/nigthly](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0)
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/org.obeonetwork.capella.update.zip)
 
 * Full update site (Extensions and dependencies):
-  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/nigthly](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/full)
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/full)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/full/org.obeonetwork.capella.update.full.zip)
 
 # Prerequisites
