@@ -17,8 +17,12 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.InterfacePkg;
+import org.polarsys.capella.core.data.fa.ComponentExchange;
+import org.polarsys.capella.core.data.fa.ComponentPort;
 import org.polarsys.capella.core.data.information.DataPkg;
+import org.polarsys.capella.core.data.information.Port;
 
 /**
  * This class contains all utility AQL templates used for M2Doc generation. The
@@ -46,8 +50,7 @@ public class M2DocGenServices {
 	 */
 	public List<InterfacePkg> getInterfaceSubPkg(InterfacePkg interfacePkg) {
 		Set<InterfacePkg> packages = new HashSet<InterfacePkg>();
-		EList<InterfacePkg> ownedInterfacePkgs = interfacePkg
-				.getOwnedInterfacePkgs();
+		EList<InterfacePkg> ownedInterfacePkgs = interfacePkg.getOwnedInterfacePkgs();
 		for (InterfacePkg interfacePkg2 : ownedInterfacePkgs) {
 			packages.add(interfacePkg2);
 			List<InterfacePkg> allInterfacePackages = getInterfaceSubPkg(interfacePkg2);
@@ -57,8 +60,8 @@ public class M2DocGenServices {
 	}
 
 	/**
-	 * Compute the amount of contained interface subpackages. This method is
-	 * only used to simplify the M2Doc template
+	 * Compute the amount of contained interface subpackages. This method is only
+	 * used to simplify the M2Doc template
 	 * 
 	 * @param interfacePkg
 	 *            The given interface package
@@ -109,4 +112,33 @@ public class M2DocGenServices {
 		return name += dataPkg.getName();
 	}
 
+	public String getCeDirection(ComponentExchange ce, Component sourceComponent) {
+		Component sourceCeComponent = (Component) ce.getSourcePort().eContainer();
+		Component targetCeComponent = (Component) ce.getTargetPort().eContainer();
+
+		Port port = null;
+		if (sourceCeComponent == sourceComponent)
+			port = ce.getSourcePort();
+		else if (targetCeComponent == sourceComponent)
+			port = ce.getTargetPort();
+
+		if (port instanceof ComponentPort) {
+			ComponentPort cp = (ComponentPort) port;
+			return cp.getOrientation().toString();
+		}
+		return "";
+	}
+
+	public String getDestinationComponent(ComponentExchange ce, Component sourceComponent) {
+		Component sourceCeComponent = (Component) ce.getSourcePort().eContainer();
+		Component targetCeComponent = (Component) ce.getTargetPort().eContainer();
+
+		Port port = null;
+		if (sourceCeComponent == sourceComponent)
+			port = ce.getTargetPort();
+		else if (targetCeComponent == sourceComponent)
+			port = ce.getSourcePort();
+
+		return ((Component) port.eContainer()).getName();
+	}
 }
