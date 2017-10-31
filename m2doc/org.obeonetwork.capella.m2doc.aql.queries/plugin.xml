@@ -12,13 +12,8 @@
    </extension>
    <extension
          point="org.eclipse.ui.newWizards">
-      <category
-            id="capella.m2doc.aql.queries.examples.category"
-            name="M2Doc"
-            parentCategory="org.eclipse.ui.Examples">
-      </category>
       <wizard
-            category="capella.m2doc.aql.queries.examples.category"
+            category="org.obeonetwork.capella.m2doc.aql.queries.category.ID"
             class="org.eclipse.emf.common.ui.wizard.ExampleInstallerWizard"
             icon="icons/new_project_capella.png"
             id="capella.m2doc.aql.queries.capellam2docproject"
@@ -28,6 +23,10 @@
             Creates a sample project based on the IFE project , with M2Doc generation models and the associated Word templates.
          </description>
       </wizard>
+      <category
+            id="org.obeonetwork.capella.m2doc.aql.queries.category.ID"
+            name="Capella - M2Doc">
+      </category>
    </extension>
    <extension
          point="org.eclipse.emf.common.ui.examples">
