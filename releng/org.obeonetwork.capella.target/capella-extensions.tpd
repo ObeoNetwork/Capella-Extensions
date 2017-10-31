@@ -22,7 +22,7 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 	org.apache.poi.feature.feature.group lazy
-	org.eclipse.acceleo.query.feature.group [5.0.2,6.0.0)
+	org.eclipse.acceleo.query.feature.group [6.0.0,7.0.0)
 }
 
 location eclipse-releases-neon "http://download.eclipse.org/releases/neon" {
