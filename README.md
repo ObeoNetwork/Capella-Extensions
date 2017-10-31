@@ -8,9 +8,6 @@ An update site is built and published for every commit:
 
 ## Nightly
 
-- Update site (Extensions only): https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nigthly
-- Full update site (Extensions and dependencies): https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nigthly/full
-
 * Update site (Extensions only):
   * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.1.0/nigthly](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.1.x/nightly/org.obeonetwork.capella.update.zip)
@@ -40,7 +37,7 @@ Tested with:
 
 #Continuous Integration
 
-Current status for branche [capella-1.1.x](https://github.com/ObeoNetwork/Capella-Extensions/tree/capella-1.1.x)
+Current status for branch [capella-1.1.x](https://github.com/ObeoNetwork/Capella-Extensions/tree/capella-1.1.x)
 
 ![](https://travis-ci.org/ObeoNetwork/Capella-Extensions.svg?branch=capella-1.1.x)
 
