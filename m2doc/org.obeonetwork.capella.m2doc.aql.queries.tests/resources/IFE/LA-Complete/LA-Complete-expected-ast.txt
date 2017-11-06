@@ -1,0 +1,549 @@
+
+=== HEADER ===
+template
+  table
+    row
+      template
+        Architecture File of 
+        [query: .aqlFeatureAccess(self, 'name')]
+      
+    
+  
+=== BODY ===
+template
+  Architecture File of 
+  [query: .aqlFeatureAccess(self, 'name')]
+  Document generated automatically by M2Doc from Capella model of the system
+Tables of ContentAucune entrée de table des matières n'a été trouvée.
+Descriptions of Logical Components
+  
+  for lc | .eAllContents(self, LogicalComponent) do
+    Logical Component : 
+    [query: .aqlFeatureAccess(lc, 'name')]
+    
+    if .differs(.aqlFeatureAccess(lc, 'description'), null) then
+      [query: .aqlFeatureAccess(lc, 'description')]
+    else
+      No description
+    endif
+    
+    
+    if .isRepresentationDescriptionName(lc, ' Logical Component Breakdown ') then
+      [query: .fit(->first(.asImageByRepresentationDescriptionName(lc, 'Logical Component Breakdown')), 500, 200)]
+    endif
+    
+    
+    if .differs(->size(.aqlFeatureAccess(lc, 'participationsInCapabilityRealizations')), 0) then
+      Participations in Capability Realizations: 
+      
+      for capa | .eContainer(.aqlFeatureAccess(lc, 'participationsInCapabilityRealizations'), NamedElement) do
+        [query: .aqlFeatureAccess(capa, 'name')]
+      endfor
+      
+    endif
+    
+    
+    if .differs(->size(.aqlFeatureAccess(lc, 'allocatedFunctions')), 0) then
+      Allocated Functions 
+      table
+        row
+          template
+            Function name
+          template
+            Description
+          
+        
+      
+      for function | .aqlFeatureAccess(lc, 'allocatedFunctions') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(function, 'name')]
+            template
+              [query: .aqlFeatureAccess(function, 'description')]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges')), 0) then
+      Component Exchanges
+      table
+        row
+          template
+            Component Exchange Name
+          template
+            DIrection
+          template
+            Destination Component
+          template
+            Description
+          
+        
+      
+      for ce | .aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(ce, 'name')]
+            template
+              [query: .getCeDirection(ce, lc)]
+            template
+              [query: .getDestinationComponent(ce, lc)]
+            template
+              [query: .aqlFeatureAccess(self, 'description')]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    if .differs(->size(.aqlFeatureAccess(lc, 'requiredInterfaces')), 0) then
+      Required Interfaces  
+      table
+        row
+          template
+            Interface name
+          template
+            Description
+          
+        
+      
+      for interface | .aqlFeatureAccess(lc, 'requiredInterfaces') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(interface, 'name')]
+            template
+              [query: .aqlFeatureAccess(interface, 'description')]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    
+    if .differs(->size(.aqlFeatureAccess(lc, 'providedInterfaces')), 0) then
+      Provided Interfaces  
+      table
+        row
+          template
+            Interface name
+          template
+            Description
+          
+        
+      
+      for interface | .aqlFeatureAccess(lc, 'providedInterfaces') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(interface, 'name')]
+            template
+              [query: .aqlFeatureAccess(interface, 'description')]
+            
+          
+      endfor
+      
+    endif
+    
+    
+  endfor
+  
+  Descriptions of Logical Functions
+  
+  for f | .eAllContents(self, LogicalFunction) do
+    Function : 
+    [query: .aqlFeatureAccess(f, 'name')]
+    Description:
+    
+    if .differs(.aqlFeatureAccess(f, 'description'), null) then
+      [query: .aqlFeatureAccess(f, 'description')]
+    else
+      No description
+    endif
+    
+    Parent / Children functions:
+    table
+      row
+        template
+          Parent function
+        template
+          Current function
+        template
+          Children functions
+        
+      row
+        template
+          [query: .aqlFeatureAccess(.eContainer(f, NamedElement), 'name')]
+        template
+          [query: .aqlFeatureAccess(f, 'name')]
+        template
+          
+          if .greaterThan(->size(.aqlFeatureAccess(f, 'subFunctions')), 0) then
+            
+            for children | .aqlFeatureAccess(f, 'subFunctions') do
+              [query: .aqlFeatureAccess(children, 'name')]
+            endfor
+            
+          else
+            No children function
+          endif
+          
+        
+      
+    List of inputs:
+    
+    if .greaterThan(->size(.aqlFeatureAccess(f, 'incoming')), 0) then
+      table
+        row
+          template
+            Incoming functional exchange
+          template
+            Exchanged items
+          
+        
+      
+      for fe | ->filter(.aqlFeatureAccess(f, 'incoming'), FunctionalExchange) do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(fe, 'name')]
+            template
+              
+              if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
+                
+                for ei | .aqlFeatureAccess(fe, 'exchangedItems') do
+                  [query: .aqlFeatureAccess(ei, 'name')]
+                endfor
+                
+              else
+                No exchanged item
+              endif
+              
+            
+          
+      endfor
+      
+    else
+      No input
+    endif
+    
+    List of outputs:
+    
+    if .greaterThan(->size(.aqlFeatureAccess(f, 'outgoing')), 0) then
+      table
+        row
+          template
+            Outgoing functional exchange
+          template
+            Exchanged items
+          
+        
+      
+      for fe | ->filter(.aqlFeatureAccess(f, 'outgoing'), FunctionalExchange) do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(fe, 'name')]
+            template
+              
+              if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
+                
+                for ei | .aqlFeatureAccess(fe, 'exchangedItems') do
+                  [query: .aqlFeatureAccess(ei, 'name')]
+                endfor
+                
+              else
+                No exchanged item
+              endif
+              
+            
+          
+      endfor
+      
+    else
+      No output
+    endif
+    
+    Participation to functional chains:
+    
+    if .greaterThan(->size(.aqlFeatureAccess(f, 'involvingFunctionalChains')), 0) then
+      
+      for FC | .aqlFeatureAccess(f, 'involvingFunctionalChains') do
+        [query: .aqlFeatureAccess(FC, 'name')]
+      endfor
+      
+    else
+      None
+    endif
+    
+    Allocated to:
+    
+    if .greaterThan(->size(.aqlFeatureAccess(f, 'allocationBlocks')), 0) then
+      
+      for sys | .aqlFeatureAccess(f, 'allocationBlocks') do
+        [query: .aqlFeatureAccess(sys, 'name')]
+      endfor
+      
+    else
+      Function not allocated
+    endif
+    
+    
+  endfor
+  
+  Descriptions of Interfaces and Data
+  
+  for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg'), 'Class Diagram Blank') do
+    [query: .fit(im, 500, 400)]
+  endfor
+  
+  
+  for package | .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg') do
+    [query: .aqlFeatureAccess(package, 'name')]
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedExchangeItems')), 0) then
+      Exchange items definition:
+      
+      for EI | .aqlFeatureAccess(package, 'ownedExchangeItems') do
+        [query: .asBookmark(.aqlFeatureAccess(EI, 'name'), .aqlFeatureAccess(EI, 'id'))]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
+          table
+            row
+              template
+                Owned element
+              template
+                Element type
+              
+            
+          
+          for element | .aqlFeatureAccess(EI, 'ownedElements') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(element, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained elements
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedCollections')), 0) then
+      Collections definition:
+      table
+        row
+          template
+            Collection
+          template
+            Collection type
+          
+        
+      
+      for collection | .aqlFeatureAccess(package, 'ownedCollections') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(collection, 'name')]
+            template
+              [
+              [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
+              ]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedClasses')), 0) then
+      Classes definition:
+      
+      for class | .aqlFeatureAccess(package, 'ownedClasses') do
+        [query: .aqlFeatureAccess(class, 'name')]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
+          table
+            row
+              template
+                Contained property
+              template
+                Property type
+              
+            
+          
+          for prop | .aqlFeatureAccess(class, 'containedProperties') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(prop, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained property
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedDataTypes')), 0) then
+      Data types definition:
+      
+      for data | .aqlFeatureAccess(package, 'ownedDataTypes') do
+        [query: .aqlFeatureAccess(data, 'name')]
+      endfor
+      
+    endif
+    
+  endfor
+  
+  
+  for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg')), DataPkg) do
+    [query: .aqlFeatureAccess(package, 'name')]
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedExchangeItems')), 0) then
+      Exchange items definition:
+      
+      for EI | .aqlFeatureAccess(package, 'ownedExchangeItems') do
+        [query: .asBookmark(.aqlFeatureAccess(EI, 'name'), .aqlFeatureAccess(EI, 'id'))]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
+          table
+            row
+              template
+                Owned element
+              template
+                Element type
+              
+            
+          
+          for element | .aqlFeatureAccess(EI, 'ownedElements') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(element, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained elements
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedCollections')), 0) then
+      Collections definition:
+      table
+        row
+          template
+            Collection
+          template
+            Collection type
+          
+        
+      
+      for collection | .aqlFeatureAccess(package, 'ownedCollections') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(collection, 'name')]
+            template
+              [
+              [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
+              ]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedClasses')), 0) then
+      Classes definition:
+      
+      for class | .aqlFeatureAccess(package, 'ownedClasses') do
+        [query: .aqlFeatureAccess(class, 'name')]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
+          table
+            row
+              template
+                Contained property
+              template
+                Property type
+              
+            
+          
+          for prop | .aqlFeatureAccess(class, 'containedProperties') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(prop, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained property
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedDataTypes')), 0) then
+      Data types definition:
+      
+      for data | .aqlFeatureAccess(package, 'ownedDataTypes') do
+        [query: .aqlFeatureAccess(data, 'name')]
+      endfor
+      
+    endif
+    
+  endfor
+  
+  
+=== FOOTER ===
+template
+  
+  content control
+  
+  

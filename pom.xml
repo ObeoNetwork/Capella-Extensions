@@ -1,77 +1,214 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- - Copyright (c) 2017 Obeo. - All rights reserved. This program and the 
-	accompanying materials - are made available under the terms of the Eclipse 
-	Public License v1.0 - which accompanies this distribution, and is available 
-	at - http://www.eclipse.org/legal/epl-v10.html - - Contributors: - Obeo - 
-	initial API and implementation -->
+  accompanying materials - are made available under the terms of the Eclipse 
+  Public License v1.0 - which accompanies this distribution, and is available 
+  at - http://www.eclipse.org/legal/epl-v10.html - - Contributors: - Obeo - 
+  initial API and implementation -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.obeonetwork.capella.extensions</groupId>
-	<artifactId>parent</artifactId>
-	<version>1.2.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+  <groupId>org.obeonetwork.capella.extensions</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.2.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-	<prerequisites>
-		<maven>3.3</maven>
-	</prerequisites>
+  <prerequisites>
+    <maven>3.2</maven>
+  </prerequisites>
 
-	<licenses>
-		<license>
-			<name>Eclipse Public License v1.0</name>
-			<comments>
+  <licenses>
+    <license>
+      <name>Eclipse Public License v1.0</name>
+      <comments>
                 All rights reserved.
 
                 This program and the accompanying materials are made
                 available under the terms of the Eclipse Public License v1.0
                 which accompanies this distribution, and is available at
                 http://www.eclipse.org/legal/epl-v10.htm
-            </comments>
-		</license>
-	</licenses>
+      </comments>
+    </license>
+  </licenses>
 
-	<properties>
-		<tycho-version>0.24.0</tycho-version>
-		<tycho-extras-version>0.24.0</tycho-extras-version>
-		<platform-version-name>neon</platform-version-name>
-		<targetPlatform.repository.p2>http://mbarbero.github.com/fr.obeo.releng.targetplatform/p2/</targetPlatform.repository.p2>
-		<targetPlatform.application.name>fr.obeo.releng.targetplatform.targetPlatform.converter</targetPlatform.application.name>
-		<targetPlatform.application.args>capella.m2doc.tpd</targetPlatform.application.args>
-		<targetPlatform.application.feature>org.obeonetwork.capella.m2doc.target</targetPlatform.application.feature>
-	</properties>
+  <properties>
+    <tycho-version>0.24.0</tycho-version>
+    <tycho-extras-version>0.24.0</tycho-extras-version>
+    <platform-version-name>neon</platform-version-name>
+    <targetPlatform.repository.p2>http://mbarbero.github.com/fr.obeo.releng.targetplatform/p2/</targetPlatform.repository.p2>
+    <targetPlatform.application.name>fr.obeo.releng.targetplatform.targetPlatform.converter</targetPlatform.application.name>
+    <targetPlatform.application.args>capella.m2doc.tpd</targetPlatform.application.args>
+    <targetPlatform.application.feature>org.obeonetwork.capella.m2doc.target</targetPlatform.application.feature>
+    <maven-resources-version>2.6</maven-resources-version>
+  </properties>
 
-	<modules>
-		<module>m2doc</module>
-		<module>releng/org.obeonetwork.capella.update</module>
-		<module>releng/org.obeonetwork.capella.update.full</module>
-	</modules>
+  <modules>
+    <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries</module>
+    <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries.feature</module>
+    <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries.tests</module>
+    <module>releng/org.obeonetwork.capella.update</module>
+    <module>releng/org.obeonetwork.capella.update.full</module>
+  </modules>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>target-platform-configuration</artifactId>
-				<version>${tycho-version}</version>
-				<configuration>
-					<target>
-						<artifact>
-							<groupId>${project.groupId}</groupId>
-							<artifactId>parent</artifactId>
-							<version>${project.version}</version>
-							<classifier>./releng/org.obeonetwork.capella.target/capella-extensions</classifier>
-						</artifact>
-					</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-maven-plugin</artifactId>
-				<version>${tycho-version}</version>
-				<extensions>true</extensions>
-			</plugin>
-		</plugins>
-	</build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <target>
+            <artifact>
+              <groupId>${project.groupId}</groupId>
+              <artifactId>parent</artifactId>
+              <version>${project.version}</version>
+              <classifier>./releng/org.obeonetwork.capella.target/capella-extensions</classifier>
+            </artifact>
+          </target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <includes>
+            <include>**/*Test*.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven-resources-version}</version>
+        <configuration>
+          <encoding>${resource-encoding}</encoding>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>target-platform-configuration</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <resolver>p2</resolver>
+            <environments>
+              <environment>
+                <os>win32</os>
+                <ws>win32</ws>
+                <arch>x86_64</arch>
+              </environment>
+              <environment>
+                <os>linux</os>
+                <ws>gtk</ws>
+                <arch>x86_64</arch>
+              </environment>
+              <environment>
+                <os>macosx</os>
+                <ws>cocoa</ws>
+                <arch>x86_64</arch>
+              </environment>
+            </environments>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-compiler-plugin</artifactId>
+          <version>${tycho-version}</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+            <source>1.7</source>
+            <target>1.7</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.17</version>
+          <dependencies>
+            <dependency>
+              <groupId>com.puppycrawl.tools</groupId>
+              <artifactId>checkstyle</artifactId>
+              <version>6.19</version>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven-resources-version}</version>
+          <configuration>
+            <encoding>${resource-encoding}</encoding>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>2.3.2</version>
+          <configuration>
+            <findbugsXmlOutput>true</findbugsXmlOutput>
+            <failOnError>false</failOnError>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pmd-plugin</artifactId>
+          <version>2.5</version>
+          <configuration>
+            <sourceEncoding>utf-8</sourceEncoding>
+            <minimumTokens>100</minimumTokens>
+            <targetJdk>1.8</targetJdk>
+            <format>xml</format>
+            <failOnViolation>false</failOnViolation>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>cpd-check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.eclipse.tycho</groupId>
+          <artifactId>tycho-p2-plugin</artifactId>
+          <version>${tycho-extras-version}</version>
+          <executions>
+            <execution>
+              <id>p2-metadata</id>
+              <goals>
+                <goal>p2-metadata</goal>
+              </goals>
+              <phase>package</phase>
+            </execution>
+          </executions>
+          <configuration>
+            <defaultP2Metadata>false</defaultP2Metadata>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
 
 </project>

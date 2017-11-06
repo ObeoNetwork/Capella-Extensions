@@ -15,6 +15,7 @@ with source, requirements
 location site_Capella "https://hudson.polarsys.org/capella/job/capella-master/lastSuccessfulBuild/artifact/releng/plugins/org.polarsys.capella.rcp.site/target/repository" {
 	org.polarsys.capella.core.feature.feature.group lazy
 	org.polarsys.capella.core.ui.feature.feature.group lazy
+	org.polarsys.capella.common.platform.sirius lazy
 }
 
 location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
@@ -23,28 +24,32 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 	org.apache.poi.feature.feature.group lazy
 	org.eclipse.acceleo.query.feature.group lazy
+	org.obeonetwork.m2doc.tests lazy
+	org.obeonetwork.m2doc.sirius.tests lazy
 }
 
 location eclipse-releases-neon "http://download.eclipse.org/releases/neon" {
-	org.eclipse.sdk.feature.group
-	org.eclipse.platform.feature.group
-	org.eclipse.emf.sdk.feature.group
-	org.eclipse.emf.query.feature.group
-	org.eclipse.emf.transaction.feature.group
-	org.eclipse.gmf.feature.group
-	org.eclipse.equinox.executable.feature.group
-	com.ibm.icu
+	org.eclipse.ui lazy
+	org.eclipse.sdk.feature.group lazy
+	org.eclipse.platform.feature.group lazy
+	org.eclipse.emf.sdk.feature.group lazy
+	org.eclipse.emf.query.feature.group lazy
+	org.eclipse.emf.transaction.feature.group lazy
+	org.eclipse.gmf.feature.group lazy
+	org.eclipse.equinox.executable.feature.group lazy
+	com.ibm.icu lazy
+	org.junit lazy
 }
 
 location sirius-5.1.0 "http://download.eclipse.org/sirius/updates/stable/5.1.0-S20170906-071207/neon" {
-	org.eclipse.sirius.doc.feature.feature.group
-	org.eclipse.sirius.runtime.feature.group
-	org.eclipse.sirius.runtime.aql.feature.group
-	org.eclipse.sirius.runtime.ide.ui.feature.group
-	org.eclipse.sirius.interpreter.feature.feature.group
-	org.eclipse.acceleo.ui.interpreter.feature.group
-	org.eclipse.sirius.aql.feature.group
-	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group
+	org.eclipse.sirius.doc.feature.feature.group lazy
+	org.eclipse.sirius.runtime.feature.group lazy
+	org.eclipse.sirius.runtime.aql.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
+	org.eclipse.sirius.interpreter.feature.feature.group lazy
+	org.eclipse.acceleo.ui.interpreter.feature.group lazy
+	org.eclipse.sirius.aql.feature.group lazy
+	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
 }
 
 location kitalpha-runtime-master-latest "https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/lastSuccessfulBuild/artifact/result/publish/kitalpha_runtime/site.p2" {
@@ -67,26 +72,26 @@ location kitalpha-runtime-master-latest "https://hudson.polarsys.org/kitalpha/jo
 }
 
 location diffmerge-core-master "http://download.eclipse.org/diffmerge/releases/0.8.0/emf-diffmerge-site" {
-	org.eclipse.emf.diffmerge.feature.feature.group
-	org.eclipse.emf.diffmerge.sirius.feature.feature.group
-	org.eclipse.emf.diffmerge.gmf.feature.feature.group
+	org.eclipse.emf.diffmerge.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.gmf.feature.feature.group lazy
 }
 
 location diffmerge-patterns-master "http://download.eclipse.org/diffmerge/releases/0.8.0/edm-patterns-site" {
-	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group
-	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group
+	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
+	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
 }
 
 location amalgam-1.8.0 "http://download.eclipse.org/modeling/amalgam/updates/nightly/1.9.0-N20170802-100423/neon" {
-	org.eclipse.amalgam.explorer.activity.feature.group
+	org.eclipse.amalgam.explorer.activity.feature.group lazy
 }
 
 location sirius-query-legacy-1.1.0 "http://download.eclipse.org/sirius/updates/legacy/1.1.0" {
-	org.eclipse.sirius.query.legacy.feature.feature.group
+	org.eclipse.sirius.query.legacy.feature.feature.group lazy
 }
 
 location nebula-1.2.0 "http://download.eclipse.org/nebula/releases/1.2.0" {
-	org.eclipse.nebula.feature.feature.group
+	org.eclipse.nebula.feature.feature.group lazy
 }
 
 location orbit-R20130827064939 "http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository" {

@@ -1,0 +1,1024 @@
+
+=== HEADER ===
+template
+  table
+    row
+      template
+        Specification File of 
+        [query: .aqlFeatureAccess(self, 'name')]
+      
+    
+  
+=== BODY ===
+template
+  Specification File of 
+  [query: .aqlFeatureAccess(self, 'name')]
+  Document generated automatically by M2Doc from Capella model of the system
+Tables of ContentAucune entrée de table des matières n'a été trouvée.
+Description of the system Missions
+  
+  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), Mission)), 0) then
+    
+    if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), MissionPkg)), 0) then
+      The system Missions are sorted in the following packages:
+      table
+        row
+          template
+            Mission package
+          template
+            Missions
+          
+        row
+          template
+            [query: .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), 'name')]
+          template
+            
+            for mission | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), 'ownedMissions') do
+              [query: .asBookmarkRef(.aqlFeatureAccess(mission, 'name'), .aqlFeatureAccess(mission, 'id'))]
+            endfor
+            
+          
+        
+      
+      for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), MissionPkg) do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(package, 'name')]
+            template
+              
+              for mission | .aqlFeatureAccess(package, 'ownedMissions') do
+                [query: .asBookmarkRef(.aqlFeatureAccess(mission, 'name'), .aqlFeatureAccess(mission, 'id'))]
+              endfor
+              
+            
+          
+      endfor
+      
+    endif
+    
+    
+    for mission | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), Mission) do
+      Mission : 
+      [query: .asBookmark(.aqlFeatureAccess(mission, 'name'), .aqlFeatureAccess(mission, 'id'))]
+      Description:
+      
+      if .differs(.aqlFeatureAccess(mission, 'description'), null) then
+        [query: .aqlFeatureAccess(mission, 'description')]
+      else
+        No description
+      endif
+      
+      Involved actors:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(mission, 'participatingActors')), 0) then
+        
+        for actor | .aqlFeatureAccess(mission, 'participatingActors') do
+          [query: .asBookmarkRef(.aqlFeatureAccess(actor, 'name'), .aqlFeatureAccess(actor, 'id'))]
+        endfor
+        
+      else
+        No actor involved
+      endif
+      
+      Exploited capabilities:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(mission, 'exploitedCapabilities')), 0) then
+        
+        for capability | .aqlFeatureAccess(mission, 'exploitedCapabilities') do
+          Capability : 
+          [query: .asBookmark(.aqlFeatureAccess(capability, 'name'), .aqlFeatureAccess(capability, 'id'))]
+          Description:
+          
+          if .differs(.aqlFeatureAccess(capability, 'description'), null) then
+            [query: .aqlFeatureAccess(capability, 'description')]
+          else
+            No description
+          endif
+          
+          Capability inclusion relations:
+          table
+            row
+              template
+                Including capabilities
+              template
+                Current capability
+              template
+                Included capabilities
+              
+            row
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(capability, 'includingAbstractCapabilities')), 0) then
+                  
+                  for cap | .aqlFeatureAccess(capability, 'includingAbstractCapabilities') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(cap, 'name'), .aqlFeatureAccess(cap, 'id'))]
+                  endfor
+                  
+                else
+                  No including capability
+                endif
+                
+              template
+                [query: .aqlFeatureAccess(capability, 'name')]
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(capability, 'includedAbstractCapabilities')), 0) then
+                  
+                  for cap | .aqlFeatureAccess(capability, 'includedAbstractCapabilities') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(cap, 'name'), .aqlFeatureAccess(cap, 'id'))]
+                  endfor
+                  
+                else
+                  No included capability
+                endif
+                
+              
+            
+          Capability extension relations:
+          table
+            row
+              template
+                Extended capabilities
+              template
+                Current capability
+              template
+                Extending capabilities
+              
+            row
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(capability, 'extendedAbstractCapabilities')), 0) then
+                  
+                  for cap | .aqlFeatureAccess(capability, 'extendedAbstractCapabilities') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(cap, 'name'), .aqlFeatureAccess(cap, 'id'))]
+                  endfor
+                  
+                else
+                  No extended capability
+                endif
+                
+              template
+                [query: .aqlFeatureAccess(capability, 'name')]
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(capability, 'extendingAbstractCapabilities')), 0) then
+                  
+                  for cap | .aqlFeatureAccess(capability, 'extendingAbstractCapabilities') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(cap, 'name'), .aqlFeatureAccess(cap, 'id'))]
+                  endfor
+                  
+                else
+                  No extending capability
+                endif
+                
+              
+            
+          Capability generalization relations:
+          table
+            row
+              template
+                Super capabilities
+              template
+                Current capability
+              template
+                Sub capabilities
+              
+            row
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(capability, 'super')), 0) then
+                  
+                  for cap | .aqlFeatureAccess(capability, 'super') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(cap, 'name'), .aqlFeatureAccess(cap, 'id'))]
+                  endfor
+                  
+                else
+                  No super capability
+                endif
+                
+              template
+                [query: .aqlFeatureAccess(capability, 'name')]
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(capability, 'sub')), 0) then
+                  
+                  for cap | .aqlFeatureAccess(capability, 'sub') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(cap, 'name'), .aqlFeatureAccess(cap, 'id'))]
+                  endfor
+                  
+                else
+                  No sub capability
+                endif
+                
+              
+            
+          Involved functions:
+          
+          if .greaterThan(->size(.aqlFeatureAccess(capability, 'involvedAbstractFunctions')), 0) then
+            
+            for SF | .aqlFeatureAccess(capability, 'involvedAbstractFunctions') do
+              [query: .asBookmarkRef(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
+            endfor
+            
+          else
+            No involved function
+          endif
+          
+          Involved functional chains:
+          
+          if .greaterThan(->size(.aqlFeatureAccess(capability, 'involvedFunctionalChains')), 0) then
+            
+            for FC | .aqlFeatureAccess(capability, 'involvedFunctionalChains') do
+              [query: .asBookmarkRef(.aqlFeatureAccess(FC, 'name'), .aqlFeatureAccess(FC, 'id'))]
+            endfor
+            
+          else
+            No involved functional chain
+          endif
+          
+          
+          if .isRepresentationDescriptionName(capability, 'System Data Flow Blank') then
+            [query: .fit(->first(.asImageByRepresentationDescriptionName(capability, 'System Data Flow Blank')), 500, 200)]
+          endif
+          
+          Involved actors:
+          
+          if .greaterThan(->size(.aqlFeatureAccess(capability, 'participatingActors')), 0) then
+            
+            for actor | .aqlFeatureAccess(capability, 'participatingActors') do
+              [query: .asBookmarkRef(.aqlFeatureAccess(actor, 'name'), .aqlFeatureAccess(actor, 'id'))]
+            endfor
+            
+          else
+            No involved actor
+          endif
+          
+          Available in modes and states:
+          
+          if .greaterThan(->size(.aqlFeatureAccess(capability, 'availableInStates')), 0) then
+            
+            for state | .aqlFeatureAccess(capability, 'availableInStates') do
+              [query: .aqlFeatureAccess(state, 'name')]
+            endfor
+            
+          else
+            No state or mode availability defined
+          endif
+          
+          Involved scenarios:
+          
+          if .greaterThan(->size(.aqlFeatureAccess(capability, 'ownedScenarios')), 0) then
+            
+            for scenario | .aqlFeatureAccess(capability, 'ownedScenarios') do
+              [query: .asBookmarkRef(.aqlFeatureAccess(scenario, 'name'), .aqlFeatureAccess(scenario, 'id'))]
+            endfor
+            
+          else
+            No involved scenario
+          endif
+          
+        endfor
+        
+      else
+        No exploited capability
+      endif
+      
+    endfor
+    
+  else
+    No mission defined
+  endif
+  
+  Description of the system Capabilities
+  
+  for package | .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg') do
+    
+    for im | .asImageByRepresentationDescriptionName(package, 'Missions Capabilities Blank') do
+      [query: .fit(im, 500, 400)]
+    endfor
+    
+  endfor
+  
+  
+  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Capability)), 0) then
+    
+    if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), CapabilityPkg)), 0) then
+      The system Capabilities are sorted in the following packages:
+      table
+        row
+          template
+            Capability package
+          template
+            Capabilities
+          
+        row
+          template
+            [query: .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), 'name')]
+          template
+            
+            for capability | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), 'ownedCapabilities') do
+              [query: .asBookmarkRef(.aqlFeatureAccess(capability, 'name'), .aqlFeatureAccess(capability, 'id'))]
+            endfor
+            
+          
+        
+      
+      for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), CapabilityPkg) do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(package, 'name')]
+            template
+              
+              for capability | .aqlFeatureAccess(package, 'ownedCapabilities') do
+                [query: .asBookmarkRef(.aqlFeatureAccess(capability, 'name'), .aqlFeatureAccess(capability, 'id'))]
+              endfor
+              
+            
+          
+      endfor
+      
+    endif
+    
+    
+    for capability | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Capability) do
+    endfor
+    
+  else
+    No capability defined
+  endif
+  
+  Description of the System and its EnvironmentArchitecture Blank Diagrams
+  
+  for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystem'), 'System Architecture Blank') do
+    [query: .fit(im, 500, 400)]
+  endfor
+  
+  
+  for sys | .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystem') do
+    System: 
+    [query: .asBookmark(.aqlFeatureAccess(sys, 'name'), .aqlFeatureAccess(sys, 'id'))]
+    Modes & State Machines:
+    
+    if ->notEmpty(.aqlFeatureAccess(sys, 'ownedStateMachines')) then
+      
+      for stateMachine | .aqlFeatureAccess(sys, 'ownedStateMachines') do
+        [query: .aqlFeatureAccess(stateMachine, 'name')]
+        
+        if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States')) then
+          
+          for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States') do
+            [query: .fit(im, 500, 400)]
+          endfor
+          
+        else
+          
+          if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine')) then
+            
+            for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine') do
+              [query: .fit(im, 500, 400)]
+            endfor
+            
+          endif
+          
+        endif
+        
+      endfor
+      
+    else
+      No modes & states machine
+    endif
+    
+    Allocated functions:
+    
+    if .greaterThan(->size(.aqlFeatureAccess(sys, 'allocatedFunctions')), 0) then
+      
+      for SF | .aqlFeatureAccess(sys, 'allocatedFunctions') do
+        [query: .asBookmarkRef(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
+      endfor
+      
+    else
+      No allocated function
+    endif
+    
+  endfor
+  
+  
+  for actor | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedActorPkg'), 'ownedActors') do
+    Actor: 
+    [query: .asBookmark(.aqlFeatureAccess(actor, 'name'), .aqlFeatureAccess(actor, 'id'))]
+    Modes & State Machines:
+    
+    if ->notEmpty(.aqlFeatureAccess(actor, 'ownedStateMachines')) then
+      
+      for stateMachine | .aqlFeatureAccess(actor, 'ownedStateMachines') do
+        [query: .aqlFeatureAccess(stateMachine, 'name')]
+        
+        if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States')) then
+          
+          for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States') do
+            [query: .fit(im, 500, 400)]
+          endfor
+          
+        else
+          
+          if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine')) then
+            
+            for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine') do
+              [query: .fit(im, 500, 400)]
+            endfor
+            
+          endif
+          
+        endif
+        
+      endfor
+      
+    else
+      No modes & states machine
+    endif
+    
+    Allocated functions:
+    
+    if .greaterThan(->size(.aqlFeatureAccess(actor, 'allocatedFunctions')), 0) then
+      
+      for SF | .aqlFeatureAccess(actor, 'allocatedFunctions') do
+        [query: .asBookmarkRef(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
+      endfor
+      
+    else
+      No allocated function
+    endif
+    
+  endfor
+  
+  Description of the Functions
+  
+  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions')), SystemFunction)), 0) then
+    The Functions are sorted in the following packages:
+    table
+      row
+        template
+          Parent element
+        template
+          Function package
+        template
+          Contained functions
+        
+      row
+        template
+          [query: .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'name')]
+        template
+          
+          for package | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions') do
+            [query: .asBookmark(.aqlFeatureAccess(package, 'name'), .aqlFeatureAccess(package, 'id'))]
+          endfor
+          
+        template
+          
+          for SF | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions'), 'containedSystemFunctions') do
+            [query: .asBookmarkRef(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
+          endfor
+          
+        
+      
+    
+    for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg')), SystemFunctionPkg) do
+      table
+        row
+          template
+            [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(package, NamedElement), 'name'), .aqlFeatureAccess(.eContainer(package, NamedElement), 'id'))]
+          template
+            [query: .asBookmark(.aqlFeatureAccess(package, 'name'), .aqlFeatureAccess(package, 'id'))]
+          template
+            
+            for SF | .aqlFeatureAccess(package, 'ownedSystemFunctions') do
+              [query: .asBookmarkRef(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
+            endfor
+            
+          
+        
+    endfor
+    
+    
+    for SF | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions')), SystemFunction) do
+      Function: 
+      [query: .asBookmark(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
+      Description:
+      
+      if .differs(.aqlFeatureAccess(SF, 'description'), null) then
+        [query: .aqlFeatureAccess(SF, 'description')]
+      else
+        No description
+      endif
+      
+      Parent / Children functions:
+      table
+        row
+          template
+            Parent function
+          template
+            Current function
+          template
+            Children functions
+          
+        row
+          template
+            [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(SF, NamedElement), 'name'), .aqlFeatureAccess(.eContainer(SF, NamedElement), 'id'))]
+          template
+            [query: .aqlFeatureAccess(SF, 'name')]
+          template
+            
+            if .greaterThan(->size(.aqlFeatureAccess(SF, 'subFunctions')), 0) then
+              
+              for children | .aqlFeatureAccess(SF, 'subFunctions') do
+                [query: .asBookmarkRef(.aqlFeatureAccess(children, 'name'), .aqlFeatureAccess(children, 'id'))]
+              endfor
+              
+            else
+              No children function
+            endif
+            
+          
+        
+      List of inputs:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(SF, 'incoming')), 0) then
+        table
+          row
+            template
+              Incoming functional exchange
+            template
+              Exchanged items
+            
+          
+        
+        for fe | ->filter(.aqlFeatureAccess(SF, 'incoming'), FunctionalExchange) do
+          table
+            row
+              template
+                [query: .aqlFeatureAccess(fe, 'name')]
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
+                  
+                  for ei | .aqlFeatureAccess(fe, 'exchangedItems') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(ei, 'name'), .aqlFeatureAccess(ei, 'id'))]
+                  endfor
+                  
+                else
+                  No exchanged item
+                endif
+                
+              
+            
+        endfor
+        
+      else
+        No input
+      endif
+      
+      List of outputs:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(SF, 'outgoing')), 0) then
+        table
+          row
+            template
+              Outgoing functional exchange
+            template
+              Exchanged items
+            
+          
+        
+        for fe | ->filter(.aqlFeatureAccess(SF, 'outgoing'), FunctionalExchange) do
+          table
+            row
+              template
+                [query: .aqlFeatureAccess(fe, 'name')]
+              template
+                
+                if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
+                  
+                  for ei | .aqlFeatureAccess(fe, 'exchangedItems') do
+                    [query: .asBookmarkRef(.aqlFeatureAccess(ei, 'name'), .aqlFeatureAccess(ei, 'id'))]
+                  endfor
+                  
+                else
+                  No exchanged item
+                endif
+                
+              
+            
+        endfor
+        
+      else
+        No output
+      endif
+      
+      Participation to functional chains:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(SF, 'involvingFunctionalChains')), 0) then
+        
+        for FC | .aqlFeatureAccess(SF, 'involvingFunctionalChains') do
+          [query: .asBookmarkRef(.aqlFeatureAccess(FC, 'name'), .aqlFeatureAccess(FC, 'id'))]
+        endfor
+        
+      else
+        None
+      endif
+      
+      Allocated to:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(SF, 'allocatorSystems')), 0) then
+        
+        for sys | .aqlFeatureAccess(SF, 'allocatorSystems') do
+          [query: .asBookmarkRef(.aqlFeatureAccess(sys, 'name'), .aqlFeatureAccess(sys, 'id'))]
+        endfor
+        
+      else
+        
+        if .greaterThan(->size(.aqlFeatureAccess(SF, 'allocatorActors')), 0) then
+          
+          for act | .aqlFeatureAccess(SF, 'allocatorActors') do
+            [query: .asBookmarkRef(.aqlFeatureAccess(act, 'name'), .aqlFeatureAccess(act, 'id'))]
+          endfor
+          
+        else
+          Function not allocated
+        endif
+        
+      endif
+      
+    endfor
+    
+  else
+    No function defined
+  endif
+  
+  Description of the Functional Chains
+  
+  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(self, 'containedSystemAnalysis')), FunctionalChain)), 0) then
+    
+    for FC | ->filter(.eAllContents(.aqlFeatureAccess(self, 'containedSystemAnalysis')), FunctionalChain) do
+      Functional Chain : 
+      [query: .asBookmark(.aqlFeatureAccess(FC, 'name'), .aqlFeatureAccess(FC, 'id'))]
+      
+      if .isRepresentationDescriptionName(FC, 'Functional Chain Description') then
+        This functional chain is illustrated by the following diagram:
+        [query: .fit(->first(.asImageByRepresentationDescriptionName(FC, 'Functional Chain Description')), 500, 300)]
+      endif
+      
+      Description:
+      
+      if .differs(.aqlFeatureAccess(FC, 'description'), null) then
+        [query: .aqlFeatureAccess(FC, 'description')]
+      else
+        No description
+      endif
+      
+      Involved elements:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(FC, 'involvedFunctions')), 0) then
+        This functional chain involves the following elements:
+        table
+          row
+            template
+              Functional exchange
+            template
+              Source function
+            template
+              Target function
+            
+          
+        
+        for FE | .aqlFeatureAccess(FC, 'involvedFunctionalExchanges') do
+          table
+            row
+              template
+                [query: .aqlFeatureAccess(FE, 'name')]
+              template
+                [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'source'), NamedElement), 'name'), .aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'source'), NamedElement), 'id'))]
+              template
+                [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'target'), NamedElement), 'name'), .aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'target'), NamedElement), 'id'))]
+              
+            
+        endfor
+        
+      else
+        No involved elements
+      endif
+      
+      Involving capabilities:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(FC, 'involvingCapabilities')), 0) then
+        
+        for capability | .aqlFeatureAccess(FC, 'involvingCapabilities') do
+          [query: .asBookmarkRef(.aqlFeatureAccess(capability, 'name'), .aqlFeatureAccess(capability, 'id'))]
+        endfor
+        
+      else
+        No involving capability
+      endif
+      
+    endfor
+    
+  else
+    No functional chain defined
+  endif
+  
+  Description of Scenarios
+  
+  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Scenario)), 0) then
+    
+    for scenario | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Scenario) do
+      Scenario: 
+      [query: .asBookmark(.aqlFeatureAccess(scenario, 'name'), .aqlFeatureAccess(scenario, 'id'))]
+      Description:
+      
+      if .differs(.aqlFeatureAccess(scenario, 'description'), null) then
+        [query: .aqlFeatureAccess(scenario, 'description')]
+      else
+        No description
+      endif
+      
+      Allocated capability:
+      [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(scenario, NamedElement), 'name'), .aqlFeatureAccess(.eContainer(scenario, NamedElement), 'id'))]
+      Representation:
+      
+      if .isRepresentationDescriptionName(scenario, 'Component Exchanges Scenario') then
+        [query: .fit(->first(.asImageByRepresentationDescriptionName(scenario, 'Component Exchanges Scenario')), 500, 400)]
+      else
+        
+        if .isRepresentationDescriptionName(scenario, 'Functional Scenario') then
+          [query: .fit(->first(.asImageByRepresentationDescriptionName(scenario, 'Functional Scenario')), 500, 400)]
+        endif
+        
+      endif
+      
+      Owned messages:
+      
+      if .greaterThan(->size(.aqlFeatureAccess(scenario, 'ownedMessages')), 0) then
+        
+        for message | .aqlFeatureAccess(scenario, 'ownedMessages') do
+          [query: .aqlFeatureAccess(message, 'name')]
+        endfor
+        
+      else
+        No message
+      endif
+      
+    endfor
+    
+  else
+    No scenario defined
+  endif
+  
+  Data definition
+  
+  for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg'), 'Class Diagram Blank') do
+    [query: .fit(im, 500, 400)]
+  endfor
+  
+  
+  for package | .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg') do
+    [query: .aqlFeatureAccess(package, 'name')]
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedExchangeItems')), 0) then
+      Exchange items definition:
+      
+      for EI | .aqlFeatureAccess(package, 'ownedExchangeItems') do
+        [query: .asBookmark(.aqlFeatureAccess(EI, 'name'), .aqlFeatureAccess(EI, 'id'))]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
+          table
+            row
+              template
+                Owned element
+              template
+                Element type
+              
+            
+          
+          for element | .aqlFeatureAccess(EI, 'ownedElements') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(element, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained elements
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedCollections')), 0) then
+      Collections definition:
+      table
+        row
+          template
+            Collection
+          template
+            Collection type
+          
+        
+      
+      for collection | .aqlFeatureAccess(package, 'ownedCollections') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(collection, 'name')]
+            template
+              [
+              [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
+              ]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedClasses')), 0) then
+      Classes definition:
+      
+      for class | .aqlFeatureAccess(package, 'ownedClasses') do
+        [query: .aqlFeatureAccess(class, 'name')]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
+          table
+            row
+              template
+                Contained property
+              template
+                Property type
+              
+            
+          
+          for prop | .aqlFeatureAccess(class, 'containedProperties') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(prop, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained property
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedDataTypes')), 0) then
+      Data types definition:
+      
+      for data | .aqlFeatureAccess(package, 'ownedDataTypes') do
+        [query: .aqlFeatureAccess(data, 'name')]
+      endfor
+      
+    endif
+    
+  endfor
+  
+  
+  for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg')), DataPkg) do
+    [query: .aqlFeatureAccess(package, 'name')]
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedExchangeItems')), 0) then
+      Exchange items definition:
+      
+      for EI | .aqlFeatureAccess(package, 'ownedExchangeItems') do
+        [query: .asBookmark(.aqlFeatureAccess(EI, 'name'), .aqlFeatureAccess(EI, 'id'))]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
+          table
+            row
+              template
+                Owned element
+              template
+                Element type
+              
+            
+          
+          for element | .aqlFeatureAccess(EI, 'ownedElements') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(element, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained elements
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedCollections')), 0) then
+      Collections definition:
+      table
+        row
+          template
+            Collection
+          template
+            Collection type
+          
+        
+      
+      for collection | .aqlFeatureAccess(package, 'ownedCollections') do
+        table
+          row
+            template
+              [query: .aqlFeatureAccess(collection, 'name')]
+            template
+              [
+              [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
+              ]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedClasses')), 0) then
+      Classes definition:
+      
+      for class | .aqlFeatureAccess(package, 'ownedClasses') do
+        [query: .aqlFeatureAccess(class, 'name')]
+        
+        if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
+          table
+            row
+              template
+                Contained property
+              template
+                Property type
+              
+            
+          
+          for prop | .aqlFeatureAccess(class, 'containedProperties') do
+            table
+              row
+                template
+                  [query: .aqlFeatureAccess(prop, 'name')]
+                template
+                  [
+                  [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
+                  ]
+                
+              
+          endfor
+          
+        else
+          No contained property
+        endif
+        
+      endfor
+      
+    endif
+    
+    
+    if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedDataTypes')), 0) then
+      Data types definition:
+      
+      for data | .aqlFeatureAccess(package, 'ownedDataTypes') do
+        [query: .aqlFeatureAccess(data, 'name')]
+      endfor
+      
+    endif
+    
+  endfor
+  
+=== FOOTER ===
+template
+  
+  content control
+  
+  
