@@ -40,5 +40,6 @@ deploy:
     region: eu-west-1
     upload-dir: capella-extensions/${TAG_OR_BRANCH}
     on:
+      tags: true
       all_branches: true
       repo: ObeoNetwork/Capella-Extensions
