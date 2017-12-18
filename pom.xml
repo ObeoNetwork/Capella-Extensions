@@ -42,7 +42,6 @@
 
 	<modules>
 		<module>m2doc</module>
-		<module>releng/org.obeonetwork.capella.update</module>
 		<module>releng/org.obeonetwork.capella.update.full</module>
 	</modules>
 
