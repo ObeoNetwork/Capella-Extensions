@@ -12,10 +12,13 @@ target "Capella M2Doc Extension"
 
 with source, requirements
 
-location site_Capella "https://hudson.polarsys.org/capella/job/capella-master/lastSuccessfulBuild/artifact/releng/plugins/org.polarsys.capella.rcp.site/target/repository" {
-	org.polarsys.capella.core.feature.feature.group lazy
-	org.polarsys.capella.core.ui.feature.feature.group lazy
-	org.polarsys.capella.common.platform.sirius lazy
+include "http://git.polarsys.org/c/capella/capella.git/plain/releng/plugins/org.polarsys.capella.targets/full/capella.target-definition.targetplatform?h=v1.2.x"
+
+location site_Capella "http://download.polarsys.org/capella/core/updates/nightly/1.2.x/org.polarsys.capella.rcp.site" {
+    org.polarsys.capella.core.feature.feature.group lazy
+    org.polarsys.capella.core.ui.feature.feature.group lazy
+    org.polarsys.capella.common.platform.sirius lazy
+    org.polarsys.capella.common lazy
 }
 
 location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
@@ -23,85 +26,7 @@ location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 	org.apache.poi.feature.feature.group lazy
-	org.eclipse.acceleo.query.feature.group lazy
 	org.obeonetwork.m2doc.tests lazy
 	org.obeonetwork.m2doc.sirius.tests lazy
+//	org.eclipse.acceleo.query.feature.group lazy
 }
-
-location eclipse-releases-neon "http://download.eclipse.org/releases/neon" {
-	org.eclipse.ui lazy
-	org.eclipse.sdk.feature.group lazy
-	org.eclipse.platform.feature.group lazy
-	org.eclipse.emf.sdk.feature.group lazy
-	org.eclipse.emf.query.feature.group lazy
-	org.eclipse.emf.transaction.feature.group lazy
-	org.eclipse.gmf.feature.group lazy
-	org.eclipse.equinox.executable.feature.group lazy
-	com.ibm.icu lazy
-	org.junit lazy
-}
-
-location sirius-5.1.0 "http://download.eclipse.org/sirius/updates/stable/5.1.0-S20170906-071207/neon" {
-	org.eclipse.sirius.doc.feature.feature.group lazy
-	org.eclipse.sirius.runtime.feature.group lazy
-	org.eclipse.sirius.runtime.aql.feature.group lazy
-	org.eclipse.sirius.runtime.ide.ui.feature.group lazy
-	org.eclipse.sirius.interpreter.feature.feature.group lazy
-	org.eclipse.acceleo.ui.interpreter.feature.group lazy
-	org.eclipse.sirius.aql.feature.group lazy
-	org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group lazy
-}
-
-location kitalpha-runtime-master-latest "https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/lastSuccessfulBuild/artifact/result/publish/kitalpha_runtime/site.p2" {
-	org.polarsys.kitalpha.ad.runtime.feature.feature.group lazy
-	org.polarsys.kitalpha.cadence.feature.feature.group lazy
-	org.polarsys.kitalpha.common.feature.feature.group lazy
-	org.polarsys.kitalpha.emde.feature.feature.group lazy
-	org.polarsys.kitalpha.emde.ui.feature.feature.group lazy
-	org.polarsys.kitalpha.model.common.commands.feature.feature.group lazy
-	org.polarsys.kitalpha.model.common.scrutiny.feature.feature.group lazy
-	org.polarsys.kitalpha.model.common.share.feature.feature.group lazy
-	org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.feature.group lazy
-	org.polarsys.kitalpha.model.detachment.feature.feature.group lazy
-	org.polarsys.kitalpha.model.detachment.ui.feature.feature.group lazy
-	org.polarsys.kitalpha.patterns.feature.feature.group lazy
-	org.polarsys.kitalpha.report.feature.feature.group lazy
-	org.polarsys.kitalpha.report.ui.feature.feature.group lazy
-	org.polarsys.kitalpha.transposer.feature.feature.group lazy
-	org.polarsys.kitalpha.richtext.widget.feature.feature.group lazy
-}
-
-location diffmerge-core-master "http://download.eclipse.org/diffmerge/releases/0.8.0/emf-diffmerge-site" {
-	org.eclipse.emf.diffmerge.feature.feature.group lazy
-	org.eclipse.emf.diffmerge.sirius.feature.feature.group lazy
-	org.eclipse.emf.diffmerge.gmf.feature.feature.group lazy
-}
-
-location diffmerge-patterns-master "http://download.eclipse.org/diffmerge/releases/0.8.0/edm-patterns-site" {
-	org.eclipse.emf.diffmerge.patterns.sdk.feature.feature.group lazy
-	org.eclipse.emf.diffmerge.patterns.sirius.sdk.feature.feature.group lazy
-}
-
-location amalgam-1.8.0 "http://download.eclipse.org/modeling/amalgam/updates/nightly/1.9.0-N20170802-100423/neon" {
-	org.eclipse.amalgam.explorer.activity.feature.group lazy
-}
-
-location sirius-query-legacy-1.1.0 "http://download.eclipse.org/sirius/updates/legacy/1.1.0" {
-	org.eclipse.sirius.query.legacy.feature.feature.group lazy
-}
-
-location nebula-1.2.0 "http://download.eclipse.org/nebula/releases/1.2.0" {
-	org.eclipse.nebula.feature.feature.group lazy
-}
-
-location orbit-R20130827064939 "http://download.eclipse.org/tools/orbit/downloads/drops/R20130827064939/repository" {
-	org.apache.log4j [1.2.15.v201012070815,1.2.15.v201012070815]
-	org.apache.commons.lang [2.4.0.v201005080502,2.4.0.v201005080502]
-	org.apache.commons.net [3.2.0.v201305141515,3.2.0.v201305141515]
-	org.jsoup [1.7.2.v201304221138,1.7.2.v201304221138]
-}
-
-location orbit-R20140525021250 "http://download.eclipse.org/tools/orbit/downloads/drops/R20140525021250/repository" {
-	com.google.guava [15.0.0.v201403281430,15.0.0.v201403281430]
-}
-
