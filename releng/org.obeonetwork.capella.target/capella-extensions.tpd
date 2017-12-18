@@ -22,13 +22,13 @@ location eclipse-releases-neon "http://download.eclipse.org/releases/neon" {
 	org.eclipse.emf.workspace lazy
 }
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/1.1.0/repository" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
 	org.apache.poi.feature.feature.group lazy
 	org.obeonetwork.m2doc.tests lazy
 	org.obeonetwork.m2doc.sirius.tests lazy
-//	org.eclipse.acceleo.query.feature.group lazy
+//	org.eclipse.acceleo.query.feature.group lazy // TODO uncomment when Capella update site don't use qualified versions
 }
 

@@ -46,7 +46,7 @@
   <modules>
     <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries</module>
     <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries.feature</module>
-    <!-- <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries.tests</module> TODO uncomment when moving to M2Doc 1.1.0 -->
+    <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries.tests</module>
     <module>releng/org.obeonetwork.capella.update.full</module>
   </modules>
 
