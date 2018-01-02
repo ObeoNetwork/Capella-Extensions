@@ -12,7 +12,7 @@ target "Capella Extensions"
 
 with source, requirements
 
-location "https://hudson.polarsys.org/capella/view/Capella-v1.1.x/job/capella-v1.1.x/lastSuccessfulBuild/artifact/result/publish/org.polarsys.capella/site.p2/" {
+location "https://ci.polarsys.org/capella/view/Capella-v1.1.x/job/capella-v1.1.x/lastSuccessfulBuild/artifact/result/publish/org.polarsys.capella/site.p2/" {
 	org.polarsys.capella.core.feature.feature.group lazy
 }
 
@@ -29,7 +29,7 @@ location "http://download.eclipse.org/releases/mars/" {
 	
 }
 
-location "https://hudson.polarsys.org/kitalpha/job/kitalpha-v1.1.x/473/artifact/result/publish/kitalpha_runtime/site.p2" {
+location "https://ci.polarsys.org/kitalpha/job/kitalpha-v1.1.x/473/artifact/result/publish/kitalpha_runtime/site.p2" {
 	
 }
 
