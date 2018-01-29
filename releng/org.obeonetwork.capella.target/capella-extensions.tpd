@@ -22,7 +22,7 @@ location eclipse-releases-neon "http://download.eclipse.org/releases/neon" {
 	org.eclipse.emf.workspace lazy
 }
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/1.1.0/repository" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
