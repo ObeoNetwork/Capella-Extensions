@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Capella M2Doc Extension" sequenceNumber="1523263755">
+<target name="Capella M2Doc Extension" sequenceNumber="1523263998">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
