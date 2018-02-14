@@ -33,14 +33,14 @@
   </licenses>
 
   <properties>
-    <tycho-version>0.24.0</tycho-version>
-    <tycho-extras-version>0.24.0</tycho-extras-version>
+    <tycho-version>1.1.0</tycho-version>
+    <tycho-extras-version>1.1.0</tycho-extras-version>
     <platform-version-name>neon</platform-version-name>
     <targetPlatform.repository.p2>http://mbarbero.github.com/fr.obeo.releng.targetplatform/p2/</targetPlatform.repository.p2>
     <targetPlatform.application.name>fr.obeo.releng.targetplatform.targetPlatform.converter</targetPlatform.application.name>
     <targetPlatform.application.args>capella.m2doc.tpd</targetPlatform.application.args>
     <targetPlatform.application.feature>org.obeonetwork.capella.m2doc.target</targetPlatform.application.feature>
-    <maven-resources-version>2.6</maven-resources-version>
+    <maven-resources-version>3.0.2</maven-resources-version>
   </properties>
 
   <modules>

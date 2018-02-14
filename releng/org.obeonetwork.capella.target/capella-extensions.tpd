@@ -12,13 +12,14 @@ target "Capella M2Doc Extension"
 
 with source, requirements
 
-include "http://git.polarsys.org/c/capella/capella.git/plain/releng/plugins/org.polarsys.capella.targets/full/capella.target-definition.targetplatform?h=v1.2.0"
+include "http://git.polarsys.org/c/capella/capella.git/plain/releng/plugins/org.polarsys.capella.targets/full/capella.target-definition.targetplatform?h=v1.2.x"
 
 location site_Capella "http://download.polarsys.org/capella/core/updates/nightly/1.2.x/org.polarsys.capella.rcp.site" {
-    org.polarsys.capella.core.feature.feature.group lazy
-    org.polarsys.capella.core.ui.feature.feature.group lazy
-    org.polarsys.capella.common.platform.sirius lazy
-    org.polarsys.capella.common lazy
+	org.polarsys.capella.core.feature.feature.group lazy
+}
+
+location eclipse-releases-neon "http://download.eclipse.org/releases/neon" {
+	org.eclipse.emf.workspace lazy
 }
 
 location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/1.1.0/repository" {

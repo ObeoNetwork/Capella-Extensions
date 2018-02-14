@@ -1,39 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Capella M2Doc Extension" sequenceNumber="1516888245">
+<target name="Capella M2Doc Extension" sequenceNumber="1518612897">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.sdk.feature.group" version="4.6.3.v20170301-0400"/>
-      <unit id="org.eclipse.platform.feature.group" version="4.6.3.v20170301-0400"/>
-      <unit id="org.eclipse.emf.sdk.feature.group" version="2.12.0.v20160526-0356"/>
-      <unit id="org.eclipse.emf.query.feature.group" version="1.10.0.201606071631"/>
-      <unit id="org.eclipse.emf.transaction.feature.group" version="1.10.0.201606071900"/>
-      <unit id="org.eclipse.gmf.feature.group" version="1.10.0.201606071959"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20161122-1740"/>
-      <unit id="com.ibm.icu" version="56.1.0.v201601250100"/>
-      <repository id="eclipse-releases-neon" location="http://download.eclipse.org/releases/neon"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.sirius.doc.feature.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.doc.feature.source.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.runtime.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.runtime.source.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.runtime.aql.source.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.runtime.ide.ui.source.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.interpreter.feature.source.feature.group" version="5.1.0.201710261549"/>
+      <unit id="org.eclipse.sirius.doc.feature.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.doc.feature.source.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.runtime.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.runtime.source.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.runtime.aql.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.runtime.aql.source.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.source.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.interpreter.feature.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.interpreter.feature.source.feature.group" version="5.1.1.201801131646"/>
       <unit id="org.eclipse.acceleo.ui.interpreter.feature.group" version="3.7.2.201708211328"/>
       <unit id="org.eclipse.acceleo.ui.interpreter.source.feature.group" version="3.7.2.201708211328"/>
-      <unit id="org.eclipse.sirius.aql.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.aql.source.feature.group" version="5.1.0.201710261549"/>
+      <unit id="org.eclipse.sirius.aql.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.aql.source.feature.group" version="5.1.1.201801131646"/>
       <unit id="org.eclipse.acceleo.query.feature.group" version="6.0.2.201708211328"/>
       <unit id="org.eclipse.acceleo.query.source.feature.group" version="6.0.2.201708211328"/>
-      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="5.1.0.201710261549"/>
-      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="5.1.0.201710261549"/>
-      <repository id="sirius-5.1.0" location="http://download.eclipse.org/sirius/updates/milestones/5.1.0rc4/neon"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="5.1.1.201801131646"/>
+      <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="5.1.1.201801131646"/>
+      <repository id="sirius-5.1.x" location="http://download.eclipse.org/sirius/updates/milestones/5.1.1rc4/neon"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="0.0.0"/>
@@ -57,11 +46,11 @@
       <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.richtext.widget.ext.source.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.doc.feature.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-runtime-master" location="https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/545/artifact/result/publish/kitalpha_runtime/site.p2"/>
+      <repository id="kitalpha-runtime-master" location="https://ci.polarsys.org/kitalpha/job/Kitalpha_master/632/artifact/result/publish/kitalpha_runtime/site.p2"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.emde.sdk.feature.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-sdk-master" location="https://hudson.polarsys.org/kitalpha/job/Kitalpha_master/545/artifact/result/publish/kitalpha_sdk/site.p2"/>
+      <repository id="kitalpha-sdk-master" location="https://ci.polarsys.org/kitalpha/job/Kitalpha_master/632/artifact/result/publish/kitalpha_sdk/site.p2"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
@@ -114,10 +103,19 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
-      <unit id="org.polarsys.capella.core.ui.feature.feature.group" version="0.0.0"/>
-      <unit id="org.polarsys.capella.common.platform.sirius" version="0.0.0"/>
-      <unit id="org.polarsys.capella.common" version="0.0.0"/>
       <repository id="site_Capella" location="http://download.polarsys.org/capella/core/updates/nightly/1.2.x/org.polarsys.capella.rcp.site"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.workspace" version="0.0.0"/>
+      <unit id="org.eclipse.sdk.feature.group" version="4.6.3.v20170301-0400"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.6.3.v20170301-0400"/>
+      <unit id="org.eclipse.emf.sdk.feature.group" version="2.12.0.v20160526-0356"/>
+      <unit id="org.eclipse.emf.query.feature.group" version="1.10.0.201606071631"/>
+      <unit id="org.eclipse.emf.transaction.feature.group" version="1.10.0.201606071900"/>
+      <unit id="org.eclipse.gmf.feature.group" version="1.10.0.201606071959"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20161122-1740"/>
+      <unit id="com.ibm.icu" version="56.1.0.v201601250100"/>
+      <repository id="eclipse-releases-neon" location="http://download.eclipse.org/releases/neon"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.obeonetwork.m2doc.feature.feature.group" version="0.0.0"/>
