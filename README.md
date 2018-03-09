@@ -18,6 +18,12 @@ An update site is built and published for every commit:
   * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.2.x/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.2.x/nightly/full)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.2.x/nightly/full/org.obeonetwork.capella.update.full.zip)
 
+## 1.2.1
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.2.1/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.2.1/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.2.1/full/org.obeonetwork.capella.update.full.zip)
+
 ## 1.2.0
 
 * Update site (Extensions and dependencies):
