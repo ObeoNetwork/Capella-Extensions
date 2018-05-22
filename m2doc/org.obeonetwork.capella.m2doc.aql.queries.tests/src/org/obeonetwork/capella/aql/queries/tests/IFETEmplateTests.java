@@ -17,6 +17,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.obeonetwork.m2doc.parser.DocumentParserException;
 import org.obeonetwork.m2doc.sirius.tests.AbstractTemplatesTestSuite;
 import org.obeonetwork.m2doc.tests.M2DocTestUtils;
+import org.obeonetwork.m2doc.tests.MemoryURIHandler;
 
 public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 
@@ -29,7 +30,7 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 
 	private final URI generatedURI;
 
-	private final String zipperTemplateName;
+	private final String zippedTemplateName;
 
 	/**
 	 * Constructor.
@@ -44,7 +45,7 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 	public IFETEmplateTests(String testFolder) throws IOException, DocumentParserException {
 		super(testFolder);
 		generatedURI = getExpectedGeneratedURI(new File(testFolder));
-		zipperTemplateName = generatedToZipped.get(generatedURI.lastSegment());
+		zippedTemplateName = generatedToZipped.get(generatedURI.lastSegment());
 	}
 
 	/**
@@ -74,21 +75,28 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 	@Test
 	public void zipComparison() throws IOException {
 		try (final ZipFile zipFile = new ZipFile("../org.obeonetwork.capella.m2doc.aql.queries/zips/m2docife.zip");) {
-			final ZipEntry templateEntry = zipFile.getEntry(zipperTemplateName);
+			final ZipEntry templateEntry = zipFile.getEntry(zippedTemplateName);
 			final InputStream zippedTemplateInputStream = zipFile.getInputStream(templateEntry);
-			final URI tempTEmplateURI = URI.createURI("m2doctests://" + zipperTemplateName);
+			final MemoryURIHandler handler = new MemoryURIHandler();
+			try {
+				final URI tempTEmplateURI = URI.createURI("m2doctests://" + zippedTemplateName);
 
-			// Copy zippedTemplateInputStream to the given URI
-			final OutputStream outputStream = URIConverter.INSTANCE.createOutputStream(tempTEmplateURI);
-			byte[] buffer = new byte[BUFFER_SIZE];
-			int size = zippedTemplateInputStream.read(buffer, 0, buffer.length);
-			while (size != -1) {
-				outputStream.write(buffer, 0, size);
-				size = zippedTemplateInputStream.read(buffer, 0, buffer.length);
+				// Copy zippedTemplateInputStream to the given URI
+				URIConverter.INSTANCE.getURIHandlers().add(0, handler);
+				final OutputStream outputStream = URIConverter.INSTANCE.createOutputStream(tempTEmplateURI);
+				byte[] buffer = new byte[BUFFER_SIZE];
+				int size = zippedTemplateInputStream.read(buffer, 0, buffer.length);
+				while (size != -1) {
+					outputStream.write(buffer, 0, size);
+					size = zippedTemplateInputStream.read(buffer, 0, buffer.length);
+				}
+				outputStream.flush();
+
+				M2DocTestUtils.assertDocx(generatedURI, tempTEmplateURI);
+			} finally {
+				handler.clear();
+				URIConverter.INSTANCE.getURIHandlers().remove(handler);
 			}
-			outputStream.flush();
-
-			M2DocTestUtils.assertDocx(generatedURI, tempTEmplateURI);
 		}
 	}
 
