@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Capella M2Doc Extension" sequenceNumber="1530869366">
+<target name="Capella M2Doc Extension" sequenceNumber="1536926715">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="5.1.2.201805181609"/>
@@ -22,29 +22,29 @@
       <unit id="org.eclipse.acceleo.query.source.feature.group" version="6.0.2.201708211328"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="5.1.2.201805181609"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="5.1.2.201805181609"/>
-      <repository id="sirius-5.1.x" location="http://download.eclipse.org/sirius/updates/stable/5.1.2-S20180518-120822/neon"/>
+      <repository id="sirius-5.1.x" location="http://download.eclipse.org/sirius/updates/releases/5.1.2/neon"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.cadence.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.common.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.emde.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.emde.ui.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.model.common.commands.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.model.common.scrutiny.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.model.common.share.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.model.detachment.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.model.detachment.ui.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.patterns.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.report.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.report.ui.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.transposer.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.richtext.widget.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.richtext.widget.feature.source.feature.group" version="1.2.1.201805300816"/>
-      <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group" version="1.2.1.201805300816"/>
-      <repository id="kitalpha-runtime-core-master" location="https://ci.polarsys.org/kitalpha/job/Kitalpha-v1.2.x/63/artifact/releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/"/>
+      <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.cadence.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.common.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.emde.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.emde.ui.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.model.common.commands.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.model.common.scrutiny.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.model.common.share.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.model.detachment.contrib.viewpoints.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.model.detachment.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.model.detachment.ui.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.patterns.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.report.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.report.ui.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.transposer.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.feature.source.feature.group" version="1.2.1.201809070845"/>
+      <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group" version="1.2.1.201809070845"/>
+      <repository id="kitalpha-runtime-core-master" location="https://ci.polarsys.org/kitalpha/job/Kitalpha-v1.2.x/72/artifact/releng/plugins/org.polarsys.kitalpha.releng.runtime.core.updatesite/target/repository/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.richtext.widget.doc.feature.feature.group" version="1.2.1.201805300816"/>
