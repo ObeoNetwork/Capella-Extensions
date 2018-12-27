@@ -1,16 +1,16 @@
 
 === HEADER ===
-template
+
   table
     row
-      template
+      
         Specification File of 
         [query: .aqlFeatureAccess(self, 'name')]
       
     
   
 === BODY ===
-template
+
   Specification File of 
   [query: .aqlFeatureAccess(self, 'name')]
   Document generated automatically by M2Doc from Capella model of the system
@@ -23,15 +23,15 @@ Description of the system Missions
       The system Missions are sorted in the following packages:
       table
         row
-          template
+          
             Mission package
-          template
+          
             Missions
           
         row
-          template
+          
             [query: .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), 'name')]
-          template
+          
             
             for mission | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), 'ownedMissions') do
               [query: .asBookmarkRef(.aqlFeatureAccess(mission, 'name'), .aqlFeatureAccess(mission, 'id'))]
@@ -43,9 +43,9 @@ Description of the system Missions
       for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), MissionPkg) do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(package, 'name')]
-            template
+            
               
               for mission | .aqlFeatureAccess(package, 'ownedMissions') do
                 [query: .asBookmarkRef(.aqlFeatureAccess(mission, 'name'), .aqlFeatureAccess(mission, 'id'))]
@@ -99,15 +99,15 @@ Description of the system Missions
           Capability inclusion relations:
           table
             row
-              template
+              
                 Including capabilities
-              template
+              
                 Current capability
-              template
+              
                 Included capabilities
               
             row
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(capability, 'includingAbstractCapabilities')), 0) then
                   
@@ -119,9 +119,9 @@ Description of the system Missions
                   No including capability
                 endif
                 
-              template
+              
                 [query: .aqlFeatureAccess(capability, 'name')]
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(capability, 'includedAbstractCapabilities')), 0) then
                   
@@ -138,15 +138,15 @@ Description of the system Missions
           Capability extension relations:
           table
             row
-              template
+              
                 Extended capabilities
-              template
+              
                 Current capability
-              template
+              
                 Extending capabilities
               
             row
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(capability, 'extendedAbstractCapabilities')), 0) then
                   
@@ -158,9 +158,9 @@ Description of the system Missions
                   No extended capability
                 endif
                 
-              template
+              
                 [query: .aqlFeatureAccess(capability, 'name')]
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(capability, 'extendingAbstractCapabilities')), 0) then
                   
@@ -177,15 +177,15 @@ Description of the system Missions
           Capability generalization relations:
           table
             row
-              template
+              
                 Super capabilities
-              template
+              
                 Current capability
-              template
+              
                 Sub capabilities
               
             row
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(capability, 'super')), 0) then
                   
@@ -197,9 +197,9 @@ Description of the system Missions
                   No super capability
                 endif
                 
-              template
+              
                 [query: .aqlFeatureAccess(capability, 'name')]
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(capability, 'sub')), 0) then
                   
@@ -307,15 +307,15 @@ Description of the system Missions
       The system Capabilities are sorted in the following packages:
       table
         row
-          template
+          
             Capability package
-          template
+          
             Capabilities
           
         row
-          template
+          
             [query: .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), 'name')]
-          template
+          
             
             for capability | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), 'ownedCapabilities') do
               [query: .asBookmarkRef(.aqlFeatureAccess(capability, 'name'), .aqlFeatureAccess(capability, 'id'))]
@@ -327,9 +327,9 @@ Description of the system Missions
       for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), CapabilityPkg) do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(package, 'name')]
-            template
+            
               
               for capability | .aqlFeatureAccess(package, 'ownedCapabilities') do
                 [query: .asBookmarkRef(.aqlFeatureAccess(capability, 'name'), .aqlFeatureAccess(capability, 'id'))]
@@ -459,23 +459,23 @@ Description of the system Missions
     The Functions are sorted in the following packages:
     table
       row
-        template
+        
           Parent element
-        template
+        
           Function package
-        template
+        
           Contained functions
         
       row
-        template
+        
           [query: .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'name')]
-        template
+        
           
           for package | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions') do
             [query: .asBookmark(.aqlFeatureAccess(package, 'name'), .aqlFeatureAccess(package, 'id'))]
           endfor
           
-        template
+        
           
           for SF | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions'), 'containedSystemFunctions') do
             [query: .asBookmarkRef(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
@@ -487,11 +487,11 @@ Description of the system Missions
     for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg')), SystemFunctionPkg) do
       table
         row
-          template
+          
             [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(package, NamedElement), 'name'), .aqlFeatureAccess(.eContainer(package, NamedElement), 'id'))]
-          template
+          
             [query: .asBookmark(.aqlFeatureAccess(package, 'name'), .aqlFeatureAccess(package, 'id'))]
-          template
+          
             
             for SF | .aqlFeatureAccess(package, 'ownedSystemFunctions') do
               [query: .asBookmarkRef(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
@@ -516,19 +516,19 @@ Description of the system Missions
       Parent / Children functions:
       table
         row
-          template
+          
             Parent function
-          template
+          
             Current function
-          template
+          
             Children functions
           
         row
-          template
+          
             [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(SF, NamedElement), 'name'), .aqlFeatureAccess(.eContainer(SF, NamedElement), 'id'))]
-          template
+          
             [query: .aqlFeatureAccess(SF, 'name')]
-          template
+          
             
             if .greaterThan(->size(.aqlFeatureAccess(SF, 'subFunctions')), 0) then
               
@@ -547,9 +547,9 @@ Description of the system Missions
       if .greaterThan(->size(.aqlFeatureAccess(SF, 'incoming')), 0) then
         table
           row
-            template
+            
               Incoming functional exchange
-            template
+            
               Exchanged items
             
           
@@ -557,9 +557,9 @@ Description of the system Missions
         for fe | ->filter(.aqlFeatureAccess(SF, 'incoming'), FunctionalExchange) do
           table
             row
-              template
+              
                 [query: .aqlFeatureAccess(fe, 'name')]
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
                   
@@ -584,9 +584,9 @@ Description of the system Missions
       if .greaterThan(->size(.aqlFeatureAccess(SF, 'outgoing')), 0) then
         table
           row
-            template
+            
               Outgoing functional exchange
-            template
+            
               Exchanged items
             
           
@@ -594,9 +594,9 @@ Description of the system Missions
         for fe | ->filter(.aqlFeatureAccess(SF, 'outgoing'), FunctionalExchange) do
           table
             row
-              template
+              
                 [query: .aqlFeatureAccess(fe, 'name')]
-              template
+              
                 
                 if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
                   
@@ -683,11 +683,11 @@ Description of the system Missions
         This functional chain involves the following elements:
         table
           row
-            template
+            
               Functional exchange
-            template
+            
               Source function
-            template
+            
               Target function
             
           
@@ -695,11 +695,11 @@ Description of the system Missions
         for FE | .aqlFeatureAccess(FC, 'involvedFunctionalExchanges') do
           table
             row
-              template
+              
                 [query: .aqlFeatureAccess(FE, 'name')]
-              template
+              
                 [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'source'), NamedElement), 'name'), .aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'source'), NamedElement), 'id'))]
-              template
+              
                 [query: .asBookmarkRef(.aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'target'), NamedElement), 'name'), .aqlFeatureAccess(.eContainer(.aqlFeatureAccess(FE, 'target'), NamedElement), 'id'))]
               
             
@@ -793,9 +793,9 @@ Description of the system Missions
         if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
           table
             row
-              template
+              
                 Owned element
-              template
+              
                 Element type
               
             
@@ -803,9 +803,9 @@ Description of the system Missions
           for element | .aqlFeatureAccess(EI, 'ownedElements') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(element, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
                   ]
@@ -826,9 +826,9 @@ Description of the system Missions
       Collections definition:
       table
         row
-          template
+          
             Collection
-          template
+          
             Collection type
           
         
@@ -836,9 +836,9 @@ Description of the system Missions
       for collection | .aqlFeatureAccess(package, 'ownedCollections') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(collection, 'name')]
-            template
+            
               [
               [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
               ]
@@ -858,9 +858,9 @@ Description of the system Missions
         if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
           table
             row
-              template
+              
                 Contained property
-              template
+              
                 Property type
               
             
@@ -868,9 +868,9 @@ Description of the system Missions
           for prop | .aqlFeatureAccess(class, 'containedProperties') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(prop, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
                   ]
@@ -911,9 +911,9 @@ Description of the system Missions
         if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
           table
             row
-              template
+              
                 Owned element
-              template
+              
                 Element type
               
             
@@ -921,9 +921,9 @@ Description of the system Missions
           for element | .aqlFeatureAccess(EI, 'ownedElements') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(element, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
                   ]
@@ -944,9 +944,9 @@ Description of the system Missions
       Collections definition:
       table
         row
-          template
+          
             Collection
-          template
+          
             Collection type
           
         
@@ -954,9 +954,9 @@ Description of the system Missions
       for collection | .aqlFeatureAccess(package, 'ownedCollections') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(collection, 'name')]
-            template
+            
               [
               [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
               ]
@@ -976,9 +976,9 @@ Description of the system Missions
         if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
           table
             row
-              template
+              
                 Contained property
-              template
+              
                 Property type
               
             
@@ -986,9 +986,9 @@ Description of the system Missions
           for prop | .aqlFeatureAccess(class, 'containedProperties') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(prop, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
                   ]
@@ -1017,8 +1017,9 @@ Description of the system Missions
   endfor
   
 === FOOTER ===
-template
+
   
   content control
   
   
+=== TEMPLATES ===

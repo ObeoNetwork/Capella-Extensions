@@ -1,16 +1,16 @@
 
 === HEADER ===
-template
+
   table
     row
-      template
+      
         Architecture File of 
         [query: .aqlFeatureAccess(self, 'name')]
       
     
   
 === BODY ===
-template
+
   Architecture File of 
   [query: .aqlFeatureAccess(self, 'name')]
   Document generated automatically by M2Doc from Capella model of the system
@@ -47,9 +47,9 @@ Descriptions of Logical Components
       Allocated Functions 
       table
         row
-          template
+          
             Function name
-          template
+          
             Description
           
         
@@ -57,9 +57,9 @@ Descriptions of Logical Components
       for function | .aqlFeatureAccess(lc, 'allocatedFunctions') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(function, 'name')]
-            template
+            
               [query: .aqlFeatureAccess(function, 'description')]
             
           
@@ -73,13 +73,13 @@ Descriptions of Logical Components
       Component Exchanges
       table
         row
-          template
+          
             Component Exchange Name
-          template
+          
             DIrection
-          template
+          
             Destination Component
-          template
+          
             Description
           
         
@@ -87,13 +87,13 @@ Descriptions of Logical Components
       for ce | .aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(ce, 'name')]
-            template
+            
               [query: .getCeDirection(ce, lc)]
-            template
+            
               [query: .getDestinationComponent(ce, lc)]
-            template
+            
               [query: .aqlFeatureAccess(self, 'description')]
             
           
@@ -106,9 +106,9 @@ Descriptions of Logical Components
       Required Interfaces  
       table
         row
-          template
+          
             Interface name
-          template
+          
             Description
           
         
@@ -116,9 +116,9 @@ Descriptions of Logical Components
       for interface | .aqlFeatureAccess(lc, 'requiredInterfaces') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(interface, 'name')]
-            template
+            
               [query: .aqlFeatureAccess(interface, 'description')]
             
           
@@ -132,9 +132,9 @@ Descriptions of Logical Components
       Provided Interfaces  
       table
         row
-          template
+          
             Interface name
-          template
+          
             Description
           
         
@@ -142,9 +142,9 @@ Descriptions of Logical Components
       for interface | .aqlFeatureAccess(lc, 'providedInterfaces') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(interface, 'name')]
-            template
+            
               [query: .aqlFeatureAccess(interface, 'description')]
             
           
@@ -171,19 +171,19 @@ Descriptions of Logical Components
     Parent / Children functions:
     table
       row
-        template
+        
           Parent function
-        template
+        
           Current function
-        template
+        
           Children functions
         
       row
-        template
+        
           [query: .aqlFeatureAccess(.eContainer(f, NamedElement), 'name')]
-        template
+        
           [query: .aqlFeatureAccess(f, 'name')]
-        template
+        
           
           if .greaterThan(->size(.aqlFeatureAccess(f, 'subFunctions')), 0) then
             
@@ -202,9 +202,9 @@ Descriptions of Logical Components
     if .greaterThan(->size(.aqlFeatureAccess(f, 'incoming')), 0) then
       table
         row
-          template
+          
             Incoming functional exchange
-          template
+          
             Exchanged items
           
         
@@ -212,9 +212,9 @@ Descriptions of Logical Components
       for fe | ->filter(.aqlFeatureAccess(f, 'incoming'), FunctionalExchange) do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(fe, 'name')]
-            template
+            
               
               if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
                 
@@ -239,9 +239,9 @@ Descriptions of Logical Components
     if .greaterThan(->size(.aqlFeatureAccess(f, 'outgoing')), 0) then
       table
         row
-          template
+          
             Outgoing functional exchange
-          template
+          
             Exchanged items
           
         
@@ -249,9 +249,9 @@ Descriptions of Logical Components
       for fe | ->filter(.aqlFeatureAccess(f, 'outgoing'), FunctionalExchange) do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(fe, 'name')]
-            template
+            
               
               if .greaterThan(->size(.aqlFeatureAccess(fe, 'exchangedItems')), 0) then
                 
@@ -317,9 +317,9 @@ Descriptions of Logical Components
         if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
           table
             row
-              template
+              
                 Owned element
-              template
+              
                 Element type
               
             
@@ -327,9 +327,9 @@ Descriptions of Logical Components
           for element | .aqlFeatureAccess(EI, 'ownedElements') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(element, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
                   ]
@@ -350,9 +350,9 @@ Descriptions of Logical Components
       Collections definition:
       table
         row
-          template
+          
             Collection
-          template
+          
             Collection type
           
         
@@ -360,9 +360,9 @@ Descriptions of Logical Components
       for collection | .aqlFeatureAccess(package, 'ownedCollections') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(collection, 'name')]
-            template
+            
               [
               [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
               ]
@@ -382,9 +382,9 @@ Descriptions of Logical Components
         if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
           table
             row
-              template
+              
                 Contained property
-              template
+              
                 Property type
               
             
@@ -392,9 +392,9 @@ Descriptions of Logical Components
           for prop | .aqlFeatureAccess(class, 'containedProperties') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(prop, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
                   ]
@@ -435,9 +435,9 @@ Descriptions of Logical Components
         if .greaterThan(->size(.aqlFeatureAccess(EI, 'ownedElements')), 0) then
           table
             row
-              template
+              
                 Owned element
-              template
+              
                 Element type
               
             
@@ -445,9 +445,9 @@ Descriptions of Logical Components
           for element | .aqlFeatureAccess(EI, 'ownedElements') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(element, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(element, 'type'), 'name')]
                   ]
@@ -468,9 +468,9 @@ Descriptions of Logical Components
       Collections definition:
       table
         row
-          template
+          
             Collection
-          template
+          
             Collection type
           
         
@@ -478,9 +478,9 @@ Descriptions of Logical Components
       for collection | .aqlFeatureAccess(package, 'ownedCollections') do
         table
           row
-            template
+            
               [query: .aqlFeatureAccess(collection, 'name')]
-            template
+            
               [
               [query: .aqlFeatureAccess(.aqlFeatureAccess(collection, 'type'), 'name')]
               ]
@@ -500,9 +500,9 @@ Descriptions of Logical Components
         if .greaterThan(->size(.aqlFeatureAccess(class, 'containedProperties')), 0) then
           table
             row
-              template
+              
                 Contained property
-              template
+              
                 Property type
               
             
@@ -510,9 +510,9 @@ Descriptions of Logical Components
           for prop | .aqlFeatureAccess(class, 'containedProperties') do
             table
               row
-                template
+                
                   [query: .aqlFeatureAccess(prop, 'name')]
-                template
+                
                   [
                   [query: .aqlFeatureAccess(.aqlFeatureAccess(prop, 'type'), 'name')]
                   ]
@@ -542,8 +542,9 @@ Descriptions of Logical Components
   
   
 === FOOTER ===
-template
+
   
   content control
   
   
+=== TEMPLATES ===
