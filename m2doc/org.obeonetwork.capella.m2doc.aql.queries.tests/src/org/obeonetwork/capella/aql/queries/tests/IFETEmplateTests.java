@@ -28,9 +28,13 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 	 */
 	private static final int BUFFER_SIZE = 1024 * 8;
 
+	private final URI templateURI;
+
 	private final URI generatedURI;
 
 	private final String zippedTemplateName;
+
+	private final String zippedGeneratedName;
 
 	/**
 	 * Constructor.
@@ -44,8 +48,10 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 	 */
 	public IFETEmplateTests(String testFolder) throws IOException, DocumentParserException {
 		super(testFolder);
+		templateURI = getTemplateURI(new File(testFolder));
 		generatedURI = getExpectedGeneratedURI(new File(testFolder));
-		zippedTemplateName = generatedToZipped.get(generatedURI.lastSegment());
+		zippedTemplateName = generatedToZipped.get(templateURI.lastSegment());
+		zippedGeneratedName = generatedToZipped.get(generatedURI.lastSegment());
 	}
 
 	/**
@@ -57,7 +63,10 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 		final Map<String, String> res = new HashMap<String, String>();
 
 		res.put("LA-Complete-expected-generation.docx", "generated/LA_Complete.docx");
+		res.put("LA-Complete-template.docx", "template/Template LA Complete.docx");
+
 		res.put("SA-Complete-expected-generation.docx", "generated/SA_Complete.docx");
+		res.put("SA-Complete-template.docx", "template/Template SA Complete.docx");
 
 		return res;
 	}
@@ -73,17 +82,26 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 	}
 
 	@Test
-	public void zipComparison() throws IOException {
+	public void zipTemplateComparison() throws IOException {
+		zipComparison(zippedTemplateName, templateURI);
+	}
+
+	@Test
+	public void zipGeneratedComparison() throws IOException {
+		zipComparison(zippedGeneratedName, generatedURI);
+	}
+
+	protected void zipComparison(String entryName, URI expectedURI) throws IOException {
 		try (final ZipFile zipFile = new ZipFile("../org.obeonetwork.capella.m2doc.aql.queries/zips/m2docife.zip");) {
-			final ZipEntry templateEntry = zipFile.getEntry(zippedTemplateName);
+			final ZipEntry templateEntry = zipFile.getEntry(entryName);
 			final InputStream zippedTemplateInputStream = zipFile.getInputStream(templateEntry);
 			final MemoryURIHandler handler = new MemoryURIHandler();
 			try {
-				final URI tempTEmplateURI = URI.createURI("m2doctests://" + zippedTemplateName);
+				final URI tempURI = URI.createURI("m2doctests://" + entryName);
 
 				// Copy zippedTemplateInputStream to the given URI
 				URIConverter.INSTANCE.getURIHandlers().add(0, handler);
-				final OutputStream outputStream = URIConverter.INSTANCE.createOutputStream(tempTEmplateURI);
+				final OutputStream outputStream = URIConverter.INSTANCE.createOutputStream(tempURI);
 				byte[] buffer = new byte[BUFFER_SIZE];
 				int size = zippedTemplateInputStream.read(buffer, 0, buffer.length);
 				while (size != -1) {
@@ -92,7 +110,7 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 				}
 				outputStream.flush();
 
-				M2DocTestUtils.assertDocx(generatedURI, tempTEmplateURI);
+				M2DocTestUtils.assertDocx(expectedURI, tempURI);
 			} finally {
 				handler.clear();
 				URIConverter.INSTANCE.getURIHandlers().remove(handler);

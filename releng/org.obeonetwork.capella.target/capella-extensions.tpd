@@ -22,7 +22,7 @@ location eclipse-releases-oxygen "http://download.eclipse.org/releases/oxygen/20
 	org.eclipse.emf.workspace lazy
 }
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/2.0.1/repository" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository/" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
