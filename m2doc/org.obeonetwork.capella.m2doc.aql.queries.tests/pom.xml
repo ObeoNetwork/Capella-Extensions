@@ -17,12 +17,12 @@
     <groupId>org.obeonetwork.capella.extensions</groupId>
     <artifactId>parent</artifactId>
     <relativePath>../..</relativePath>
-    <version>0.10.2-SNAPSHOT</version>
+    <version>1.3.0-SNAPSHOT</version>
   </parent>
 
   <groupId>org.obeonetwork.capella.extensions</groupId>
   <artifactId>org.obeonetwork.capella.m2doc.aql.queries.tests</artifactId>
-  <version>0.10.2-SNAPSHOT</version>
+  <version>1.3.0-SNAPSHOT</version>
   <packaging>eclipse-test-plugin</packaging>
 
   <build>
