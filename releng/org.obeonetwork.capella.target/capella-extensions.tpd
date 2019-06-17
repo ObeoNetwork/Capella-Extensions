@@ -12,9 +12,9 @@ target "Capella M2Doc Extension"
 
 with source, requirements
 
-include "https://download.polarsys.org/capella/core/updates/releases/1.3.0-R20181030-191805/targets/capella.target-definition.targetplatform"
+include "https://download.polarsys.org/capella/core/updates/releases/1.3.1-R20190520-182008/targets/capella.target-definition.targetplatform"
 
-location site_Capella "https://download.polarsys.org/capella/core/updates/releases/1.3.0-R20181030-191805/org.polarsys.capella.rcp.site/" {
+location site_Capella "https://download.polarsys.org/capella/core/updates/releases/1.3.1-R20190520-182008/org.polarsys.capella.rcp.site/" {
 	org.polarsys.capella.core.feature.feature.group lazy
 }
 

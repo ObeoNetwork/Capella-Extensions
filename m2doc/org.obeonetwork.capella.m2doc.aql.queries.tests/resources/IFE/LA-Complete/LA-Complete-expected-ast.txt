@@ -28,7 +28,7 @@ Descriptions of Logical Components
     endif
     
     
-    if .isRepresentationDescriptionName(lc, ' Logical Component Breakdown ') then
+    if .isRepresentationDescriptionName(lc, 'Logical Component Breakdown') then
       [query: .fit(->first(.asImageByRepresentationDescriptionName(lc, 'Logical Component Breakdown')), 500, 200)]
     endif
     
