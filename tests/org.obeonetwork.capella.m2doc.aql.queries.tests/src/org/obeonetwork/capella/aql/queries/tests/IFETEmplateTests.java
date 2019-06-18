@@ -92,7 +92,7 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 	}
 
 	protected void zipComparison(String entryName, URI expectedURI) throws IOException {
-		try (final ZipFile zipFile = new ZipFile("../org.obeonetwork.capella.m2doc.aql.queries/zips/m2docife.zip");) {
+		try (final ZipFile zipFile = new ZipFile("../../plugins/org.obeonetwork.capella.m2doc.aql.queries/zips/m2docife.zip");) {
 			final ZipEntry templateEntry = zipFile.getEntry(entryName);
 			final InputStream zippedTemplateInputStream = zipFile.getInputStream(templateEntry);
 			final MemoryURIHandler handler = new MemoryURIHandler();

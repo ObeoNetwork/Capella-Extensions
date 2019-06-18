@@ -33,8 +33,8 @@
   </licenses>
 
   <properties>
-    <tycho-version>1.1.0</tycho-version>
-    <tycho-extras-version>1.1.0</tycho-extras-version>
+    <tycho-version>1.3.0</tycho-version>
+    <tycho-extras-version>1.3.0</tycho-extras-version>
     <platform-version-name>neon</platform-version-name>
     <targetPlatform.repository.p2>http://mbarbero.github.com/fr.obeo.releng.targetplatform/p2/</targetPlatform.repository.p2>
     <targetPlatform.application.name>fr.obeo.releng.targetplatform.targetPlatform.converter</targetPlatform.application.name>
@@ -44,9 +44,9 @@
   </properties>
 
   <modules>
-    <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries</module>
-    <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries.feature</module>
-    <module>m2doc/org.obeonetwork.capella.m2doc.aql.queries.tests</module>
+    <module>plugins/org.obeonetwork.capella.m2doc.aql.queries</module>
+    <module>features/org.obeonetwork.capella.m2doc.aql.queries.feature</module>
+    <module>tests/org.obeonetwork.capella.m2doc.aql.queries.tests</module>
     <module>releng/org.obeonetwork.capella.update.full</module>
   </modules>
 

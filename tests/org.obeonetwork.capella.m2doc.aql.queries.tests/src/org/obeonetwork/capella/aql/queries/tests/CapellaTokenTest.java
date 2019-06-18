@@ -38,7 +38,7 @@ public class CapellaTokenTest {
 	@Test
 	public void ePackages() {
 		for (String nsuri : TokenRegistry.INSTANCE.getPackages("Capella")) {
-			assertNotNull(EPackage.Registry.INSTANCE.getEPackage(nsuri));
+			assertNotNull(nsuri, EPackage.Registry.INSTANCE.getEPackage(nsuri));
 		}
 	}
 
@@ -50,7 +50,7 @@ public class CapellaTokenTest {
 			for (String className : entry.getValue()) {
 				try {
 					final Class<?> cls = classProvider.getClass(className, bundleName);
-					assertNotNull(cls);
+					assertNotNull(className + " in bundle " + bundleName, cls);
 				} catch (ClassNotFoundException e) {
 					System.err.println("can't load service class: " + className);
 				}
