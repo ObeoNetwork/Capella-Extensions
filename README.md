@@ -18,6 +18,12 @@ An update site is built and published for every commit:
   * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.3.x/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.3.x/nightly/full)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-1.3.x/nightly/full/org.obeonetwork.capella.update.full.zip)
 
+## 1.3.1
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.3.1/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.3.1/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/1.3.1/full/org.obeonetwork.capella.update.full.zip)
+
 ## 1.3.0
 
 * Update site (Extensions and dependencies):
@@ -63,6 +69,10 @@ An update site is built and published for every commit:
 Current status for branch [master](https://github.com/ObeoNetwork/Capella-Extensions/tree/master)
 
 ![](https://travis-ci.org/ObeoNetwork/Capella-Extensions.svg?branch=master)
+
+Current status for branch [capella-1.3.x](https://github.com/ObeoNetwork/Capella-Extensions/tree/capella-1.3.x)
+
+![](https://travis-ci.org/ObeoNetwork/Capella-Extensions.svg?branch=capella-1.3.x)
 
 Current status for branch [capella-1.2.x](https://github.com/ObeoNetwork/Capella-Extensions/tree/capella-1.2.x)
 
