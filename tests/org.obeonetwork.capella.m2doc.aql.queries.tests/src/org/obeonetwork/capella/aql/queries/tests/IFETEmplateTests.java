@@ -17,7 +17,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.obeonetwork.m2doc.parser.DocumentParserException;
 import org.obeonetwork.m2doc.sirius.tests.AbstractTemplatesTestSuite;
 import org.obeonetwork.m2doc.tests.M2DocTestUtils;
-import org.obeonetwork.m2doc.tests.MemoryURIHandler;
+import org.obeonetwork.m2doc.tests.TestMemoryURIHandler;
 
 public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 
@@ -95,9 +95,9 @@ public class IFETEmplateTests extends AbstractTemplatesTestSuite {
 		try (final ZipFile zipFile = new ZipFile("../../plugins/org.obeonetwork.capella.m2doc.aql.queries/zips/m2docife.zip");) {
 			final ZipEntry templateEntry = zipFile.getEntry(entryName);
 			final InputStream zippedTemplateInputStream = zipFile.getInputStream(templateEntry);
-			final MemoryURIHandler handler = new MemoryURIHandler();
+			final TestMemoryURIHandler handler = new TestMemoryURIHandler();
 			try {
-				final URI tempURI = URI.createURI("m2doctests://" + entryName);
+				final URI tempURI = URI.createURI(TestMemoryURIHandler.PROTOCOL +"://" + entryName);
 
 				// Copy zippedTemplateInputStream to the given URI
 				URIConverter.INSTANCE.getURIHandlers().add(0, handler);

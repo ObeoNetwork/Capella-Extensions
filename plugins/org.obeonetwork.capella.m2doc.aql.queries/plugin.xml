@@ -18,9 +18,6 @@
                class="org.polarsys.capella.core.model.utils.ListExt">
          </service>
          <service
-               class="org.polarsys.capella.core.model.helpers.GenericPkgExt">
-         </service>
-         <service
                class="org.polarsys.capella.core.model.helpers.PhysicalLinkExt">
          </service>
          <service
@@ -33,16 +30,10 @@
                class="org.polarsys.capella.core.model.helpers.AbstractFunctionExt">
          </service>
          <service
-               class="org.polarsys.capella.core.model.helpers.BlockExt">
-         </service>
-         <service
                class="org.polarsys.capella.core.model.helpers.StateMachineExt">
          </service>
          <service
                class="org.polarsys.capella.core.model.helpers.MergeLinkExt">
-         </service>
-         <service
-               class="org.polarsys.capella.core.model.helpers.LogicalActorPkgExt">
          </service>
          <service
                class="org.polarsys.capella.core.model.helpers.PortExt">
@@ -66,19 +57,10 @@
                class="org.polarsys.capella.core.model.helpers.SystemAnalysisExt">
          </service>
          <service
-               class="org.polarsys.capella.core.model.helpers.LogicalArchitectureExt">
-         </service>
-         <service
                class="org.polarsys.capella.core.model.helpers.NamespaceExt">
          </service>
          <service
                class="org.polarsys.capella.core.model.helpers.PhysicalPathExt">
-         </service>
-         <service
-               class="org.polarsys.capella.core.model.helpers.PhysicalArchitecturePkgExt">
-         </service>
-         <service
-               class="org.polarsys.capella.core.model.helpers.PhysicalActorPkgExt">
          </service>
          <service
                class="org.polarsys.capella.core.model.helpers.AbstractDependenciesPkgExt">
@@ -111,9 +93,6 @@
                class="org.polarsys.capella.core.model.helpers.SignalPkgExt">
          </service>
          <service
-               class="org.polarsys.capella.core.model.helpers.SystemComponentExt">
-         </service>
-         <service
                class="org.polarsys.capella.core.model.helpers.PhysicalComponentExt">
          </service>
          <service
@@ -142,9 +121,6 @@
          </service>
          <service
                class="org.polarsys.capella.core.model.helpers.ClassExt">
-         </service>
-         <service
-               class="org.polarsys.capella.core.model.helpers.ActorExt">
          </service>
          <service
                class="org.polarsys.capella.core.model.helpers.StateExt">
@@ -231,7 +207,7 @@
                class="org.polarsys.capella.core.libraries.model.CapellaLibraryExt">
          </service>
          <service
-               class="org.polarsys.capella.core.queries.helpers.QueryExt">
+               class="org.polarsys.capella.core.libraries.queries.QueryExt">
          </service>
          <service
                class="org.obeonetwork.capella.m2doc.aql.queries.M2DocGenServices">
@@ -331,15 +307,6 @@
          </service>
          <service
                class="org.polarsys.capella.core.data.helpers.ctx.services.CapabilityExt">
-         </service>
-         <service
-               class="org.polarsys.capella.core.data.helpers.ctx.services.ActorPkgExt">
-         </service>
-         <service
-               class="org.polarsys.capella.core.data.helpers.ctx.services.SystemExt">
-         </service>
-         <service
-               class="org.polarsys.capella.core.data.helpers.ctx.services.ActorExt">
          </service>
          <service
                class="org.polarsys.capella.core.data.helpers.ctx.services.OperationalCapabilityExt">
