@@ -7,14 +7,6 @@ jdk:
   - oraclejdk8
 sudo: required
 install: true
-# TODO: Gross until Travis support setting maven version or upgrades to 3.3
-before_install:
-  - wget http://mirrors.ircam.fr/pub/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz
-  - tar zxvf apache-maven-3.3.9-bin.tar.gz
-  - chmod +x apache-maven-3.3.9/bin/mvn
-  - export M2_HOME=$PWD/apache-maven-3.3.9
-  - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
-  - hash -r
 before_script:
 # for RCPTT tests
   - export SWT_GTK3=0
