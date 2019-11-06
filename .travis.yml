@@ -19,7 +19,7 @@ before_script:
   - export PATH=$PWD/apache-maven-3.3.9/bin:${PATH}
   - hash -r
 script:
-- mvn clean package -e -Dgpg.skip=true
+- mvn clean verify -e -Dgpg.skip=true
 - chmod a+x prepare-deploy-local-dir.sh
 - export TAG_OR_BRANCH="${TRAVIS_BRANCH}/nightly"
 - if [[ "$TRAVIS_TAG" != "" ]]; then export TAG_OR_BRANCH="${TRAVIS_TAG}"; fi
