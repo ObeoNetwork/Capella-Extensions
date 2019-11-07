@@ -64,16 +64,16 @@ Description of the system Missions
       Description:
       
       if .differs(.aqlFeatureAccess(mission, 'description'), null) then
-        [query: .aqlFeatureAccess(mission, 'description')]
+        [query: .fromHTMLBodyString(.aqlFeatureAccess(mission, 'description'))]
       else
         No description
       endif
       
       Involved actors:
       
-      if .greaterThan(->size(.aqlFeatureAccess(mission, 'participatingActors')), 0) then
+      if .greaterThan(->size(->select(.aqlFeatureAccess(mission, 'involvedSystemComponents'), sc = .aqlFeatureAccess(mission, 'involvedSystemComponents') | .aqlFeatureAccess(sc, 'actor'))), 0) then
         
-        for actor | .aqlFeatureAccess(mission, 'participatingActors') do
+        for actor | ->select(.aqlFeatureAccess(mission, 'involvedSystemComponents'), sc = .aqlFeatureAccess(mission, 'involvedSystemComponents') | .aqlFeatureAccess(sc, 'actor')) do
           [query: .asBookmarkRef(.aqlFeatureAccess(actor, 'name'), .aqlFeatureAccess(actor, 'id'))]
         endfor
         
@@ -91,7 +91,7 @@ Description of the system Missions
           Description:
           
           if .differs(.aqlFeatureAccess(capability, 'description'), null) then
-            [query: .aqlFeatureAccess(capability, 'description')]
+            [query: .fromHTMLBodyString(.aqlFeatureAccess(capability, 'description'))]
           else
             No description
           endif
@@ -244,9 +244,9 @@ Description of the system Missions
           
           Involved actors:
           
-          if .greaterThan(->size(.aqlFeatureAccess(capability, 'participatingActors')), 0) then
+          if .greaterThan(->size(->select(.aqlFeatureAccess(capability, 'involvedSystemComponents'), sc = .aqlFeatureAccess(capability, 'involvedSystemComponents') | .aqlFeatureAccess(sc, 'actor'))), 0) then
             
-            for actor | .aqlFeatureAccess(capability, 'participatingActors') do
+            for actor | ->select(.aqlFeatureAccess(capability, 'involvedSystemComponents'), sc = .aqlFeatureAccess(capability, 'involvedSystemComponents') | .aqlFeatureAccess(sc, 'actor')) do
               [query: .asBookmarkRef(.aqlFeatureAccess(actor, 'name'), .aqlFeatureAccess(actor, 'id'))]
             endfor
             
@@ -351,12 +351,12 @@ Description of the system Missions
   
   Description of the System and its EnvironmentArchitecture Blank Diagrams
   
-  for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystem'), 'System Architecture Blank') do
+  for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents'), 'System Architecture Blank') do
     [query: .fit(im, 500, 400)]
   endfor
   
   
-  for sys | .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystem') do
+  for sys | .aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents') do
     System: 
     [query: .asBookmark(.aqlFeatureAccess(sys, 'name'), .aqlFeatureAccess(sys, 'id'))]
     Modes & State Machines:
@@ -405,7 +405,7 @@ Description of the system Missions
   endfor
   
   
-  for actor | .aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedActorPkg'), 'ownedActors') do
+  for actor | ->select(.aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents'), sComp = .aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents') | .aqlFeatureAccess(sComp, 'actor')) do
     Actor: 
     [query: .asBookmark(.aqlFeatureAccess(actor, 'name'), .aqlFeatureAccess(actor, 'id'))]
     Modes & State Machines:
@@ -508,7 +508,7 @@ Description of the system Missions
       Description:
       
       if .differs(.aqlFeatureAccess(SF, 'description'), null) then
-        [query: .aqlFeatureAccess(SF, 'description')]
+        [query: .fromHTMLBodyString(.aqlFeatureAccess(SF, 'description'))]
       else
         No description
       endif
@@ -630,17 +630,17 @@ Description of the system Missions
       
       Allocated to:
       
-      if .greaterThan(->size(.aqlFeatureAccess(SF, 'allocatorSystems')), 0) then
+      if .greaterThan(->size(->select(.aqlFeatureAccess(SF, 'allocatingSystemComponents'), sComp = .aqlFeatureAccess(SF, 'allocatingSystemComponents') | .not(.aqlFeatureAccess(sComp, 'actor')))), 0) then
         
-        for sys | .aqlFeatureAccess(SF, 'allocatorSystems') do
+        for sys | ->select(.aqlFeatureAccess(SF, 'allocatingSystemComponents'), sComp = .aqlFeatureAccess(SF, 'allocatingSystemComponents') | .not(.aqlFeatureAccess(sComp, 'actor'))) do
           [query: .asBookmarkRef(.aqlFeatureAccess(sys, 'name'), .aqlFeatureAccess(sys, 'id'))]
         endfor
         
       else
         
-        if .greaterThan(->size(.aqlFeatureAccess(SF, 'allocatorActors')), 0) then
+        if .greaterThan(->size(->select(.aqlFeatureAccess(SF, 'allocatingSystemComponents'), sComp = .aqlFeatureAccess(SF, 'allocatingSystemComponents') | .aqlFeatureAccess(sComp, 'actor'))), 0) then
           
-          for act | .aqlFeatureAccess(SF, 'allocatorActors') do
+          for act | ->select(.aqlFeatureAccess(SF, 'allocatingSystemComponents'), sComp = .aqlFeatureAccess(SF, 'allocatingSystemComponents') | .aqlFeatureAccess(sComp, 'actor')) do
             [query: .asBookmarkRef(.aqlFeatureAccess(act, 'name'), .aqlFeatureAccess(act, 'id'))]
           endfor
           
@@ -672,7 +672,7 @@ Description of the system Missions
       Description:
       
       if .differs(.aqlFeatureAccess(FC, 'description'), null) then
-        [query: .aqlFeatureAccess(FC, 'description')]
+        [query: .fromHTMLBodyString(.aqlFeatureAccess(FC, 'description'))]
       else
         No description
       endif
@@ -737,7 +737,7 @@ Description of the system Missions
       Description:
       
       if .differs(.aqlFeatureAccess(scenario, 'description'), null) then
-        [query: .aqlFeatureAccess(scenario, 'description')]
+        [query: .fromHTMLBodyString(.aqlFeatureAccess(scenario, 'description'))]
       else
         No description
       endif
@@ -932,7 +932,7 @@ Description of the system Missions
           endfor
           
         else
-          No contained elements
+          	No contained elements
         endif
         
       endfor

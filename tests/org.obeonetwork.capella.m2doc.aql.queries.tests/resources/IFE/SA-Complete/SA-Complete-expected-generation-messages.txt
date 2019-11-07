@@ -1,2 +1,10 @@
+ERROR - Can't start duplicated bookmark 181a678c-dca9-46c1-9d18-b5a0c457c0de
+ERROR - Can't end already closed bookmark 181a678c-dca9-46c1-9d18-b5a0c457c0de
+ERROR - Can't start duplicated bookmark 4890eae8-7a62-4d7b-bf8a-1590a199eebf
+ERROR - Can't end already closed bookmark 4890eae8-7a62-4d7b-bf8a-1590a199eebf
+ERROR - Can't start duplicated bookmark c8b78c78-5b11-4fc0-87b7-3ca84622efea
+ERROR - Can't end already closed bookmark c8b78c78-5b11-4fc0-87b7-3ca84622efea
+ERROR - Can't start duplicated bookmark d475ed7d-4644-4461-97d4-b52772c9b425
+ERROR - Can't end already closed bookmark d475ed7d-4644-4461-97d4-b52772c9b425
 ERROR - dangling reference for bookmark 5acd248a-3961-4e71-85a4-5bc3b775215f
 ERROR - dangling reference for bookmark 5acd248a-3961-4e71-85a4-5bc3b775215f

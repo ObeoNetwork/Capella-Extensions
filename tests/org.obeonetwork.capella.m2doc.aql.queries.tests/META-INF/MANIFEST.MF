@@ -194,7 +194,9 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.capella.transitions.doc;bundle-version="[1.4.0,1.4.1)",
  org.polarsys.capella.ui.doc;bundle-version="[1.4.0,1.4.1)",
  org.polarsys.capella.validation.doc;bundle-version="[1.4.0,1.4.1)",
- org.polarsys.capella.viewpoint.doc;bundle-version="[1.4.0,1.4.1)"
+ org.polarsys.capella.viewpoint.doc;bundle-version="[1.4.0,1.4.1)",
+ org.obeonetwork.m2doc.html,
+ org.obeonetwork.m2doc.html.ide
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-Vendor: Obeo Network
 Export-Package: org.obeonetwork.capella.aql.queries.tests

@@ -5,12 +5,18 @@
    </feature>
    <feature id="org.obeonetwork.m2doc.feature" version="0.0.0"/>
    <feature id="org.obeonetwork.m2doc.sirius.feature" version="0.0.0"/>
+   <feature id="org.obeonetwork.m2doc.html.feature" version="0.0.0"/>
    <feature id="org.obeonetwork.m2doc.ui.feature" version="0.0.0"/>
    <feature id="org.apache.poi.feature" version="0.0.0"/>
    <feature id="org.eclipse.acceleo.query" version="0.0.0"/>
+
+   <feature id="org.eclipse.acceleo.query" version="0.0.0"/>
+   <feature id="org.eclipse.acceleo.query.source" version="0.0.0"/>
+
+   <bundle id="org.jsoup" version="0.0.0"/>
    <category-def name="generators" label="Documentation and Code generators">
       <description>
-         Add-ons to generate documents or code.
+         Add-ons to generate documents.
       </description>
    </category-def>
 </site>

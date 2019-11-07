@@ -33,11 +33,21 @@ Descriptions of Logical Components
     endif
     
     
-    if .differs(->size(.aqlFeatureAccess(lc, 'participationsInCapabilityRealizations')), 0) then
-      Participations in Capability Realizations: 
+    if .differs(->size(.aqlFeatureAccess(lc, 'realizedSystemComponents')), 0) then
+      Realizing system components: 
       
-      for capa | .eContainer(.aqlFeatureAccess(lc, 'participationsInCapabilityRealizations'), NamedElement) do
-        [query: .aqlFeatureAccess(capa, 'name')]
+      for systComp | .eContainerOrSelf(.aqlFeatureAccess(lc, 'realizedSystemComponents'), NamedElement) do
+        [query: .aqlFeatureAccess(systComp, 'name')]
+      endfor
+      
+    endif
+    
+    
+    if .differs(->size(.aqlFeatureAccess(lc, 'realizingPhysicalComponents')), 0) then
+      Realizing physical components: 
+      
+      for physComp | .eContainerOrSelf(.aqlFeatureAccess(lc, 'realizingPhysicalComponents'), NamedElement) do
+        [query: .aqlFeatureAccess(physComp, 'name')]
       endfor
       
     endif
@@ -60,7 +70,7 @@ Descriptions of Logical Components
             
               [query: .aqlFeatureAccess(function, 'name')]
             
-              [query: .aqlFeatureAccess(function, 'description')]
+              [query: .fromHTMLBodyString(.aqlFeatureAccess(function, 'description'))]
             
           
       endfor
@@ -94,7 +104,7 @@ Descriptions of Logical Components
             
               [query: .getDestinationComponent(ce, lc)]
             
-              [query: .aqlFeatureAccess(self, 'description')]
+              [query: .fromHTMLBodyString(.aqlFeatureAccess(self, 'description'))]
             
           
       endfor
@@ -119,7 +129,7 @@ Descriptions of Logical Components
             
               [query: .aqlFeatureAccess(interface, 'name')]
             
-              [query: .aqlFeatureAccess(interface, 'description')]
+              [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
             
           
       endfor
@@ -145,7 +155,7 @@ Descriptions of Logical Components
             
               [query: .aqlFeatureAccess(interface, 'name')]
             
-              [query: .aqlFeatureAccess(interface, 'description')]
+              [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
             
           
       endfor
@@ -163,7 +173,7 @@ Descriptions of Logical Components
     Description:
     
     if .differs(.aqlFeatureAccess(f, 'description'), null) then
-      [query: .aqlFeatureAccess(f, 'description')]
+      [query: .fromHTMLBodyString(.aqlFeatureAccess(f, 'description'))]
     else
       No description
     endif
