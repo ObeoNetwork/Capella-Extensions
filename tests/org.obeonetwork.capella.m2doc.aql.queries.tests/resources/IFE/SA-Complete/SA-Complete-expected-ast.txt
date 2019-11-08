@@ -239,7 +239,7 @@ Description of the system Missions
           
           
           if .isRepresentationDescriptionName(capability, 'System Data Flow Blank') then
-            [query: .fit(->first(.asImageByRepresentationDescriptionName(capability, 'System Data Flow Blank')), 500, 200)]
+            [query: .setWidth(->first(.asImageByRepresentationDescriptionName(capability, 'System Data Flow Blank')), 400)]
           endif
           
           Involved actors:
@@ -295,7 +295,7 @@ Description of the system Missions
   for package | .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg') do
     
     for im | .asImageByRepresentationDescriptionName(package, 'Missions Capabilities Blank') do
-      [query: .fit(im, 500, 400)]
+      [query: .setWidth(im, 400)]
     endfor
     
   endfor
@@ -352,7 +352,7 @@ Description of the system Missions
   Description of the System and its EnvironmentArchitecture Blank Diagrams
   
   for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents'), 'System Architecture Blank') do
-    [query: .fit(im, 500, 400)]
+    [query: .setWidth(im, 400)]
   endfor
   
   
@@ -369,7 +369,7 @@ Description of the system Missions
         if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States')) then
           
           for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States') do
-            [query: .fit(im, 500, 400)]
+            [query: .setWidth(im, 400)]
           endfor
           
         else
@@ -377,7 +377,7 @@ Description of the system Missions
           if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine')) then
             
             for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine') do
-              [query: .fit(im, 500, 400)]
+              [query: .setWidth(im, 400)]
             endfor
             
           endif
@@ -418,7 +418,7 @@ Description of the system Missions
         if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States')) then
           
           for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Modes & States') do
-            [query: .fit(im, 500, 400)]
+            [query: .setWidth(im, 400)]
           endfor
           
         else
@@ -426,7 +426,7 @@ Description of the system Missions
           if .and(->notEmpty(.aqlFeatureAccess(stateMachine, 'ownedRegions')), .isRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine')) then
             
             for im | .asImageByRepresentationDescriptionName(->first(.aqlFeatureAccess(stateMachine, 'ownedRegions')), 'Mode State Machine') do
-              [query: .fit(im, 500, 400)]
+              [query: .setWidth(im, 400)]
             endfor
             
           endif
@@ -666,7 +666,7 @@ Description of the system Missions
       
       if .isRepresentationDescriptionName(FC, 'Functional Chain Description') then
         This functional chain is illustrated by the following diagram:
-        [query: .fit(->first(.asImageByRepresentationDescriptionName(FC, 'Functional Chain Description')), 500, 300)]
+        [query: .setWidth(->first(.asImageByRepresentationDescriptionName(FC, 'Functional Chain Description')), 400)]
       endif
       
       Description:
@@ -747,11 +747,11 @@ Description of the system Missions
       Representation:
       
       if .isRepresentationDescriptionName(scenario, 'Component Exchanges Scenario') then
-        [query: .fit(->first(.asImageByRepresentationDescriptionName(scenario, 'Component Exchanges Scenario')), 500, 400)]
+        [query: .setWidth(->first(.asImageByRepresentationDescriptionName(scenario, 'Component Exchanges Scenario')), 400)]
       else
         
         if .isRepresentationDescriptionName(scenario, 'Functional Scenario') then
-          [query: .fit(->first(.asImageByRepresentationDescriptionName(scenario, 'Functional Scenario')), 500, 400)]
+          [query: .setWidth(->first(.asImageByRepresentationDescriptionName(scenario, 'Functional Scenario')), 400)]
         endif
         
       endif
@@ -777,7 +777,7 @@ Description of the system Missions
   Data definition
   
   for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg'), 'Class Diagram Blank') do
-    [query: .fit(im, 500, 400)]
+    [query: .setWidth(im, 400)]
   endfor
   
   

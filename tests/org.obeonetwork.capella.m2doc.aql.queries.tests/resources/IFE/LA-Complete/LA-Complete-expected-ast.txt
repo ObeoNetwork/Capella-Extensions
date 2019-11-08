@@ -29,7 +29,7 @@ Descriptions of Logical Components
     
     
     if .isRepresentationDescriptionName(lc, 'Logical Component Breakdown') then
-      [query: .fit(->first(.asImageByRepresentationDescriptionName(lc, 'Logical Component Breakdown')), 500, 200)]
+      [query: .setWidth(->first(.asImageByRepresentationDescriptionName(lc, 'Logical Component Breakdown')), 400)]
     endif
     
     
@@ -311,7 +311,7 @@ Descriptions of Logical Components
   Descriptions of Interfaces and Data
   
   for im | .asImageByRepresentationDescriptionName(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg'), 'Class Diagram Blank') do
-    [query: .fit(im, 500, 400)]
+    [query: .setWidth(im, 400)]
   endfor
   
   
