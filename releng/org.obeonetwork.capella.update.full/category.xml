@@ -7,6 +7,7 @@
    <feature id="org.obeonetwork.m2doc.sirius.feature" version="0.0.0"/>
    <feature id="org.obeonetwork.m2doc.html.feature" version="0.0.0"/>
    <feature id="org.obeonetwork.m2doc.ui.feature" version="0.0.0"/>
+   <feature id="org.obeonetwork.m2doc.launcher.feature" version="0.0.0"/>
    <feature id="org.apache.poi.feature" version="0.0.0"/>
    <feature id="org.eclipse.acceleo.query" version="0.0.0"/>
 
