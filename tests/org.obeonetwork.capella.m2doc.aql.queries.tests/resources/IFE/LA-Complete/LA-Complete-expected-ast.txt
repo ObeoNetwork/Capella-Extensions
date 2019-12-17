@@ -14,7 +14,7 @@
   Architecture File of 
   [query: .aqlFeatureAccess(self, 'name')]
   Document generated automatically by M2Doc from Capella model of the system
-Tables of ContentAucune entrée de table des matières n'a été trouvée.
+Table of ContentAucune entrée de table des matières n'a été trouvée.
 Descriptions of Logical Components
   
   for lc | .eAllContents(self, LogicalComponent) do
