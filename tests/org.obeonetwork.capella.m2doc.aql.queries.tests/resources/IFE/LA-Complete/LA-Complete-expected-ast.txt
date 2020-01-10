@@ -14,8 +14,9 @@
   Architecture File of 
   [query: .aqlFeatureAccess(self, 'name')]
   Document generated automatically by M2Doc from Capella model of the system
-Table of ContentsAucune entrée de table des matières n'a été trouvée.
-Descriptions of Logical Components
+Table of Contents
+  [query: .asPagination('newTableOfContent')]
+  Descriptions of Logical Components
   
   for lc | .eAllContents(self, LogicalComponent) do
     Logical Component : 
@@ -53,115 +54,46 @@ Descriptions of Logical Components
     endif
     
     
-    if .differs(->size(.aqlFeatureAccess(lc, 'allocatedFunctions')), 0) then
+    for function | .aqlFeatureAccess(lc, 'allocatedFunctions') do
       Allocated Functions 
+      [query: .aqlFeatureAccess(function, 'name')]
+      [query: .fromHTMLBodyString(.aqlFeatureAccess(function, 'description'))]
+    endfor
+    
+    
+    for ce | .aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges') do
+      Component Exchanges 
+      [query: .aqlFeatureAccess(ce, 'name')]
       table
         row
           
-            Function name
+            Direction
           
-            Description
+            [query: .getCeDirection(ce, lc)]
           
-        
-      
-      for function | .aqlFeatureAccess(lc, 'allocatedFunctions') do
-        table
-          row
-            
-              [query: .aqlFeatureAccess(function, 'name')]
-            
-              [query: .fromHTMLBodyString(.aqlFeatureAccess(function, 'description'))]
-            
-          
-      endfor
-      
-    endif
-    
-    
-    
-    if .greaterThan(->size(.aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges')), 0) then
-      Component Exchanges
-      table
         row
-          
-            Component Exchange Name
-          
-            DIrection
           
             Destination Component
           
-            Description
+            [query: .getDestinationComponent(ce, lc)]
           
         
-      
-      for ce | .aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges') do
-        table
-          row
-            
-              [query: .aqlFeatureAccess(ce, 'name')]
-            
-              [query: .getCeDirection(ce, lc)]
-            
-              [query: .getDestinationComponent(ce, lc)]
-            
-              [query: .fromHTMLBodyString(.aqlFeatureAccess(self, 'description'))]
-            
-          
-      endfor
-      
-    endif
+      [query: .fromHTMLBodyString(.aqlFeatureAccess(self, 'description'))]
+    endfor
     
     
-    if .differs(->size(.aqlFeatureAccess(lc, 'requiredInterfaces')), 0) then
+    for interface | .aqlFeatureAccess(lc, 'requiredInterfaces') do
       Required Interfaces  
-      table
-        row
-          
-            Interface name
-          
-            Description
-          
-        
-      
-      for interface | .aqlFeatureAccess(lc, 'requiredInterfaces') do
-        table
-          row
-            
-              [query: .aqlFeatureAccess(interface, 'name')]
-            
-              [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
-            
-          
-      endfor
-      
-    endif
+      [query: .aqlFeatureAccess(interface, 'name')]
+      [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
+    endfor
     
     
-    
-    if .differs(->size(.aqlFeatureAccess(lc, 'providedInterfaces')), 0) then
+    for interface | .aqlFeatureAccess(lc, 'providedInterfaces') do
       Provided Interfaces  
-      table
-        row
-          
-            Interface name
-          
-            Description
-          
-        
-      
-      for interface | .aqlFeatureAccess(lc, 'providedInterfaces') do
-        table
-          row
-            
-              [query: .aqlFeatureAccess(interface, 'name')]
-            
-              [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
-            
-          
-      endfor
-      
-    endif
-    
+      [query: .aqlFeatureAccess(interface, 'name')]
+      [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
+    endfor
     
   endfor
   
@@ -433,7 +365,7 @@ Descriptions of Logical Components
   endfor
   
   
-  for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg')), DataPkg) do
+  for package | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg'), DataPkg) do
     [query: .aqlFeatureAccess(package, 'name')]
     
     if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedExchangeItems')), 0) then

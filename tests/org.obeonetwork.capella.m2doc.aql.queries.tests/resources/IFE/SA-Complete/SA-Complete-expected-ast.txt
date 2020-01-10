@@ -14,12 +14,13 @@
   Specification File of 
   [query: .aqlFeatureAccess(self, 'name')]
   Document generated automatically by M2Doc from Capella model of the system
-Table of ContentsAucune entrée de table des matières n'a été trouvée.
-Description of the system Missions
+Table of Contents
+  [query: .asPagination('newTableOfContent')]
+  Description of the system Missions
   
-  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), Mission)), 0) then
+  if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), Mission)), 0) then
     
-    if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), MissionPkg)), 0) then
+    if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), MissionPkg)), 0) then
       The system Missions are sorted in the following packages:
       table
         row
@@ -40,7 +41,7 @@ Description of the system Missions
           
         
       
-      for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), MissionPkg) do
+      for package | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), MissionPkg) do
         table
           row
             
@@ -58,7 +59,7 @@ Description of the system Missions
     endif
     
     
-    for mission | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg')), Mission) do
+    for mission | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), Mission) do
       Mission : 
       [query: .asBookmark(.aqlFeatureAccess(mission, 'name'), .aqlFeatureAccess(mission, 'id'))]
       Description:
@@ -301,9 +302,9 @@ Description of the system Missions
   endfor
   
   
-  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Capability)), 0) then
+  if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), Capability)), 0) then
     
-    if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), CapabilityPkg)), 0) then
+    if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), CapabilityPkg)), 0) then
       The system Capabilities are sorted in the following packages:
       table
         row
@@ -324,7 +325,7 @@ Description of the system Missions
           
         
       
-      for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), CapabilityPkg) do
+      for package | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), CapabilityPkg) do
         table
           row
             
@@ -342,7 +343,7 @@ Description of the system Missions
     endif
     
     
-    for capability | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Capability) do
+    for capability | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), Capability) do
     endfor
     
   else
@@ -356,7 +357,7 @@ Description of the system Missions
   endfor
   
   
-  for sys | .aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents') do
+  for sys | ->select(.aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents'), sComp = .aqlFeatureAccess(->closure(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg'), cPkg = .aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedSystemComponentPkg') | .aqlFeatureAccess(cPkg, 'ownedSystemComponentPkgs')), 'ownedSystemComponents') | .not(.aqlFeatureAccess(sComp, 'actor'))) do
     System: 
     [query: .asBookmark(.aqlFeatureAccess(sys, 'name'), .aqlFeatureAccess(sys, 'id'))]
     Modes & State Machines:
@@ -455,7 +456,7 @@ Description of the system Missions
   
   Description of the Functions
   
-  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions')), SystemFunction)), 0) then
+  if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions'), SystemFunction)), 0) then
     The Functions are sorted in the following packages:
     table
       row
@@ -484,7 +485,7 @@ Description of the system Missions
         
       
     
-    for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg')), SystemFunctionPkg) do
+    for package | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), SystemFunctionPkg) do
       table
         row
           
@@ -502,7 +503,7 @@ Description of the system Missions
     endfor
     
     
-    for SF | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions')), SystemFunction) do
+    for SF | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedSystemFunctionPkg'), 'ownedSystemFunctions'), SystemFunction) do
       Function: 
       [query: .asBookmark(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
       Description:
@@ -658,9 +659,9 @@ Description of the system Missions
   
   Description of the Functional Chains
   
-  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(self, 'containedSystemAnalysis')), FunctionalChain)), 0) then
+  if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(self, 'containedSystemAnalysis'), FunctionalChain)), 0) then
     
-    for FC | ->filter(.eAllContents(.aqlFeatureAccess(self, 'containedSystemAnalysis')), FunctionalChain) do
+    for FC | .eAllContents(.aqlFeatureAccess(self, 'containedSystemAnalysis'), FunctionalChain) do
       Functional Chain : 
       [query: .asBookmark(.aqlFeatureAccess(FC, 'name'), .aqlFeatureAccess(FC, 'id'))]
       
@@ -729,9 +730,9 @@ Description of the system Missions
   
   Description of Scenarios
   
-  if .greaterThan(->size(->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Scenario)), 0) then
+  if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), Scenario)), 0) then
     
-    for scenario | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg')), Scenario) do
+    for scenario | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'containedCapabilityPkg'), Scenario) do
       Scenario: 
       [query: .asBookmark(.aqlFeatureAccess(scenario, 'name'), .aqlFeatureAccess(scenario, 'id'))]
       Description:
@@ -899,7 +900,7 @@ Description of the system Missions
   endfor
   
   
-  for package | ->filter(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg')), DataPkg) do
+  for package | .eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedDataPkg'), DataPkg) do
     [query: .aqlFeatureAccess(package, 'name')]
     
     if .greaterThan(->size(.aqlFeatureAccess(package, 'ownedExchangeItems')), 0) then
