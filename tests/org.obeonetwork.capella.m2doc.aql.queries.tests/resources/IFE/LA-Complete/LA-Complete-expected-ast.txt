@@ -54,32 +54,59 @@ Table of Contents
     endif
     
     
-    for function | .aqlFeatureAccess(lc, 'allocatedFunctions') do
+    if .differs(->size(.aqlFeatureAccess(lc, 'allocatedFunctions')), 0) then
       Allocated Functions 
-      [query: .aqlFeatureAccess(function, 'name')]
-      [query: .fromHTMLBodyString(.aqlFeatureAccess(function, 'description'))]
-    endfor
-    
-    
-    for ce | .aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges') do
-      Component Exchanges 
-      [query: .aqlFeatureAccess(ce, 'name')]
       table
         row
           
-            Direction
+            Function name
           
-            [query: .getCeDirection(ce, lc)]
-          
-        row
-          
-            Destination Component
-          
-            [query: .getDestinationComponent(ce, lc)]
+            Description
           
         
-      [query: .fromHTMLBodyString(.aqlFeatureAccess(self, 'description'))]
-    endfor
+      
+      for function | .aqlFeatureAccess(lc, 'allocatedFunctions') do
+        table
+          row
+            
+              [query: .aqlFeatureAccess(function, 'name')]
+            
+              [query: .fromHTMLBodyString(.aqlFeatureAccess(function, 'description'))]
+            
+          
+      endfor
+      
+    endif
+    
+    
+    if .differs(->size(.aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges')), 0) then
+      Component Exchanges
+      
+      for ce | .aqlFeatureAccess(->filter(.aqlFeatureAccess(lc, 'ownedFeatures'), ComponentPort), 'componentExchanges') do
+        table
+          row
+            
+              Name
+            
+              [query: .aqlFeatureAccess(ce, 'name')]
+            
+          row
+            
+              Direction
+            
+              [query: .getCeDirection(ce, lc)]
+            
+          row
+            
+              Destination Component
+            
+              [query: .getDestinationComponent(ce, lc)]
+            
+          
+        [query: .fromHTMLBodyString(.aqlFeatureAccess(self, 'description'))]
+      endfor
+      
+    endif
     
     
     for interface | .aqlFeatureAccess(lc, 'requiredInterfaces') do
