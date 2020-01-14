@@ -17,6 +17,17 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.viewpoint.DSemanticDecorator;
+import org.obeonetwork.m2doc.element.MElement;
+import org.obeonetwork.m2doc.element.MHyperLink;
+import org.obeonetwork.m2doc.element.MList;
+import org.obeonetwork.m2doc.element.MParagraph;
+import org.obeonetwork.m2doc.element.MTable;
+import org.obeonetwork.m2doc.element.MTable.MCell;
+import org.obeonetwork.m2doc.element.MTable.MRow;
+import org.polarsys.capella.common.data.modellingcore.ModelElement;
 import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.InterfacePkg;
 import org.polarsys.capella.core.data.fa.ComponentExchange;
@@ -141,4 +152,60 @@ public class M2DocGenServices {
 
 		return ((Component) port.eContainer()).getName();
 	}
+
+	public MElement replaceLink(MElement element, EObject reference) {
+		final MElement res;
+
+		if (element instanceof MList) {
+			final List<MElement> newElements = new ArrayList<MElement>();
+			for (MElement e : (MList) element) {
+				newElements.add(replaceLink(e, reference));
+			}
+			((MList) element).clear();
+			((MList) element).addAll(newElements);
+			res = element;
+		} else if (element instanceof MParagraph) {
+			final MElement newContent = replaceLink(((MParagraph) element).getContents(), reference);
+			if (newContent != ((MParagraph) element).getContents()) {
+				((MParagraph) element).setContents(newContent);
+			}
+			res = element;
+		} else if (element instanceof MTable) {
+			for (MRow row : ((MTable) element).getRows()) {
+				for (MCell cell : row.getCells()) {
+					final MElement newContent = replaceLink(cell.getContents(), reference);
+					if (newContent != cell.getContents()) {
+						cell.setContents(newContent);
+					}
+				}
+			}
+			res = element;
+		} else if (element instanceof MHyperLink) {
+			final MHyperLink link = (MHyperLink) element;
+			if (link.getUrl().startsWith("hlink://_") && link.getUrl().endsWith("/")) {
+				final Resource airResource = new EObjectQuery(reference).getSession().getSessionResource();
+				final String repID = link.getUrl().substring("hlink://".length(), link.getUrl().length() - 1);
+				final EObject repEObject = airResource.getEObject(repID);
+				if (repEObject instanceof DSemanticDecorator) {
+					final DSemanticDecorator decorator = (DSemanticDecorator) repEObject;
+					if (decorator.getTarget() instanceof ModelElement) {
+						final ModelElement modelElement = (ModelElement) decorator.getTarget();
+						link.setUrl("#" + modelElement.getId());
+						res = link;
+					} else {
+						res = link;
+					}
+				} else {
+					res = link;
+				}
+			} else {
+				res = link;
+			}
+		} else {
+			res = element;
+		}
+
+		return res;
+	}
+
 }

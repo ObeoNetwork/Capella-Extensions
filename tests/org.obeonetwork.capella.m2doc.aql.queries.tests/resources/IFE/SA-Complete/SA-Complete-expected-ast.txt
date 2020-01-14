@@ -16,6 +16,16 @@
   Document generated automatically by M2Doc from Capella model of the system
 Table of Contents
   [query: .asPagination('newTableOfContent')]
+  System 
+  [query: .aqlFeatureAccess(self, 'name')]
+  Description:
+  
+  if .differs(.size(.trim(.aqlFeatureAccess(self, 'description'))), 0) then
+    [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(self, 'description'))), self)]
+  else
+    No description
+  endif
+  
   Description of the system Missions
   
   if .greaterThan(->size(.eAllContents(.aqlFeatureAccess(.aqlFeatureAccess(self, 'containedSystemAnalysis'), 'ownedMissionPkg'), Mission)), 0) then
@@ -64,8 +74,8 @@ Table of Contents
       [query: .asBookmark(.aqlFeatureAccess(mission, 'name'), .aqlFeatureAccess(mission, 'id'))]
       Description:
       
-      if .differs(.aqlFeatureAccess(mission, 'description'), null) then
-        [query: .fromHTMLBodyString(.aqlFeatureAccess(mission, 'description'))]
+      if .differs(.size(.trim(.aqlFeatureAccess(mission, 'description'))), 0) then
+        [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(mission, 'description'))), mission)]
       else
         No description
       endif
@@ -91,8 +101,8 @@ Table of Contents
           [query: .asBookmark(.aqlFeatureAccess(capability, 'name'), .aqlFeatureAccess(capability, 'id'))]
           Description:
           
-          if .differs(.aqlFeatureAccess(capability, 'description'), null) then
-            [query: .fromHTMLBodyString(.aqlFeatureAccess(capability, 'description'))]
+          if .differs(.size(.trim(.aqlFeatureAccess(capability, 'description'))), 0) then
+            [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(capability, 'description'))), capability)]
           else
             No description
           endif
@@ -508,8 +518,8 @@ Table of Contents
       [query: .asBookmark(.aqlFeatureAccess(SF, 'name'), .aqlFeatureAccess(SF, 'id'))]
       Description:
       
-      if .differs(.aqlFeatureAccess(SF, 'description'), null) then
-        [query: .fromHTMLBodyString(.aqlFeatureAccess(SF, 'description'))]
+      if .differs(.size(.trim(.aqlFeatureAccess(SF, 'description'))), 0) then
+        [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(SF, 'description'))), SF)]
       else
         No description
       endif
@@ -672,8 +682,8 @@ Table of Contents
       
       Description:
       
-      if .differs(.aqlFeatureAccess(FC, 'description'), null) then
-        [query: .fromHTMLBodyString(.aqlFeatureAccess(FC, 'description'))]
+      if .differs(.size(.trim(.aqlFeatureAccess(FC, 'description'))), 0) then
+        [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(FC, 'description'))), FC)]
       else
         No description
       endif
@@ -737,8 +747,8 @@ Table of Contents
       [query: .asBookmark(.aqlFeatureAccess(scenario, 'name'), .aqlFeatureAccess(scenario, 'id'))]
       Description:
       
-      if .differs(.aqlFeatureAccess(scenario, 'description'), null) then
-        [query: .fromHTMLBodyString(.aqlFeatureAccess(scenario, 'description'))]
+      if .differs(.size(.trim(.aqlFeatureAccess(scenario, 'description'))), 0) then
+        [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(scenario, 'description'))), scenario)]
       else
         No description
       endif

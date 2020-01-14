@@ -22,8 +22,8 @@ Table of Contents
     Logical Component : 
     [query: .aqlFeatureAccess(lc, 'name')]
     
-    if .differs(.aqlFeatureAccess(lc, 'description'), null) then
-      [query: .aqlFeatureAccess(lc, 'description')]
+    if .differs(.size(.trim(.aqlFeatureAccess(lc, 'description'))), 0) then
+      [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(lc, 'description'))), lc)]
     else
       No description
     endif
@@ -71,7 +71,7 @@ Table of Contents
             
               [query: .aqlFeatureAccess(function, 'name')]
             
-              [query: .fromHTMLBodyString(.aqlFeatureAccess(function, 'description'))]
+              [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(function, 'description'))), function)]
             
           
       endfor
@@ -103,7 +103,13 @@ Table of Contents
               [query: .getDestinationComponent(ce, lc)]
             
           
-        [query: .fromHTMLBodyString(.aqlFeatureAccess(self, 'description'))]
+        
+        if .differs(.size(.trim(.aqlFeatureAccess(ce, 'description'))), 0) then
+          [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(ce, 'description'))), ce)]
+        else
+          No description
+        endif
+        
       endfor
       
     endif
@@ -112,14 +118,14 @@ Table of Contents
     for interface | .aqlFeatureAccess(lc, 'requiredInterfaces') do
       Required Interfaces  
       [query: .aqlFeatureAccess(interface, 'name')]
-      [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
+      [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(interface, 'description'))), interface)]
     endfor
     
     
     for interface | .aqlFeatureAccess(lc, 'providedInterfaces') do
       Provided Interfaces  
       [query: .aqlFeatureAccess(interface, 'name')]
-      [query: .fromHTMLBodyString(.aqlFeatureAccess(interface, 'description'))]
+      [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(interface, 'description'))), interface)]
     endfor
     
   endfor
@@ -131,8 +137,8 @@ Table of Contents
     [query: .aqlFeatureAccess(f, 'name')]
     Description:
     
-    if .differs(.aqlFeatureAccess(f, 'description'), null) then
-      [query: .fromHTMLBodyString(.aqlFeatureAccess(f, 'description'))]
+    if .differs(.size(.trim(.aqlFeatureAccess(f, 'description'))), 0) then
+      [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(f, 'description'))), f)]
     else
       No description
     endif
