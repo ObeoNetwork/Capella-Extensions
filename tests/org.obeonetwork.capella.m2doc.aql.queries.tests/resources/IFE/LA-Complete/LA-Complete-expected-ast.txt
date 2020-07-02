@@ -143,6 +143,11 @@ Table of Contents
       No description
     endif
     
+    
+    if .isRepresentationDescriptionName(f, 'Logical Data Flow Blank') then
+      [query: .setWidth(.asImageByRepresentationDescriptionName(f, 'Logical Data Flow Blank'), 400)]
+    endif
+    
     Parent / Children functions:
     table
       row

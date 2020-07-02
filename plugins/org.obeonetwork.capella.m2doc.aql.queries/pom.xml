@@ -17,10 +17,10 @@
 		<groupId>org.obeonetwork.capella.extensions</groupId>
 		<artifactId>parent</artifactId>
 		<relativePath>../..</relativePath>
-		<version>1.4.0-SNAPSHOT</version>
+		<version>1.4.1-SNAPSHOT</version>
 	</parent>
   <groupId>org.obeonetwork.capella.extensions</groupId>
   <artifactId>org.obeonetwork.capella.m2doc.aql.queries</artifactId>
-  <version>1.4.0-SNAPSHOT</version>
+  <version>1.4.1-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 </project>

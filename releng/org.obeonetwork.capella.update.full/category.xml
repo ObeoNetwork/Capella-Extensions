@@ -15,6 +15,24 @@
    <feature id="org.eclipse.acceleo.query.source" version="0.0.0"/>
 
    <bundle id="org.jsoup" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.asciidoc" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.confluence" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.html" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.markdown" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.mediawiki" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.textile" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.tracwiki" version="0.0.0"/>
+   <bundle id="org.eclipse.mylyn.wikitext.twiki" version="0.0.0"/>
+
+    <bundle id="org.eclipse.jetty.server" version="0.0.0"/>
+    <bundle id="org.eclipse.jetty.util" version="0.0.0"/>
+    <bundle id="org.eclipse.jetty.io" version="0.0.0"/>
+    <bundle id="org.eclipse.jetty.http" version="0.0.0"/>
+    <bundle id="javax.servlet" version="0.0.0"/>
+    <bundle id="org.eclipse.jetty.servlet" version="0.0.0"/>
+    <bundle id="org.eclipse.jetty.security" version="0.0.0"/>
+    <bundle id="org.eclipse.jetty.util.ajax" version="0.0.0"/>
    <category-def name="generators" label="Documentation and Code generators">
       <description>
          Add-ons to generate documents.
