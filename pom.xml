@@ -48,6 +48,7 @@
     <module>features/org.obeonetwork.capella.m2doc.aql.queries.feature</module>
     <module>tests/org.obeonetwork.capella.m2doc.aql.queries.tests</module>
     <module>plugins/org.obeonetwork.capella.m2doc.commandline</module>
+    <module>features/org.obeonetwork.capella.m2doc.commandline.feature</module>
     <module>releng/org.obeonetwork.capella.update.full</module>
   </modules>
 
