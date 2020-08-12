@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.annotations;bundle-version="[5.0.1,7.0.0)",
  org.polarsys.capella.core.data.helpers;bundle-version="[1.4.1,1.4.2)",
  org.polarsys.capella.core.libraries;bundle-version="[1.4.1,1.4.2)",
- org.polarsys.capella.core.model.helpers;bundle-version="[1.4.1,1.4.2)"
+ org.polarsys.capella.core.model.helpers;bundle-version="[1.4.1,1.4.2)",
+ org.eclipse.acceleo.query
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %providerName
