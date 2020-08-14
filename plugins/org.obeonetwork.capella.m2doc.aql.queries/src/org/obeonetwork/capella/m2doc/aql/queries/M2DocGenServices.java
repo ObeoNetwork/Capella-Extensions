@@ -30,12 +30,10 @@ import org.eclipse.acceleo.query.validation.type.EClassifierLiteralType;
 import org.eclipse.acceleo.query.validation.type.EClassifierSetLiteralType;
 import org.eclipse.acceleo.query.validation.type.EClassifierType;
 import org.eclipse.acceleo.query.validation.type.IType;
-import org.eclipse.acceleo.query.validation.type.SequenceType;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -90,91 +88,19 @@ public class M2DocGenServices extends AbstractServiceProvider {
 				IReadOnlyQueryEnvironment queryEnvironment, List<IType> argTypes) {
 			final Set<IType> result = new LinkedHashSet<IType>();
 
-			if (argTypes.get(0).getType() instanceof EClass) {
-				final EClass eCls = (EClass) argTypes.get(0).getType();
-				if (eCls == EcorePackage.eINSTANCE.getEObject()) {
-					if (argTypes.size() == 1) {
-						result.add(new SequenceType(queryEnvironment, argTypes.get(0)));
-					} else if (argTypes.size() == 2 && argTypes.get(1) instanceof EClassifierLiteralType) {
-						result.add(new SequenceType(queryEnvironment, new EClassifierType(queryEnvironment,
-								((EClassifierLiteralType) argTypes.get(1)).getType())));
-					} else if (argTypes.size() == 2 && argTypes.get(1) instanceof EClassifierSetLiteralType) {
-						for (EClassifier eClsFilter : ((EClassifierSetLiteralType) argTypes.get(1)).getEClassifiers()) {
-							result.add(new SequenceType(queryEnvironment,
-									new EClassifierType(queryEnvironment, eClsFilter)));
-						}
-					} else if (argTypes.size() == 2) {
-						result.addAll(super.getType(call, services, validationResult, queryEnvironment, argTypes));
-					}
-				} else {
-					result.addAll(getTypeForSpecificType(services, queryEnvironment, argTypes, eCls));
-				}
-			} else {
-				result.add(new SequenceType(queryEnvironment,
-						services.nothing("Only EClass can contain other EClasses not %s", argTypes.get(0))));
-			}
-
-			return result;
-		}
-
-		/**
-		 * Gets the {@link IType} of elements returned by the service when the receiver
-		 * type is not the {@link EObject} {@link EClass}.
-		 * 
-		 * @param services
-		 *            the {@link ValidationServices}
-		 * @param queryEnvironment
-		 *            the {@link IReadOnlyQueryEnvironment}
-		 * @param argTypes
-		 *            arguments {@link IType}
-		 * @param receiverEClass
-		 *            the receiver type can't be {@link EObject} {@link EClass}
-		 * @return the {@link IType} of elements returned by the service when the
-		 *         receiver type is not the {@link EObject} {@link EClass}
-		 */
-		private Set<IType> getTypeForSpecificType(ValidationServices services,
-				IReadOnlyQueryEnvironment queryEnvironment, List<IType> argTypes, final EClass receiverEClass) {
-			final Set<IType> result = new LinkedHashSet<IType>();
-
-			if (argTypes.size() == 1) {
-				final Set<IType> containedTypes = new LinkedHashSet<IType>();
-				for (EClass contained : queryEnvironment.getEPackageProvider().getContainedEClasses(receiverEClass)) {
-					containedTypes
-							.add(new SequenceType(queryEnvironment, new EClassifierType(queryEnvironment, contained)));
-				}
-				result.addAll(containedTypes);
-				if (result.isEmpty()) {
-					result.add(new SequenceType(queryEnvironment,
-							services.nothing("%s doesn't contain any other EClass", argTypes.get(0))));
-				}
-			} else if (argTypes.size() == 2) {
-				final Set<IType> filterTypes = new LinkedHashSet<IType>();
+			if (argTypes.size() == 2) {
 				if (argTypes.get(1) instanceof EClassifierSetLiteralType) {
 					for (EClassifier eClassifier : ((EClassifierSetLiteralType) argTypes.get(1)).getEClassifiers()) {
-						filterTypes.add(new EClassifierType(queryEnvironment, eClassifier));
+						result.add(new EClassifierType(queryEnvironment, eClassifier));
 					}
 				} else if (argTypes.get(1) instanceof EClassifierLiteralType) {
-					filterTypes.add(argTypes.get(1));
+					result.add(argTypes.get(1));
 				} else {
 					final Collection<EClassifier> eObjectEClasses = queryEnvironment.getEPackageProvider()
 							.getTypes("ecore", "EObject");
 					for (EClassifier eObjectEClass : eObjectEClasses) {
-						filterTypes.add(new EClassifierType(queryEnvironment, eObjectEClass));
+						result.add(new EClassifierType(queryEnvironment, eObjectEClass));
 					}
-				}
-				for (IType filterType : filterTypes) {
-					for (EClass containedEClass : queryEnvironment.getEPackageProvider()
-							.getContainedEClasses(receiverEClass)) {
-						final IType lowerType = services.lower(new EClassifierType(queryEnvironment, containedEClass),
-								filterType);
-						if (lowerType != null) {
-							result.add(new SequenceType(queryEnvironment, lowerType));
-						}
-					}
-				}
-				if (result.isEmpty()) {
-					result.add(new SequenceType(queryEnvironment,
-							services.nothing("%s can't contain %s direclty", argTypes.get(0), argTypes.get(1))));
 				}
 			}
 
