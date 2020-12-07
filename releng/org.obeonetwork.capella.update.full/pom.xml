@@ -17,13 +17,13 @@
    <parent>
         <groupId>org.obeonetwork.capella.extensions</groupId>
         <artifactId>parent</artifactId>
-        <version>1.4.1-SNAPSHOT</version>
+        <version>1.4.2-SNAPSHOT</version>
         <relativePath>../../</relativePath>
     </parent>
 
     <artifactId>org.obeonetwork.capella.update.full</artifactId>
     <packaging>eclipse-repository</packaging>
-    <version>1.4.1-SNAPSHOT</version>
+    <version>1.4.2-SNAPSHOT</version>
     
 
     <build>

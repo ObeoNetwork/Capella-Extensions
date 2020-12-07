@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Capella M2Doc Extension" sequenceNumber="1597151039">
+<target name="Capella M2Doc Extension" sequenceNumber="1607352940">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
@@ -105,7 +105,7 @@
       <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/6.3.2/2019-06/"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/6.3.3/2019-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.feature.group" version="0.0.0"/>
@@ -133,12 +133,12 @@
       <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.transposer.feature.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/stable/runtime/1.4.1.IT5-1"/>
+      <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/stable/runtime/1.4.2it2_ter"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.doc.feature.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.emde.sdk.feature.feature.group" version="0.0.0"/>
-      <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/stable/sdk/1.4.1.IT5-1"/>
+      <repository id="kitalpha-sdk-master" location="https://download.eclipse.org/kitalpha/updates/stable/sdk/1.4.2it2_ter"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.emf.diffmerge.feature.feature.group" version="0.0.0"/>
@@ -160,8 +160,8 @@
       <repository id="diffmerge-patterns-master" location="https://download.eclipse.org/diffmerge/releases/0.12.0/edm-patterns-site"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.amalgam.explorer.activity.feature.group" version="1.11.0.201910071427"/>
+      <unit id="org.eclipse.amalgam.explorer.activity.source.feature.group" version="1.11.0.201910071427"/>
       <repository id="amalgam" location="https://download.eclipse.org/modeling/amalgam/updates/stable/1.11.0-S20191007/capella"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -189,7 +189,7 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
-      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/1.4.1-R20200630-160305/org.polarsys.capella.rcp.site/"/>
+      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/1.4.2-R20201014-090868/org.polarsys.capella.rcp.site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.obeonetwork.m2doc.feature.feature.group" version="0.0.0"/>
