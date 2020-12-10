@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genconf:Generation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:genconf="http://www.obeonetwork.org/m2doc/genconf/1.0" name="Template SA Complete" templateFileName="template/Template SA Complete.docx" resultFileName="generated/SA_Complete.docx">
   <definitions xsi:type="genconf:ModelDefinition" key="self">
-    <value href="In-Flight%20Entertainment%20System.melodymodeller#8f49452e-61f2-4ba0-b944-352d1f4c4227"/>
+    <value href="In-Flight%20Entertainment%20System.capella#8f49452e-61f2-4ba0-b944-352d1f4c4227"/>
   </definitions>
   <options name="SiriusSession" value="In-Flight%20Entertainment%20System.aird"/>
 </genconf:Generation>
