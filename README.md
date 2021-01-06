@@ -12,6 +12,18 @@ An update site is built and published for every commit:
   * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/master/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/master/nightly/full)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/master/nightly/full/org.obeonetwork.capella.update.full.zip)
 
+## Nightly Capella 5.0.x
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-5.0.x/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-5.0.x/nightly/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-5.0.x/nightly/full/org.obeonetwork.capella.update.full.zip)
+
+## 5.0.0
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.0.0/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.0.0/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.0.0/full/org.obeonetwork.capella.update.full.zip)
+
 ## Nightly Capella 1.4.x
 
 * Update site (Extensions and dependencies):
