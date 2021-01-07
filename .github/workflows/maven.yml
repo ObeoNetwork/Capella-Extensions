@@ -27,8 +27,8 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-
     - name: Build with Maven
+      env:
+        MAVEN_OPTS: -XX:MaxPermSize=512m -Xmx2048m -Xms1024m
       uses: GabrielBB/xvfb-action@v1
       with:
-        env:
-          MAVEN_OPTS: -XX:MaxPermSize=512m -Xmx2048m -Xms1024m
         run: mvn clean verify -e -Dgpg.skip=true
