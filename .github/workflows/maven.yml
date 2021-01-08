@@ -37,10 +37,9 @@ jobs:
         run: mvn clean verify -e -Dgpg.skip=true
 
     - name: Prepare deploy local directory
-      env:
-        TAG_OR_BRANCH: $(echo $GITHUB_REF | cut -d"/" -f3)/nightly
       run: |
         chmod a+x prepare-deploy-local-dir.sh
+        export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)/nightly"
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
         ./prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
 
