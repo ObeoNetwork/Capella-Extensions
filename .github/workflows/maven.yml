@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    GITHUB_REF
     - name: Environment
       run: |
         echo GITHUB_WORKSPACE $GITHUB_WORKSPACE
         echo GITHUB_REF $GITHUB_REF
+        echo GITHUB_SHA $GITHUB_SHA
         echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
     - name: Set up JDK 1.8 and caches
     - uses: actions/checkout@v2
