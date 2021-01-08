@@ -44,8 +44,7 @@ jobs:
         ./prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
 
     - name: Deploy to S3
-    - uses: actions/checkout@master
-    - uses: jakejarvis/s3-sync-action@master
+      uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read
       env:
