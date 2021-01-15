@@ -16,6 +16,7 @@
 
    <feature id="org.eclipse.acceleo.query" version="0.0.0"/>
    <feature id="org.eclipse.acceleo.query.source" version="0.0.0"/>
+   <feature id="org.eclipse.license" version="0.0.0"/>
 
    <bundle id="org.jsoup" version="0.0.0"/>
    <bundle id="org.eclipse.mylyn.wikitext" version="0.0.0"/>
