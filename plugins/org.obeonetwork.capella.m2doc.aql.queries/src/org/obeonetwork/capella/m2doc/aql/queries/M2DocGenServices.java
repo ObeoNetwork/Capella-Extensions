@@ -35,7 +35,10 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.viewpoint.DRepresentation;
+import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.m2doc.element.MElement;
 import org.obeonetwork.m2doc.element.MHyperLink;
@@ -51,6 +54,7 @@ import org.polarsys.capella.core.data.fa.ComponentExchange;
 import org.polarsys.capella.core.data.fa.ComponentPort;
 import org.polarsys.capella.core.data.information.DataPkg;
 import org.polarsys.capella.core.data.information.Port;
+import org.polarsys.capella.core.diagram.helpers.RepresentationAnnotationHelper;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
 
@@ -290,6 +294,32 @@ public class M2DocGenServices extends AbstractServiceProvider {
 					break;
 				}
 			}
+		}
+
+		return res;
+	}
+
+	public boolean isVisibleInDoc(DRepresentation rep) {
+		final boolean res;
+
+		final DRepresentationDescriptor descriptor = new DRepresentationQuery(rep).getRepresentationDescriptor();
+		if (descriptor != null) {
+			res = RepresentationAnnotationHelper.isVisibleInDoc(descriptor);
+		} else {
+			res = true;
+		}
+
+		return res;
+	}
+
+	public boolean isVisibleInLM(DRepresentation rep) {
+		final boolean res;
+
+		final DRepresentationDescriptor descriptor = new DRepresentationQuery(rep).getRepresentationDescriptor();
+		if (descriptor != null) {
+			res = RepresentationAnnotationHelper.isVisibleInLM(descriptor);
+		} else {
+			res = true;
 		}
 
 		return res;
