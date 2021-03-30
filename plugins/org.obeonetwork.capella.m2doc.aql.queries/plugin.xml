@@ -213,6 +213,9 @@
                class="org.obeonetwork.capella.m2doc.aql.queries.M2DocGenServices">
          </service>
          <service
+               class="org.obeonetwork.capella.m2doc.aql.queries.SemanticBrowserServices">
+         </service>
+         <service
                class="org.polarsys.capella.core.data.helpers.fa.services.FunctionPkgExt">
          </service>
          <service
