@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.obeonetwork.capella.m2doc.aql.queries;singleton:=true
-Bundle-Version: 5.0.0.qualifier
+Bundle-Version: 5.1.0.qualifier
 Bundle-Activator: org.obeonetwork.capella.m2doc.aql.queries.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.capella.common;bundle-version="[5.1.0,5.1.1)",
