@@ -21,6 +21,7 @@ import java.util.Set;
 import org.eclipse.acceleo.annotations.api.documentation.Documentation;
 import org.eclipse.acceleo.annotations.api.documentation.Example;
 import org.eclipse.acceleo.annotations.api.documentation.Param;
+import org.eclipse.acceleo.annotations.api.documentation.ServiceProvider;
 import org.eclipse.acceleo.query.ast.Call;
 import org.eclipse.acceleo.query.runtime.IReadOnlyQueryEnvironment;
 import org.eclipse.acceleo.query.runtime.IService;
@@ -68,6 +69,11 @@ import org.polarsys.kitalpha.emde.model.ExtensibleElement;
  * 
  * @author <a href="mailto:mathieu.cartaud@obeo.fr">Mathieu Cartaud</a>
  */
+//@formatter:off
+@ServiceProvider(
+value = "Services available for Capella extensions."
+)
+//@formatter:on
 public class M2DocGenServices extends AbstractServiceProvider {
 
     /**

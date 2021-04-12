@@ -16,6 +16,7 @@ import java.util.List;
 import org.eclipse.acceleo.annotations.api.documentation.Documentation;
 import org.eclipse.acceleo.annotations.api.documentation.Example;
 import org.eclipse.acceleo.annotations.api.documentation.Param;
+import org.eclipse.acceleo.annotations.api.documentation.ServiceProvider;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.description.DAnnotation;
@@ -130,6 +131,11 @@ import org.polarsys.kitalpha.emde.model.Element;
  * 
  * @author <a href="mailto:yvan.lussaud@obeo.fr">Yvan Lussaud</a>
  */
+//@formatter:off
+@ServiceProvider(
+value = "Services available for the Capella semantic browser."
+)
+//@formatter:on
 public class SemanticBrowserServices {
 
     @SuppressWarnings("unchecked")
@@ -6817,110 +6823,109 @@ public class SemanticBrowserServices {
                         .compute(value));
     }
 
-    // TODO uncomment before the release of Capella 5.1.0.
-//    // @formatter:off
-//    @Documentation(
-//        value = "Returns the Sequence of all related diagrams for the given ModelElement.",
-//        params = {
-//            @Param(name = "value", value = "the ModelElement")
-//        },
-//        result = "the Sequence of all related diagrams for the given ModelElement",
-//        examples = {
-//            @Example(expression = "myModelElement.getAllRelatedDiagrams()", result = "the Sequence of all related diagrams for the given ModelElement"),
-//        }
-//    )
-//    // @formatter:on
-    // public List<DRepresentationDescriptor> getAllRelatedDiagrams(ModelElement value) {
-    // return castList(new org.polarsys.capella.core.semantic.queries.sirius.diagram.ModelElementRelatedDiagramsQuery()
-    // .compute(value));
-    // }
-    //
-//    // @formatter:off
-//    @Documentation(
-//        value = "Returns the Sequence of all related tables for the given ModelElement.",
-//        params = {
-//            @Param(name = "value", value = "the ModelElement")
-//        },
-//        result = "the Sequence of all related tables for the given ModelElement",
-//        examples = {
-//            @Example(expression = "myModelElement.getAllRelatedTables()", result = "the Sequence of all related tables for the given ModelElement"),
-//        }
-//    )
-//    // @formatter:on
-    // public List<DRepresentationDescriptor> getAllRelatedTables(ModelElement value) {
-    // return castList(new org.polarsys.capella.core.semantic.queries.sirius.diagram.ModelElementRelatedTablesQuery()
-    // .compute(value));
-    // }
-    //
-//    // @formatter:off
-//    @Documentation(
-//        value = "Returns the Sequence of element of interest for diagram for the given Element.",
-//        params = {
-//            @Param(name = "value", value = "the Element")
-//        },
-//        result = "the Sequence of element of interest for diagram for the given Element",
-//        examples = {
-//            @Example(expression = "myModelElement.getElementOfInterestForDiagram()", result = "the Sequence of element of interest for diagram for the given Element"),
-//        }
-//    )
-//    // @formatter:on
-    // public List<EObject> getElementOfInterestForDiagram(Element value) {
-    // return castList(new org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation()
-    // .compute(value));
-    // }
-    //
-//    // @formatter:off
-//    @Documentation(
-//        value = "Returns the Sequence of element of interest for the given DRepresentationDescriptor.",
-//        params = {
-//            @Param(name = "value", value = "the DRepresentationDescriptor")
-//        },
-//        result = "the Sequence of element of interest for the given DRepresentationDescriptor",
-//        examples = {
-//            @Example(expression = "myDRepresentationDescriptor.getElementsOfInterest()", result = "the Sequence of element of interest for the given DRepresentationDescriptor"),
-//        }
-//    )
-//    // @formatter:on
-    // public List<EObject> getElementsOfInterest(DRepresentationDescriptor value) {
-    // return castList(new org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToElement()
-    // .compute(value));
-    // }
-    //
-//    // @formatter:off
-//    @Documentation(
-//        value = "Returns the Sequence of contextual elements for the given DRepresentationDescriptor.",
-//        params = {
-//            @Param(name = "value", value = "the DRepresentationDescriptor")
-//        },
-//        result = "the Sequence of contextual elements for the given DRepresentationDescriptor",
-//        examples = {
-//            @Example(expression = "myDRepresentationDescriptor.getContextualElements()", result = "the Sequence of contextual elements for the given DRepresentationDescriptor"),
-//        }
-//    )
-//    // @formatter:on
-    // public List<EObject> getContextualElements(DRepresentationDescriptor value) {
-    // return castList(
-    // new org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToContextualElement()
-    // .compute(value));
-    // }
-    //
-//    // @formatter:off
-//    @Documentation(
-//        value = "Returns the Sequence of target element for the given DRepresentationDescriptor.",
-//        params = {
-//            @Param(name = "value", value = "the DRepresentationDescriptor")
-//        },
-//        result = "the Sequence of target element for the given DRepresentationDescriptor",
-//        examples = {
-//            @Example(expression = "myDRepresentationDescriptor.getTargetElement()", result = "the Sequence of target element for the given DRepresentationDescriptor"),
-//        }
-//    )
-//    // @formatter:on
-    // public List<EObject> getTargetElement(DRepresentationDescriptor value) {
-    // return castList(
-    // new org.polarsys.capella.core.semantic.queries.sirius.diagram.RepresentationDescriptorTargetElement()
-    // .compute(value));
-    // }
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of all related diagrams for the given ModelElement.",
+        params = {
+            @Param(name = "value", value = "the ModelElement")
+        },
+        result = "the Sequence of all related diagrams for the given ModelElement",
+        examples = {
+            @Example(expression = "myModelElement.getAllRelatedDiagrams()", result = "the Sequence of all related diagrams for the given ModelElement"),
+        }
+    )
+    // @formatter:on
+    public List<DRepresentationDescriptor> getAllRelatedDiagrams(ModelElement value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.sirius.diagram.ModelElementRelatedDiagramsQuery()
+                .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of all related tables for the given ModelElement.",
+        params = {
+            @Param(name = "value", value = "the ModelElement")
+        },
+        result = "the Sequence of all related tables for the given ModelElement",
+        examples = {
+            @Example(expression = "myModelElement.getAllRelatedTables()", result = "the Sequence of all related tables for the given ModelElement"),
+        }
+    )
+    // @formatter:on
+    public List<DRepresentationDescriptor> getAllRelatedTables(ModelElement value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.sirius.diagram.ModelElementRelatedTablesQuery()
+                .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of element of interest for diagram for the given Element.",
+        params = {
+            @Param(name = "value", value = "the Element")
+        },
+        result = "the Sequence of element of interest for diagram for the given Element",
+        examples = {
+            @Example(expression = "myModelElement.getElementOfInterestForDiagram()", result = "the Sequence of element of interest for diagram for the given Element"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getElementOfInterestForDiagram(Element value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.ElementToRepresentation()
+                .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of element of interest for the given DRepresentationDescriptor.",
+        params = {
+            @Param(name = "value", value = "the DRepresentationDescriptor")
+        },
+        result = "the Sequence of element of interest for the given DRepresentationDescriptor",
+        examples = {
+            @Example(expression = "myDRepresentationDescriptor.getElementsOfInterest()", result = "the Sequence of element of interest for the given DRepresentationDescriptor"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getElementsOfInterest(DRepresentationDescriptor value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToElement()
+                .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of contextual elements for the given DRepresentationDescriptor.",
+        params = {
+            @Param(name = "value", value = "the DRepresentationDescriptor")
+        },
+        result = "the Sequence of contextual elements for the given DRepresentationDescriptor",
+        examples = {
+            @Example(expression = "myDRepresentationDescriptor.getContextualElements()", result = "the Sequence of contextual elements for the given DRepresentationDescriptor"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getContextualElements(DRepresentationDescriptor value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.sirius.annotation.eoi.RepresentationToContextualElement()
+                        .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of target element for the given DRepresentationDescriptor.",
+        params = {
+            @Param(name = "value", value = "the DRepresentationDescriptor")
+        },
+        result = "the Sequence of target element for the given DRepresentationDescriptor",
+        examples = {
+            @Example(expression = "myDRepresentationDescriptor.getTargetElement()", result = "the Sequence of target element for the given DRepresentationDescriptor"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getTargetElement(DRepresentationDescriptor value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.sirius.diagram.RepresentationDescriptorTargetElement()
+                        .compute(value));
+    }
 
     // @formatter:off
     @Documentation(
