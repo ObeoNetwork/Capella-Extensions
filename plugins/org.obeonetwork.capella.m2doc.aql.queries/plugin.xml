@@ -314,6 +314,9 @@
          <service
                class="org.polarsys.capella.core.data.helpers.ctx.services.MissionExt">
          </service>
+         <service
+               class="org.obeonetwork.capella.m2doc.aql.queries.SemanticBrowserServices">
+         </service>
          <package
                uri="http://www.polarsys.org/capella/core/ctx/1.4.0">
          </package>
