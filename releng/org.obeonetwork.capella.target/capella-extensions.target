@@ -1,42 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Capella M2Doc Extension" sequenceNumber="1607352940">
+<target name="Capella M2Doc Extension" sequenceNumber="1621417465">
   <locations>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
-      <unit id="org.jsoup" version="1.8.3.v20181012-1713"/>
-      <unit id="javax.servlet" version="3.1.0.v201410161800"/>
-      <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20190827152740/repository/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="com.google.guava" version="15.0.0.v201403281430"/>
-      <repository location="http://download.eclipse.org/tools/orbit/downloads/drops/R20180905201904/repository/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.apache.poi.feature.feature.group" version="0.0.0"/>
-      <repository id="ObeoNetworkBits" location="http://obeo-networkaggregation-releases.s3-website-eu-west-1.amazonaws.com/bits/master/thirdparties"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.emf.cdo.sdk.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.net4j.feature.group" version="0.0.0"/>
-      <repository id="CDO" location="http://download.eclipse.org/modeling/emf/cdo/updates/releases/4.7/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.xtext.sdk.feature.group" version="2.16.0.v20181203-1555"/>
-      <repository id="XText" location="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.16.0/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.jetty.server" version="9.4.24.v20191120"/>
-      <unit id="org.eclipse.jetty.util" version="9.4.24.v20191120"/>
-      <unit id="org.eclipse.jetty.util.ajax" version="9.4.24.v20191120"/>
-      <unit id="org.eclipse.jetty.io" version="9.4.24.v20191120"/>
-      <unit id="org.eclipse.jetty.http" version="9.4.24.v20191120"/>
-      <unit id="org.eclipse.jetty.client" version="9.4.24.v20191120"/>
-      <unit id="org.eclipse.jetty.servlet" version="9.4.24.v20191120"/>
-      <unit id="org.eclipse.jetty.security" version="9.4.24.v20191120"/>
-      <repository id="Jetty" location="https://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.4.24.v20191120/"/>
-    </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
@@ -76,7 +42,8 @@
       <unit id="org.eclipse.mylyn.wikitext.tracwiki" version="3.0.29.20181217192207"/>
       <unit id="org.eclipse.mylyn.wikitext.twiki" version="3.0.29.20181217192207"/>
       <unit id="org.eclipse.uml2.feature.group" version="0.0.0"/>
-      <repository id="eclipse" location="http://download.eclipse.org/releases/2019-06"/>
+      <unit id="org.eclipse.pde.feature.group" version="0.0.0"/>
+      <repository id="eclipse" location="https://download.eclipse.org/releases/2019-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf" version="0.0.0"/>
@@ -84,7 +51,7 @@
       <unit id="org.eclipse.gmf.runtime.diagram.ui.render" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.diagram.ui.properties" version="0.0.0"/>
       <unit id="org.eclipse.gmf.runtime.notation" version="0.0.0"/>
-      <repository location="http://download.eclipse.org/releases/2020-09"/>
+      <repository location="https://download.eclipse.org/releases/2020-09"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
@@ -167,19 +134,19 @@
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.query.legacy.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.query.legacy.feature.source.feature.group" version="0.0.0"/>
-      <repository id="sirius-query-legacy" location="http://download.eclipse.org/sirius/updates/legacy/1.1.0"/>
+      <repository id="sirius-query-legacy" location="https://download.eclipse.org/sirius/updates/legacy/1.1.0"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.egf.sdk.feature.feature.group" version="0.0.0"/>
-      <repository id="egf" location="http://download.eclipse.org/egf/updates/1.6.1/2019-06/"/>
+      <repository id="egf" location="https://download.eclipse.org/egf/updates/1.6.1/2019-06/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.richtext.feature.feature.group" version="0.0.0"/>
-      <repository id="nebula" location="http://download.eclipse.org/nebula/releases/1.4.0/"/>
+      <repository id="nebula" location="https://download.eclipse.org/nebula/releases/1.4.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.license.feature.group" version="0.0.0"/>
-      <repository id="eclipse-shared-license" location="http://download.eclipse.org/cbi/updates/license"/>
+      <repository id="eclipse-shared-license" location="https://download.eclipse.org/cbi/updates/license"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.apache.log4j" version="1.2.15.v201012070815"/>
@@ -192,6 +159,40 @@
       <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/1.4.2-R20201014-090868/org.polarsys.capella.rcp.site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
+      <unit id="org.jsoup" version="1.8.3.v20181012-1713"/>
+      <unit id="javax.servlet" version="3.1.0.v201410161800"/>
+      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190827152740/repository/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="com.google.guava" version="15.0.0.v201403281430"/>
+      <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20180905201904/repository/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.apache.poi.feature.feature.group" version="0.0.0"/>
+      <repository id="ObeoNetworkBits" location="http://obeo-networkaggregation-releases.s3-website-eu-west-1.amazonaws.com/bits/master/thirdparties"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.cdo.sdk.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.net4j.feature.group" version="0.0.0"/>
+      <repository id="CDO" location="https://download.eclipse.org/modeling/emf/cdo/updates/releases/4.7/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.xtext.sdk.feature.group" version="2.16.0.v20181203-1555"/>
+      <repository id="XText" location="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.16.0/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.jetty.server" version="9.4.24.v20191120"/>
+      <unit id="org.eclipse.jetty.util" version="9.4.24.v20191120"/>
+      <unit id="org.eclipse.jetty.util.ajax" version="9.4.24.v20191120"/>
+      <unit id="org.eclipse.jetty.io" version="9.4.24.v20191120"/>
+      <unit id="org.eclipse.jetty.http" version="9.4.24.v20191120"/>
+      <unit id="org.eclipse.jetty.client" version="9.4.24.v20191120"/>
+      <unit id="org.eclipse.jetty.servlet" version="9.4.24.v20191120"/>
+      <unit id="org.eclipse.jetty.security" version="9.4.24.v20191120"/>
+      <repository id="Jetty" location="https://download.eclipse.org/jetty/updates/jetty-bundles-9.x/9.4.24.v20191120/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.obeonetwork.m2doc.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.sirius.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.ui.feature.feature.group" version="0.0.0"/>
@@ -199,7 +200,7 @@
       <unit id="org.obeonetwork.m2doc.launcher.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.tests" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.sirius.tests" version="0.0.0"/>
-      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.1.0/repository"/>
+      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository"/>
     </location>
   </locations>
 </target>
