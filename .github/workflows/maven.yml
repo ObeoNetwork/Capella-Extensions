@@ -1,0 +1,59 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Java CI with Maven
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Environment
+      run: |
+        echo GITHUB_WORKSPACE $GITHUB_WORKSPACE
+        echo GITHUB_REF $GITHUB_REF
+        echo GITHUB_SHA $GITHUB_SHA
+        echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+    - uses: actions/cache@v1
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
+
+    - name: Build with Maven
+      env:
+        MAVEN_OPTS: -XX:MaxPermSize=512m -Xmx2048m -Xms1024m
+      uses: GabrielBB/xvfb-action@v1
+      with:
+        run: mvn clean verify -e -Dgpg.skip=true
+
+    - name: Prepare deploy local directory
+      id: prepare_deploy
+      run: |
+        chmod a+x prepare-deploy-local-dir.sh
+        export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)/nightly"
+        if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
+        ./prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
+        echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
+
+    - name: Deploy to S3
+      uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: "eu-west-1"
+        SOURCE_DIR: ${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}
+        DEST_DIR: capella-extensions/${{ steps.prepare_deploy.outputs.TAG_OR_BRANCH }}
+
