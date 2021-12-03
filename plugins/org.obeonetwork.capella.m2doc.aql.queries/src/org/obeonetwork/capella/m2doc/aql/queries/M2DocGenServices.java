@@ -46,6 +46,7 @@ import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
 import org.obeonetwork.m2doc.element.MElement;
 import org.obeonetwork.m2doc.element.MHyperLink;
+import org.obeonetwork.m2doc.element.MImage;
 import org.obeonetwork.m2doc.element.MList;
 import org.obeonetwork.m2doc.element.MParagraph;
 import org.obeonetwork.m2doc.element.MTable;
@@ -281,7 +282,7 @@ public class M2DocGenServices extends AbstractServiceProvider {
         },
         result = "replaced the MLink uri from the given MElement to reference document bookmarks",
         examples = {
-            @Example(expression = "myDataPkg.replaceLink(eObj)", result = "replaced the MLink uri from the given MElement to reference document bookmarks"),
+            @Example(expression = "myMElement.replaceLink(eObj)", result = "replaced the MLink uri from the given MElement to reference document bookmarks"),
         }
     )
     // @formatter:on
@@ -333,6 +334,68 @@ public class M2DocGenServices extends AbstractServiceProvider {
             } else {
                 res = link;
             }
+        } else {
+            res = element;
+        }
+
+        return res;
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Reduces all MImages from the given MElement.",
+        params = {
+            @Param(name = "element", value = "The given MElement"),
+            @Param(name = "width", value = "The width to fit"),
+            @Param(name = "height", value = "The height to fit"),
+        },
+        result = "replaced the MLink uri from the given MElement to reference document bookmarks",
+        examples = {
+            @Example(expression = "myMElement.recudeAllImages(200, 300)", result = "all reduced MImages from the given MElement"),
+        }
+    )
+    // @formatter:on
+    public MElement recudeAllImages(MElement element, Integer width, Integer height) {
+        final MElement res;
+
+        if (element instanceof MList) {
+            final List<MElement> newElements = new ArrayList<MElement>();
+            for (MElement e : (MList) element) {
+                newElements.add(recudeAllImages(e, width, height));
+            }
+            ((MList) element).clear();
+            ((MList) element).addAll(newElements);
+            res = element;
+        } else if (element instanceof MParagraph) {
+            final MElement newContent = recudeAllImages(((MParagraph) element).getContents(), width, height);
+            if (newContent != ((MParagraph) element).getContents()) {
+                ((MParagraph) element).setContents(newContent);
+            }
+            res = element;
+        } else if (element instanceof MTable) {
+            for (MRow row : ((MTable) element).getRows()) {
+                for (MCell cell : row.getCells()) {
+                    final MElement newContent = recudeAllImages(cell.getContents(), width, height);
+                    if (newContent != cell.getContents()) {
+                        cell.setContents(newContent);
+                    }
+                }
+            }
+            res = element;
+        } else if (element instanceof MImage) {
+            final MImage image = (MImage) element;
+            if (image.getWidth() > width) {
+                image.setWidth(width);
+                if (!image.conserveRatio() || image.getHeight() > height) {
+                    image.setHeight(height);
+                }
+            } else if (image.getHeight() > height) {
+                image.setHeight(height);
+                if (!image.conserveRatio()) {
+                    image.setWidth(width);
+                }
+            }
+            res = image;
         } else {
             res = element;
         }
