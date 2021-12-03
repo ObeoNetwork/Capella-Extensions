@@ -343,31 +343,31 @@ public class M2DocGenServices extends AbstractServiceProvider {
 
     // @formatter:off
     @Documentation(
-        value = "Reduces all MImages from the given MElement.",
+        value = "Reduces all MImages from the given MElement to a maximum of the given size. Smaller images will not be changed.",
         params = {
             @Param(name = "element", value = "The given MElement"),
-            @Param(name = "width", value = "The width to fit"),
-            @Param(name = "height", value = "The height to fit"),
+            @Param(name = "width", value = "The maximum width"),
+            @Param(name = "height", value = "The maximum height"),
         },
-        result = "replaced the MLink uri from the given MElement to reference document bookmarks",
+        result = "reduced all MImages from the given MElement to a maximum of the given size. Smaller images will not be changed",
         examples = {
-            @Example(expression = "myMElement.recudeAllImages(200, 300)", result = "all reduced MImages from the given MElement"),
+            @Example(expression = "myMElement.reduceAllImages(200, 300)", result = "all reduced MImages from the given MElement"),
         }
     )
     // @formatter:on
-    public MElement recudeAllImages(MElement element, Integer width, Integer height) {
+    public MElement reduceAllImages(MElement element, Integer width, Integer height) {
         final MElement res;
 
         if (element instanceof MList) {
             final List<MElement> newElements = new ArrayList<MElement>();
             for (MElement e : (MList) element) {
-                newElements.add(recudeAllImages(e, width, height));
+                newElements.add(reduceAllImages(e, width, height));
             }
             ((MList) element).clear();
             ((MList) element).addAll(newElements);
             res = element;
         } else if (element instanceof MParagraph) {
-            final MElement newContent = recudeAllImages(((MParagraph) element).getContents(), width, height);
+            final MElement newContent = reduceAllImages(((MParagraph) element).getContents(), width, height);
             if (newContent != ((MParagraph) element).getContents()) {
                 ((MParagraph) element).setContents(newContent);
             }
@@ -375,7 +375,7 @@ public class M2DocGenServices extends AbstractServiceProvider {
         } else if (element instanceof MTable) {
             for (MRow row : ((MTable) element).getRows()) {
                 for (MCell cell : row.getCells()) {
-                    final MElement newContent = recudeAllImages(cell.getContents(), width, height);
+                    final MElement newContent = reduceAllImages(cell.getContents(), width, height);
                     if (newContent != cell.getContents()) {
                         cell.setContents(newContent);
                     }
