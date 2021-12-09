@@ -2,24 +2,24 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.obeonetwork.capella.m2doc.aql.queries;singleton:=true
-Bundle-Version: 5.1.0.qualifier
+Bundle-Version: 5.2.0.qualifier
 Bundle-Activator: org.obeonetwork.capella.m2doc.aql.queries.Activator
 Require-Bundle: org.eclipse.core.runtime,
- org.polarsys.capella.common;bundle-version="[5.1.0,5.1.1)",
- org.polarsys.capella.core.data.gen;bundle-version="[5.1.0,5.1.1)",
+ org.polarsys.capella.common;bundle-version="[5.2.0,5.2.1)",
+ org.polarsys.capella.core.data.gen;bundle-version="[5.2.0,5.2.1)",
  org.obeonetwork.m2doc;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.ui,
  org.eclipse.emf.common.ui;bundle-version="[2.7.0,3.0.0)",
  org.obeonetwork.m2doc.ide;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.acceleo.annotations;bundle-version="[5.0.1,8.0.0)",
- org.polarsys.capella.core.data.helpers;bundle-version="[5.1.0,5.1.1)",
- org.polarsys.capella.core.libraries;bundle-version="[5.1.0,5.1.1)",
- org.polarsys.capella.core.model.helpers;bundle-version="[5.1.0,5.1.1)",
+ org.polarsys.capella.core.data.helpers;bundle-version="[5.2.0,5.2.1)",
+ org.polarsys.capella.core.libraries;bundle-version="[5.2.0,5.2.1)",
+ org.polarsys.capella.core.model.helpers;bundle-version="[5.2.0,5.2.1)",
  org.eclipse.acceleo.query,
- org.polarsys.capella.core.sirius.analysis;bundle-version="[5.1.0,5.1.1)",
- org.polarsys.capella.common.re.ui;bundle-version="[5.1.0,5.1.1)",
- org.polarsys.capella.core.semantic.queries;bundle-version="[5.1.0,5.1.1)",
- org.polarsys.capella.common.re.gen;bundle-version="[5.1.0,5.1.1)"
+ org.polarsys.capella.core.sirius.analysis;bundle-version="[5.2.0,5.2.1)",
+ org.polarsys.capella.common.re.ui;bundle-version="[5.2.0,5.2.1)",
+ org.polarsys.capella.core.semantic.queries;bundle-version="[5.2.0,5.2.1)",
+ org.polarsys.capella.common.re.gen;bundle-version="[5.2.0,5.2.1)"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-Vendor: %providerName

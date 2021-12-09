@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.obeonetwork.capella.m2doc.commandline;singleton:=true
-Bundle-Version: 5.1.0.qualifier
+Bundle-Version: 5.2.0.qualifier
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui,
- org.polarsys.capella.core.commandline.core;bundle-version="[5.1.0,5.1.1)",
+ org.polarsys.capella.core.commandline.core;bundle-version="[5.2.0,5.2.1)",
  org.obeonetwork.m2doc;bundle-version="[3.1.0,4.0.0)",
  org.obeonetwork.m2doc.genconf;bundle-version="[3.1.0,4.0.0)",
  org.obeonetwork.m2doc.ide;bundle-version="[3.0.0,4.0.0)",
