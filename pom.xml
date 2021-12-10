@@ -41,6 +41,7 @@
     <targetPlatform.application.args>capella.m2doc.tpd</targetPlatform.application.args>
     <targetPlatform.application.feature>org.obeonetwork.capella.m2doc.target</targetPlatform.application.feature>
     <maven-resources-version>3.0.2</maven-resources-version>
+    <antrun-version>1.7</antrun-version>
   </properties>
 
   <modules>

@@ -23,4 +23,49 @@
   <artifactId>org.obeonetwork.capella.m2doc.aql.queries</artifactId>
   <version>5.1.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
+
+  <properties>
+    <tempFolder>/tmp/In-Flight Entertainment System With M2Doc/</tempFolder>
+    <testsPluginFolder>${basedir}/../../tests/org.obeonetwork.capella.m2doc.aql.queries.tests/</testsPluginFolder>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>${antrun-version}</version>
+        <executions>
+          <execution>
+            <id>package-Python4Cpaella</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+              <delete dir="${tempFolder}"/>
+                <unzip src="${basedir}/zips/m2docife.zip" dest="${tempFolder}"/>
+                <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/LA-Complete-expected-generation.docx" tofile="${tempFolder}/generated/LA_Complete.docx"/>
+                <copy file="${testsPluginFolder}/resources/IFE/SA-Complete/SA-Complete-expected-generation.docx" tofile="${tempFolder}/generated/SA_Complete.docx"/>
+
+                <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/LA-Complete-template.docx" tofile="${tempFolder}/template/Template LA Complete.docx"/>
+                <copy file="${testsPluginFolder}/resources/IFE/SA-Complete/SA-Complete-template.docx" tofile="${tempFolder}/template/Template SA Complete.docx"/>
+
+                <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/In-Flight Entertainment System.afm" tofile="${tempFolder}/In-Flight Entertainment System.afm"/>
+                <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/In-Flight Entertainment System.capella" tofile="${tempFolder}/In-Flight Entertainment System.capella"/>
+                <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/LA-Complete.aird" tofile="${tempFolder}/In-Flight Entertainment System.aird"/>
+
+                <zip destfile="${basedir}/zips/m2docife.zip">
+                  <fileset dir="${tempFolder}">
+                    <include name="**"/>
+                  </fileset>
+                </zip>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>
