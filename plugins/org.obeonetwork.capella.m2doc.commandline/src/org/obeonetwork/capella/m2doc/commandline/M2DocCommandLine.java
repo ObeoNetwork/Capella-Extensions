@@ -116,9 +116,12 @@ public class M2DocCommandLine extends DefaultCommandLine {
 					M2DocCommandLinePlugin.getPlugin().log(new Status(IStatus.ERROR, M2DocCommandLinePlugin.PLUGIN_ID,
 							"Error loading genconf: '" + uri.toString() + "' : " + e.getMessage(), e));
 				}
-			} else {
+			} else if (uri != null) {
 				M2DocCommandLinePlugin.getPlugin().log(new Status(IStatus.ERROR, M2DocCommandLinePlugin.PLUGIN_ID,
 						"Error loading genconf: '" + uri.toString() + "' : does not exist or is not accessible."));
+			} else {
+				M2DocCommandLinePlugin.getPlugin().log(new Status(IStatus.ERROR, M2DocCommandLinePlugin.PLUGIN_ID,
+						"Error loading genconf: uri is null."));
 			}
 		}
 
