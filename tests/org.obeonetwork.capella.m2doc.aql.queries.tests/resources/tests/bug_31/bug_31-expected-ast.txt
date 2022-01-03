@@ -1,0 +1,28 @@
+
+=== HEADER ===
+
+  table
+    row
+      
+        Specification File of 
+        [query: .aqlFeatureAccess(self, 'name')]
+      
+    
+  
+=== BODY ===
+
+  Description:
+  
+  if .differs(.size(.trim(.aqlFeatureAccess(self, 'description'))), 0) then
+    [query: .replaceLink(.fromHTMLBodyString(.trim(.aqlFeatureAccess(self, 'description'))), self)]
+  else
+    No description
+  endif
+  
+=== FOOTER ===
+
+  
+  content control
+  
+  
+=== TEMPLATES ===
