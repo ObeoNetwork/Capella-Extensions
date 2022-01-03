@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2021 Obeo.
+ * Copyright (c) 2017, 2022 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -17,6 +17,8 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.eclipse.acceleo.annotations.api.documentation.Documentation;
 import org.eclipse.acceleo.annotations.api.documentation.Example;
@@ -41,6 +43,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -121,6 +124,17 @@ public class M2DocGenServices extends AbstractServiceProvider {
         }
 
     }
+
+    /**
+     * The {@link Pattern} to match hlinks with UUID.
+     */
+    private static final Pattern HLINK_WITH_UUID_PATTERN = Pattern
+            .compile("hlink://_?([a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})/?");
+
+    /**
+     * The UUID group in {@link #HLINK_WITH_UUID_PATTERN}.
+     */
+    private static final int UUID_GROUP = 1;
 
     /**
      * Default constructor.
@@ -314,11 +328,48 @@ public class M2DocGenServices extends AbstractServiceProvider {
             }
             res = element;
         } else if (element instanceof MHyperLink) {
-            final MHyperLink link = (MHyperLink) element;
-            if (link.getUrl().startsWith("hlink://_") && link.getUrl().endsWith("/")) {
+            res = internalReplaceLink((MHyperLink) element, reference);
+        } else {
+            res = element;
+        }
+
+        return res;
+    }
+
+    /**
+     * Replaces the given {@link MHyperLink}.
+     * 
+     * @param link
+     *            the {@link MHyperLink}
+     * @param reference
+     *            a reference {@link EObject} to reteive the Sirius {@link Session}
+     * @return the replaced {@link MHyperLink}
+     */
+    private MHyperLink internalReplaceLink(MHyperLink link, EObject reference) {
+        final MHyperLink res;
+
+        if (link.getUrl().startsWith("hlink://_") && link.getUrl().endsWith("/")) {
+            final Resource airResource = new EObjectQuery(reference).getSession().getSessionResource();
+            final String repID = link.getUrl().substring("hlink://".length(), link.getUrl().length() - 1);
+            final EObject repEObject = airResource.getEObject(repID);
+            if (repEObject instanceof DSemanticDecorator) {
+                final DSemanticDecorator decorator = (DSemanticDecorator) repEObject;
+                if (decorator.getTarget() instanceof ModelElement) {
+                    final ModelElement modelElement = (ModelElement) decorator.getTarget();
+                    link.setUrl("#" + modelElement.getId());
+                    res = link;
+                } else {
+                    res = link;
+                }
+            } else {
+                res = link;
+            }
+        } else {
+            final Matcher matcher = HLINK_WITH_UUID_PATTERN.matcher(link.getUrl());
+            if (matcher.matches()) {
                 final Resource airResource = new EObjectQuery(reference).getSession().getSessionResource();
-                final String repID = link.getUrl().substring("hlink://".length(), link.getUrl().length() - 1);
-                final EObject repEObject = airResource.getEObject(repID);
+                final String id = matcher.group(UUID_GROUP);
+                final EObject repEObject = airResource.getEObject(id);
                 if (repEObject instanceof DSemanticDecorator) {
                     final DSemanticDecorator decorator = (DSemanticDecorator) repEObject;
                     if (decorator.getTarget() instanceof ModelElement) {
@@ -329,13 +380,44 @@ public class M2DocGenServices extends AbstractServiceProvider {
                         res = link;
                     }
                 } else {
-                    res = link;
+                    final Resource capellaResource = getCapellaResource(reference);
+                    if (capellaResource != null) {
+                        final EObject eObject = capellaResource.getEObject(id);
+                        if (eObject instanceof ModelElement) {
+                            final ModelElement modelElement = (ModelElement) eObject;
+                            link.setUrl("#" + modelElement.getId());
+                            res = link;
+                        } else {
+                            res = link;
+                        }
+                    } else {
+                        res = link;
+                    }
                 }
             } else {
                 res = link;
             }
-        } else {
-            res = element;
+        }
+
+        return res;
+    }
+
+    /**
+     * Gets the Capella {@link Resource} from the given reference {@link EObject}.
+     * 
+     * @param reference
+     *            a reference {@link EObject} to reteive the Sirius {@link Session}
+     * @return the Capella {@link Resource} from the given reference {@link EObject}
+     */
+    private Resource getCapellaResource(EObject reference) {
+        Resource res = null;
+
+        final Session session = new EObjectQuery(reference).getSession();
+        for (Resource resource : session.getSemanticResources()) {
+            if ("capella".equals(resource.getURI().fileExtension())) {
+                res = resource;
+                break;
+            }
         }
 
         return res;
