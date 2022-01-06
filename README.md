@@ -21,8 +21,8 @@ An update site is built and published for every commit:
 ## 5.2.0
 
 * Update site (Extensions and dependencies):
-  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.2.0/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.2.0/full)
-  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.2.0/full/org.obeonetwork.capella.update.full.zip)
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.2.0_M2Doc3.2.1/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.2.0_M2Doc3.2.1/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/5.2.0_M2Doc3.2.1/full/org.obeonetwork.capella.update.full.zip)
 
 ## Nightly Capella 5.1.x
 
