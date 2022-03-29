@@ -30,7 +30,6 @@ jobs:
           ${{ runner.os }}-maven-
 
     - name: Build with Maven
-      env:
       uses: GabrielBB/xvfb-action@v1
       with:
         run: mvn clean verify -e -Dgpg.skip=true
