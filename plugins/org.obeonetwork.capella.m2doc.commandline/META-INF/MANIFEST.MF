@@ -2,17 +2,17 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.obeonetwork.capella.m2doc.commandline;singleton:=true
-Bundle-Version: 5.2.0.qualifier
+Bundle-Version: 6.0.0.qualifier
 Bundle-Vendor: %providerName
 Require-Bundle: org.eclipse.ui,
- org.polarsys.capella.core.commandline.core;bundle-version="[5.2.0,5.2.1)",
+ org.polarsys.capella.core.commandline.core;bundle-version="[6.0.0,6.0.1)",
  org.obeonetwork.m2doc;bundle-version="[3.1.0,4.0.0)",
  org.obeonetwork.m2doc.genconf;bundle-version="[3.1.0,4.0.0)",
  org.obeonetwork.m2doc.ide;bundle-version="[3.0.0,4.0.0)",
  org.obeonetwork.m2doc.launcher;bundle-version="[3.1.0,4.0.0)"
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.obeonetwork.capella.m2doc.commandline
 Bundle-Localization: plugin
 Automatic-Module-Name: org.obeonetwork.capella.m2doc.commandline
