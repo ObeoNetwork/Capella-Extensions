@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Capella M2Doc Extension" sequenceNumber="1641482081">
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="Capella M2Doc Extension" sequenceNumber="1650620094">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sdk.feature.group" version="0.0.0"/>
@@ -148,7 +148,7 @@
       <unit id="org.obeonetwork.m2doc.launcher.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.tests" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.sirius.tests" version="0.0.0"/>
-      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.2.1/repository/"/>
+      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository/"/>
     </location>
   </locations>
 </target>
