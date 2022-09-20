@@ -41,9 +41,12 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.query.DRepresentationQuery;
 import org.eclipse.sirius.business.api.query.EObjectQuery;
+import org.eclipse.sirius.business.api.resource.ResourceDescriptor;
 import org.eclipse.sirius.business.api.session.Session;
+import org.eclipse.sirius.common.tools.api.util.StringUtil;
 import org.eclipse.sirius.viewpoint.DRepresentation;
 import org.eclipse.sirius.viewpoint.DRepresentationDescriptor;
 import org.eclipse.sirius.viewpoint.DSemanticDecorator;
@@ -349,47 +352,29 @@ public class M2DocGenServices extends AbstractServiceProvider {
         final MHyperLink res;
 
         if (link.getUrl().startsWith("hlink://_") && link.getUrl().endsWith("/")) {
-            final Resource airResource = new EObjectQuery(reference).getSession().getSessionResource();
             final String repID = link.getUrl().substring("hlink://".length(), link.getUrl().length() - 1);
-            final EObject repEObject = airResource.getEObject(repID);
+            final EObject repEObject = getLinkTargetFromId(reference, repID);
             if (repEObject instanceof DSemanticDecorator) {
                 final DSemanticDecorator decorator = (DSemanticDecorator) repEObject;
-                if (decorator.getTarget() instanceof ModelElement) {
-                    final ModelElement modelElement = (ModelElement) decorator.getTarget();
-                    link.setUrl("#" + modelElement.getId());
-                    res = link;
-                } else {
-                    res = link;
-                }
+                EObject eObject = decorator.getTarget();
+                res = internalReplaceLinkWithModelElementId(link, eObject);
             } else {
                 res = link;
             }
         } else {
             final Matcher matcher = HLINK_WITH_UUID_PATTERN.matcher(link.getUrl());
             if (matcher.matches()) {
-                final Resource airResource = new EObjectQuery(reference).getSession().getSessionResource();
                 final String id = matcher.group(UUID_GROUP);
-                final EObject repEObject = airResource.getEObject(id);
+                final EObject repEObject = getLinkTargetFromId(reference, id);
                 if (repEObject instanceof DSemanticDecorator) {
                     final DSemanticDecorator decorator = (DSemanticDecorator) repEObject;
-                    if (decorator.getTarget() instanceof ModelElement) {
-                        final ModelElement modelElement = (ModelElement) decorator.getTarget();
-                        link.setUrl("#" + modelElement.getId());
-                        res = link;
-                    } else {
-                        res = link;
-                    }
+                    EObject eObject = decorator.getTarget();
+                    res = internalReplaceLinkWithModelElementId(link, eObject);
                 } else {
                     final Resource capellaResource = getCapellaResource(reference);
                     if (capellaResource != null) {
                         final EObject eObject = capellaResource.getEObject(id);
-                        if (eObject instanceof ModelElement) {
-                            final ModelElement modelElement = (ModelElement) eObject;
-                            link.setUrl("#" + modelElement.getId());
-                            res = link;
-                        } else {
-                            res = link;
-                        }
+                        res = internalReplaceLinkWithModelElementId(link, eObject);
                     } else {
                         res = link;
                     }
@@ -399,6 +384,52 @@ public class M2DocGenServices extends AbstractServiceProvider {
             }
         }
 
+        return res;
+    }
+
+    private EObject getLinkTargetFromId(EObject reference, final String id) {
+        Session session = new EObjectQuery(reference).getSession();
+        EObject repEObject = null;
+        if (session != null && !StringUtil.isEmpty(id)) {
+            final Resource airResource = session.getSessionResource();
+            repEObject = airResource.getEObject(id);
+
+            // Aird can be split into several resource, representations can be stored in their own .srm resources.
+            if (repEObject == null) {
+                for (Resource srmResource : session.getSrmResources()) {
+                    repEObject = srmResource.getEObject(id);
+                    if (repEObject != null) {
+                        break;
+                    }
+                }
+            }
+
+            // Some srm resource might not be loaded yet (lazy loading of DRepresentation content
+            for (DRepresentationDescriptor repDesc : DialectManager.INSTANCE.getAllRepresentationDescriptors(session)) {
+                ResourceDescriptor representationPath = repDesc.getRepPath();
+                if (representationPath.getResourceURI().toString().contains(id)) {
+                    // Load representation if repPath contains the searched id
+                    DRepresentation rep = repDesc.getRepresentation();
+                    if (rep != null && id.equals(rep.getUid())) {
+                        repEObject = rep;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return repEObject;
+    }
+
+    private MHyperLink internalReplaceLinkWithModelElementId(MHyperLink link, EObject eObject) {
+        final MHyperLink res;
+        if (eObject instanceof ModelElement) {
+            final ModelElement modelElement = (ModelElement) eObject;
+            link.setUrl("#" + modelElement.getId());
+            res = link;
+        } else {
+            res = link;
+        }
         return res;
     }
 
