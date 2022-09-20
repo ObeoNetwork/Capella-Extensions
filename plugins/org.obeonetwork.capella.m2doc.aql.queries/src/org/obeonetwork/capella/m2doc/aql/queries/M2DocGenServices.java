@@ -394,6 +394,16 @@ public class M2DocGenServices extends AbstractServiceProvider {
             final Resource airResource = session.getSessionResource();
             repEObject = airResource.getEObject(id);
 
+            // Aird can be fragmented or manage several airds.
+            if (repEObject == null) {
+                for (Resource otherAirds : session.getReferencedSessionResources()) {
+                    repEObject = otherAirds.getEObject(id);
+                    if (repEObject != null) {
+                        break;
+                    }
+                }
+            }
+
             // Aird can be split into several resource, representations can be stored in their own .srm resources.
             if (repEObject == null) {
                 for (Resource srmResource : session.getSrmResources()) {
