@@ -414,15 +414,18 @@ public class M2DocGenServices extends AbstractServiceProvider {
                 }
             }
 
-            // Some srm resource might not be loaded yet (lazy loading of DRepresentation content
-            for (DRepresentationDescriptor repDesc : DialectManager.INSTANCE.getAllRepresentationDescriptors(session)) {
-                ResourceDescriptor representationPath = repDesc.getRepPath();
-                if (representationPath.getResourceURI().toString().contains(id)) {
-                    // Load representation if repPath contains the searched id
-                    DRepresentation rep = repDesc.getRepresentation();
-                    if (rep != null && id.equals(rep.getUid())) {
-                        repEObject = rep;
-                        break;
+            // Some srm resource might not be loaded yet (lazy loading of DRepresentation content)
+            if (repEObject == null) {
+                for (DRepresentationDescriptor repDesc : DialectManager.INSTANCE
+                        .getAllRepresentationDescriptors(session)) {
+                    ResourceDescriptor representationPath = repDesc.getRepPath();
+                    if (representationPath.getResourceURI().toString().contains(id)) {
+                        // Load representation if repPath contains the searched id
+                        DRepresentation rep = repDesc.getRepresentation();
+                        if (rep != null && id.equals(rep.getUid())) {
+                            repEObject = rep;
+                            break;
+                        }
                     }
                 }
             }
