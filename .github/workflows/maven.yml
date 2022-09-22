@@ -35,6 +35,7 @@ jobs:
         run: mvn clean verify -e -Dgpg.skip=true -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory
+      if: github.ref == 'refs/heads/master'
       id: prepare_deploy
       run: |
         chmod a+x prepare-deploy-local-dir.sh
@@ -44,6 +45,7 @@ jobs:
         echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
 
     - name: Deploy to S3
+      if: github.ref == 'refs/heads/master'
       uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --delete
