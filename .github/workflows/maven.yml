@@ -32,7 +32,7 @@ jobs:
     - name: Build with Maven
       uses: GabrielBB/xvfb-action@v1
       with:
-        run: mvn clean verify -e -Dgpg.skip=true
+        run: mvn clean verify -e -Dgpg.skip=true -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory
       id: prepare_deploy
