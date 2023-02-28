@@ -8,7 +8,7 @@ on: [push, pull_request]
 jobs:
   build:
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Environment
@@ -17,22 +17,30 @@ jobs:
         echo GITHUB_REF $GITHUB_REF
         echo GITHUB_SHA $GITHUB_SHA
         echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
+
     - name: Set up JDK 17
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v3
       with:
         java-version: 17
-    - uses: actions/cache@v1
+    - uses: actions/cache@v3
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
         restore-keys: |
           ${{ runner.os }}-maven-
 
+    - name: Install metacity and xvfb
+      run: |
+        sudo apt install xvfb metacity
+
     - name: Build with Maven
-      uses: GabrielBB/xvfb-action@v1
-      with:
-        run: mvn clean verify -e -Dgpg.skip=true -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
+      run: |
+        /usr/bin/Xvfb :99 -ac -screen 0 1440x900x16&
+        ps auxwww | grep Xvfb
+        export DISPLAY=:99
+        echo DISPLAY $DISPLAY
+        mvn clean verify -e -Dgpg.skip=true -Dmaven.wagon.provider.http=httpclient -Dmaven.artifact.threads=12 -Dhttp.tcp.nodelay=false
 
     - name: Prepare deploy local directory
       if: github.ref == 'refs/heads/master'
@@ -42,7 +50,7 @@ jobs:
         export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)/nightly"
         if [[ "$(echo $GITHUB_REF | cut -d"/" -f2)" != "heads" ]]; then export TAG_OR_BRANCH="$(echo $GITHUB_REF | cut -d"/" -f3)"; fi
         ./prepare-deploy-local-dir.sh $GITHUB_WORKSPACE/$TAG_OR_BRANCH
-        echo ::set-output name=TAG_OR_BRANCH::${TAG_OR_BRANCH}
+        echo "TAG_OR_BRANCH=${TAG_OR_BRANCH}" >> $GITHUB_OUTPUT
 
     - name: Deploy to S3
       if: github.ref == 'refs/heads/master'
