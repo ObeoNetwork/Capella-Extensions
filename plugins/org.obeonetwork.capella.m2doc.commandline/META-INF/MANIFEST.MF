@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.ui,
  org.obeonetwork.m2doc;bundle-version="[3.1.0,4.0.0)",
  org.obeonetwork.m2doc.genconf;bundle-version="[3.1.0,4.0.0)",
  org.obeonetwork.m2doc.ide;bundle-version="[3.0.0,4.0.0)",
- org.obeonetwork.m2doc.launcher;bundle-version="[3.1.0,4.0.0)"
+ org.obeonetwork.m2doc.launcher;bundle-version="[3.1.0,4.0.0)",
+ org.polarsys.capella.core.commandline.core.ui
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

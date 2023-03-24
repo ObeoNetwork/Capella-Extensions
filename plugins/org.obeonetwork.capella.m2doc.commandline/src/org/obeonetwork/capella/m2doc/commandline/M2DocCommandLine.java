@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2020 Obeo.
+ * Copyright (c) 2020, 2023 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -16,8 +16,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -36,12 +39,12 @@ import org.obeonetwork.m2doc.launcher.internal.CLIUtils;
 import org.obeonetwork.m2doc.parser.DocumentParserException;
 import org.polarsys.capella.core.commandline.core.CommandLineArgumentHelper;
 import org.polarsys.capella.core.commandline.core.CommandLineException;
-import org.polarsys.capella.core.commandline.core.DefaultCommandLine;
+import org.polarsys.capella.core.commandline.core.ui.AbstractWorkbenchCommandLine;
 
 /**
  * Command line to launch the
  */
-public class M2DocCommandLine extends DefaultCommandLine {
+public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 
 	private String[] genconfs = new String[1];
 
@@ -153,6 +156,15 @@ public class M2DocCommandLine extends DefaultCommandLine {
 			}
 		}
 
+		monitor.beginTask("Saving workspace...", 1);
+		try {
+			ResourcesPlugin.getWorkspace().save(true, BasicMonitor.toIProgressMonitor(monitor));
+		} catch (CoreException e) {
+			M2DocCommandLinePlugin.getPlugin().log(new Status(IStatus.ERROR, M2DocCommandLinePlugin.PLUGIN_ID,
+					"Error while saving workspace: '" + e.getMessage(), e));
+		}
+		monitor.worked(1);
+
 		return !somethingWentWrong;
 	}
 
@@ -216,6 +228,11 @@ public class M2DocCommandLine extends DefaultCommandLine {
 
 		return result;
 
+	}
+
+	@Override
+	protected IStatus executeWithinWorkbench() {
+		return Status.OK_STATUS;
 	}
 
 }
