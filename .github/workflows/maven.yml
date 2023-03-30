@@ -32,8 +32,10 @@ jobs:
           ${{ runner.os }}-maven-
 
     - name: Install metacity and xvfb
-      run: |
-        sudo apt install xvfb metacity
+      uses: awalsh128/cache-apt-pkgs-action@v1.3.0
+      with:
+        packages: xvfb metacity
+        version: 1.0
 
     - name: Build with Maven
       run: |
