@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella M2Doc Extension" sequenceNumber="1681992139">
+<target name="Capella M2Doc Extension" sequenceNumber="1683022272">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -171,7 +171,6 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
-      <unit id="org.jsoup" version="1.8.3.v20181012-1713"/>
       <unit id="javax.servlet" version="3.1.0.v201410161800"/>
       <repository location="https://download.eclipse.org/tools/orbit/downloads/drops/R20190827152740/repository/"/>
     </location>
@@ -197,7 +196,7 @@
       <unit id="org.obeonetwork.m2doc.launcher.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.tests" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.sirius.tests" version="0.0.0"/>
-      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository/"/>
+      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.3.0/repository/"/>
     </location>
   </locations>
 </target>
