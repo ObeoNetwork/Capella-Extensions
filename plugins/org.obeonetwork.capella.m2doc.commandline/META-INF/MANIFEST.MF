@@ -17,3 +17,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.obeonetwork.capella.m2doc.commandline
 Bundle-Localization: plugin
 Automatic-Module-Name: org.obeonetwork.capella.m2doc.commandline
+Bundle-Activator: org.obeonetwork.capella.m2doc.commandline.M2DocCommandLinePlugin$Implementation

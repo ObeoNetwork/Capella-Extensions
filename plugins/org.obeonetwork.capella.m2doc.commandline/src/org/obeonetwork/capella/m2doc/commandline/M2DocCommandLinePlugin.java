@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2020 Obeo.
+ * Copyright (c) 2020, 2023 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -19,10 +19,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
  * @author <a href="mailto:cedric.brun@obeo.fr">Cedric Brun</a>
  */
 public final class M2DocCommandLinePlugin extends EMFPlugin {
-	/**
-	 * Keep track of the singleton.
-	 */
-	public static final M2DocCommandLinePlugin INSTANCE = new M2DocCommandLinePlugin();
 
 	/**
 	 * The plugin ID.
