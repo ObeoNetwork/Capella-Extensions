@@ -77,7 +77,7 @@ public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 
 		startFakeWorkbench();
 
-		genconfs[0] = "platform:/resource/" + CommandLineArgumentHelper.getInstance().getFilePath();
+		genconfs[0] = CommandLineArgumentHelper.getInstance().getFilePath();
 		Collection<URI> genconfsURIs = validateArguments();
 
 		boolean somethingWentWrong = false;
