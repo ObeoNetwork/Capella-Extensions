@@ -17,11 +17,11 @@
 		<groupId>org.obeonetwork.capella.extensions</groupId>
 		<artifactId>parent</artifactId>
 		<relativePath>../..</relativePath>
-		<version>6.1.0-SNAPSHOT</version>
+		<version>7.0.0-SNAPSHOT</version>
 	</parent>
   <groupId>org.obeonetwork.capella.extensions</groupId>
   <artifactId>org.obeonetwork.capella.m2doc.aql.queries</artifactId>
-  <version>6.1.0-SNAPSHOT</version>
+  <version>7.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
 
   <properties>
@@ -31,7 +31,7 @@
 
   <build>
     <plugins>
-      <plugin>
+      <!--plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>${antrun-version}</version>
@@ -44,7 +44,7 @@
             </goals>
             <configuration>
               <target>
-              <delete dir="${tempFolder}"/>
+                <delete dir="${tempFolder}"/>
                 <unzip src="${basedir}/zips/m2docife.zip" dest="${tempFolder}"/>
                 <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/LA-Complete-expected-generation.docx" tofile="${tempFolder}/generated/LA_Complete.docx"/>
                 <copy file="${testsPluginFolder}/resources/IFE/SA-Complete/SA-Complete-expected-generation.docx" tofile="${tempFolder}/generated/SA_Complete.docx"/>
@@ -65,7 +65,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin-->
     </plugins>
   </build>
 </project>

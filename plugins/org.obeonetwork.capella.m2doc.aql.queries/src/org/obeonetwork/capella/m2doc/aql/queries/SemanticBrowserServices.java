@@ -123,7 +123,6 @@ import org.polarsys.capella.core.data.oa.OperationalProcess;
 import org.polarsys.capella.core.data.oa.Role;
 import org.polarsys.capella.core.data.pa.PhysicalComponent;
 import org.polarsys.capella.core.data.pa.PhysicalFunction;
-import org.polarsys.capella.core.data.requirement.Requirement;
 import org.polarsys.kitalpha.emde.model.Element;
 
 /**
@@ -350,23 +349,6 @@ public class SemanticBrowserServices {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElement_applied_property_value_groups()
                         .compute(value));
-    }
-
-    // @formatter:off
-    @Documentation(
-        value = "Returns the Sequence of requirements for the given CapellaElement.",
-        params = {
-            @Param(name = "value", value = "the CapellaElement")
-        },
-        result = "the Sequence of requirements for the given CapellaElement",
-        examples = {
-            @Example(expression = "myCapellaElement.getRequirements()", result = "the Sequence of requirements for the given CapellaElement"),
-        }
-    )
-    // @formatter:on
-    public List<TraceableElement> getRequirements(CapellaElement value) {
-        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElement_requirement()
-                .compute(value));
     }
 
     // @formatter:off
@@ -2563,24 +2545,6 @@ public class SemanticBrowserServices {
 
     // @formatter:off
     @Documentation(
-        value = "Returns the Sequence of incoming physical links for the given PhysicalComponent.",
-        params = {
-            @Param(name = "value", value = "the PhysicalComponent")
-        },
-        result = "the Sequence of incoming physical links for the given PhysicalComponent",
-        examples = {
-            @Example(expression = "myPhysicalComponent.getIncomingPhysicalLinks()", result = "the Sequence of incoming physical links for the given PhysicalComponent"),
-        }
-    )
-    // @formatter:on
-    public List<PhysicalLink> getIncomingPhysicalLinks(PhysicalComponent value) {
-        return castList(
-                new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalComponent_IncomingPhysicalLinks()
-                        .compute(value));
-    }
-
-    // @formatter:off
-    @Documentation(
         value = "Returns the Sequence of allocated physical functions for the given PhysicalComponent.",
         params = {
             @Param(name = "value", value = "the PhysicalComponent")
@@ -2646,24 +2610,6 @@ public class SemanticBrowserServices {
     public List<Component> getRealizingComponents(PhysicalComponent value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Component_RealizingComponents()
                 .compute(value));
-    }
-
-    // @formatter:off
-    @Documentation(
-        value = "Returns the Sequence of outgoing physical links for the given PhysicalComponent.",
-        params = {
-            @Param(name = "value", value = "the PhysicalComponent")
-        },
-        result = "the Sequence of outgoing physical links for the given PhysicalComponent",
-        examples = {
-            @Example(expression = "myPhysicalComponent.getOutgoingPhysicalLinks()", result = "the Sequence of outgoing physical links for the given PhysicalComponent"),
-        }
-    )
-    // @formatter:on
-    public List<PhysicalLink> getOutgoingPhysicalLinks(PhysicalComponent value) {
-        return castList(
-                new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalComponent_OutgoingPhysicalLinks()
-                        .compute(value));
     }
 
     // @formatter:off
@@ -3066,23 +3012,6 @@ public class SemanticBrowserServices {
 
     // @formatter:off
     @Documentation(
-        value = "Returns the Sequence of physical links ends for the given PhysicalLink.",
-        params = {
-            @Param(name = "value", value = "the PhysicalLink")
-        },
-        result = "the Sequence of physical links ends for the given PhysicalLink",
-        examples = {
-            @Example(expression = "myPhysicalLink.getPhysicalLinkEnds()", result = "the Sequence of physical links ends for the given PhysicalLink"),
-        }
-    )
-    // @formatter:on
-    public List<Component> getPhysicalLinkEnds(PhysicalLink value) {
-        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinkSourceAndTarget()
-                .compute(value));
-    }
-
-    // @formatter:off
-    @Documentation(
         value = "Returns the Sequence of realizing configuration items for the given PhysicalLink.",
         params = {
             @Param(name = "value", value = "the PhysicalLink")
@@ -3304,23 +3233,6 @@ public class SemanticBrowserServices {
     // @formatter:on
     public List<ComponentExchange> getOutgoingDelegations(PhysicalPort value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPortOutgoingDelgations()
-                .compute(value));
-    }
-
-    // @formatter:off
-    @Documentation(
-        value = "Returns the Sequence of physical links for the given PhysicalPort.",
-        params = {
-            @Param(name = "value", value = "the PhysicalPort")
-        },
-        result = "the Sequence of physical links for the given PhysicalPort",
-        examples = {
-            @Example(expression = "myPhysicalPort.getPhysicalLinks()", result = "the Sequence of physical links for the given PhysicalPort"),
-        }
-    )
-    // @formatter:on
-    public List<PhysicalLink> getPhysicalLinks(PhysicalPort value) {
-        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPortIncomingPhysicalLinks()
                 .compute(value));
     }
 
@@ -3830,23 +3742,6 @@ public class SemanticBrowserServices {
     // @formatter:on
     public List<TraceableElement> getSource(Trace value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaRelationshipsTraceSource()
-                .compute(value));
-    }
-
-    // @formatter:off
-    @Documentation(
-        value = "Returns the Sequence of traced elements for the given Requirement.",
-        params = {
-            @Param(name = "value", value = "the Requirement")
-        },
-        result = "the Sequence of traced elements for the given Requirement",
-        examples = {
-            @Example(expression = "myRequirement.getTracedElements()", result = "the Sequence of traced elements for the given Requirement"),
-        }
-    )
-    // @formatter:on
-    public List<TraceableElement> getTracedElements(Requirement value) {
-        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.RequirementTracedElements()
                 .compute(value));
     }
 
