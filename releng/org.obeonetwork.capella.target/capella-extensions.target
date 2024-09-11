@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella M2Doc Extension" sequenceNumber="1726046496">
+<target name="Capella M2Doc Extension" sequenceNumber="1726048338">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="false" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -198,7 +198,7 @@
       <unit id="org.obeonetwork.m2doc.launcher.feature.feature.group" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.tests" version="0.0.0"/>
       <unit id="org.obeonetwork.m2doc.sirius.tests" version="0.0.0"/>
-      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.3.2/repository/"/>
+      <repository location="https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/3.3.3/repository/"/>
     </location>
   </locations>
 </target>
