@@ -17,14 +17,14 @@ jobs:
         echo GITHUB_REF $GITHUB_REF
         echo GITHUB_SHA $GITHUB_SHA
         echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
-    - uses: actions/checkout@v4.1.1
+    - uses: actions/checkout@v4.2.2
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v4.2.0
+      uses: actions/setup-java@v4.6.0
       with:
         distribution: 'adopt'
         java-version: 17
-    - uses: actions/cache@v4.0.1
+    - uses: actions/cache@v4.2.0
       with:
         path: ~/.m2/repository
         key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
