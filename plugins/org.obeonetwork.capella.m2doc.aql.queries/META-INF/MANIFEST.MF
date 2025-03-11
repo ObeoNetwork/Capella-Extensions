@@ -20,9 +20,12 @@ Require-Bundle: org.eclipse.core.runtime,
  org.polarsys.capella.core.sirius.analysis;bundle-version="[7.0.0,7.1.0)",
  org.polarsys.capella.common.re.ui;bundle-version="[7.0.0,7.1.0)",
  org.polarsys.capella.core.semantic.queries;bundle-version="[7.0.0,7.1.0)",
- org.polarsys.capella.common.re.gen;bundle-version="[7.0.0,7.1.0)"
+ org.polarsys.capella.common.re.gen;bundle-version="[7.0.0,7.1.0)",
+ org.polarsys.capella.common.ui.toolkit.browser;bundle-version="[7.0.0,7.1.0)",
+ org.polarsys.capella.common.ui.massactions;bundle-version="[7.0.0,7.1.0)",
+ org.polarsys.capella.common.ui.massactions.core;bundle-version="[7.0.0,7.1.0)"
 Bundle-ActivationPolicy: lazy
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Bundle-Vendor: %providerName
 Export-Package: org.obeonetwork.capella.m2doc.aql.queries
 Automatic-Module-Name: org.obeonetwork.capella.m2doc.aql.queries

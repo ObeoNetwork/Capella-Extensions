@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2022 Obeo.
+ * Copyright (c) 2017, 2025 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -13,6 +13,7 @@ package org.obeonetwork.capella.m2doc.aql.queries;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -59,6 +60,8 @@ import org.obeonetwork.m2doc.element.MTable;
 import org.obeonetwork.m2doc.element.MTable.MCell;
 import org.obeonetwork.m2doc.element.MTable.MRow;
 import org.polarsys.capella.common.data.modellingcore.ModelElement;
+import org.polarsys.capella.common.ui.massactions.core.shared.helper.SemanticBrowserHelper;
+import org.polarsys.capella.common.ui.toolkit.browser.category.ICategory;
 import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.InterfacePkg;
 import org.polarsys.capella.core.data.fa.ComponentExchange;
@@ -628,11 +631,65 @@ public class M2DocGenServices extends AbstractServiceProvider {
         return res;
     }
 
-    /**
-     * {@inheritDoc}
-     *
-     * @see org.eclipse.acceleo.query.runtime.impl.AbstractServiceProvider#getService(java.lang.reflect.Method)
-     */
+    // @formatter:off
+    @Documentation(
+        value = "Gets the list of available semantic browser query names for the given EObject.",
+        params = {
+            @Param(name = "eObj", value = "The EObject")
+        },
+        result = "the list of available semantic browser queries for the given EObject",
+        examples = {
+            @Example(expression = "myCapellaElement.availableSBQueries()", result = "Sequence{'query1', 'query2', ...}"),
+        }
+    )
+    // @formatter:on
+    public List<String> availableSBQueries(EObject eObj) {
+        final List<String> res = new ArrayList<String>();
+
+        final Set<ICategory> queries = SemanticBrowserHelper.getCommonObjectCategories(Collections.singleton(eObj));
+        for (ICategory query : queries) {
+            res.add(query.getName());
+        }
+        Collections.sort(res);
+
+        return res;
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Gets the semantic browser query result for the given query name on the given EObject.",
+        params = {
+            @Param(name = "eObj", value = "The EObject"),
+            @Param(name = "queryName", value = "The semantic query name")
+        },
+        result = "the list of EObject",
+        examples = {
+            @Example(expression = "myCapellaElement.getSBQuery('query1')", result = "Sequence{eObject1, eObject1, ...}"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getSBQuery(EObject eObj, String queryName) {
+        List<EObject> res = new ArrayList<EObject>();
+
+        final Set<ICategory> queries = SemanticBrowserHelper.getCommonObjectCategories(Collections.singleton(eObj));
+        ICategory foundQuery = null;
+        for (ICategory query : queries) {
+            if (query.getName().equals(queryName)) {
+                foundQuery = query;
+                break;
+            }
+        }
+        if (foundQuery != null) {
+            for (Object object : foundQuery.compute(eObj)) {
+                if (object instanceof EObject) {
+                    res.add((EObject) object);
+                }
+            }
+        }
+
+        return res;
+    }
+
     @Override
     protected IService getService(Method publicMethod) {
         final IService result;

@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2017, 2022 Obeo. 
+ *  Copyright (c) 2017, 2025 Obeo. 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
@@ -22,7 +22,7 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses(value = { CapellaTokenTest.class, IFETemplateTests.class, SemanticBrowserServicesTests.class,
-		TemplateTests.class, })
+		TemplateTests.class, M2DocGenServicesTests.class, })
 public class AllTests {
 
 }

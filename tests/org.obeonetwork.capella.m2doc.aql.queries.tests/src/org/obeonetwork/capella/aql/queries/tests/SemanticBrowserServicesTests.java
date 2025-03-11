@@ -41,13 +41,13 @@ public class SemanticBrowserServicesTests {
 	/**
 	 * The Sirius {@link Session} {@link URI}.
 	 */
-	private static final URI SESSION_URI = URI
+	public static final URI SESSION_URI = URI
 			.createFileURI(new File("resources/IFE/LA-Complete/LA-Complete.aird").getAbsolutePath());
 
 	/**
 	 * The IFE model {@link URI}.
 	 */
-	private static final URI IFE_URI = URI.createFileURI(
+	public static final URI IFE_URI = URI.createFileURI(
 			new File("resources/IFE/LA-Complete/In-Flight Entertainment System.capella").getAbsolutePath());
 
 	/**
@@ -79,10 +79,10 @@ public class SemanticBrowserServicesTests {
 
 		final SemanticBrowserServices serviceInstance = new SemanticBrowserServices();
 		for (EObject root : ifeModel.getContents()) {
-			 callComplatibleMethods(serviceInstance, methods, root);
+			callComplatibleMethods(serviceInstance, methods, root);
 			final Iterator<EObject> it = root.eAllContents();
 			while (it.hasNext()) {
-				 callComplatibleMethods(serviceInstance, methods, it.next());
+				callComplatibleMethods(serviceInstance, methods, it.next());
 			}
 		}
 	}
@@ -90,13 +90,10 @@ public class SemanticBrowserServicesTests {
 	/**
 	 * Calls compatible {@link Method} for the given parameter.
 	 * 
-	 * @param serviceInstance
-	 *            the instance of {@link SemanticBrowserServices}
+	 * @param serviceInstance the instance of {@link SemanticBrowserServices}
 	 * 
-	 * @param methods
-	 *            the {@link List} of possible {@link Method} to call
-	 * @param parameter
-	 *            the parameter
+	 * @param methods         the {@link List} of possible {@link Method} to call
+	 * @param parameter       the parameter
 	 * @throws InvocationTargetException
 	 * @throws IllegalArgumentException
 	 * @throws IllegalAccessException
