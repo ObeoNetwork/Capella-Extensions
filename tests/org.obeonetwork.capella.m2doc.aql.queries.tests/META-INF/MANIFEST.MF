@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: M2Doc integration plugin for Capella
 Bundle-SymbolicName: org.obeonetwork.capella.m2doc.aql.queries.tests
-Bundle-Version: 7.0.0.qualifier
+Bundle-Version: 7.0.1.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.polarsys.capella.common;bundle-version="[7.0.0,7.1.0)",
@@ -191,7 +191,7 @@ Require-Bundle: org.eclipse.ui,
  org.polarsys.capella.viewpoint.doc;bundle-version="[7.0.0,7.1.0)",
  org.obeonetwork.m2doc.html,
  org.obeonetwork.m2doc.html.ide
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-Vendor: Obeo Network
 Export-Package: org.obeonetwork.capella.aql.queries.tests
 Automatic-Module-Name: org.obeonetwork.capella.m2doc.aql.queries.tests

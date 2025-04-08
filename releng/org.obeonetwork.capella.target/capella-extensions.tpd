@@ -12,7 +12,7 @@ target "Capella M2Doc Extension"
 
 with requirements
 
-include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/master/releng/org.obeonetwork.m2doc.targetplatforms/capella-7.0.0/m2doc-capella-7.0.0.tpd"
+include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/master/releng/org.obeonetwork.m2doc.targetplatforms/capella-7.0.1/m2doc-capella-7.0.1.tpd"
 
 location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository/" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
