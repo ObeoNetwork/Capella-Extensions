@@ -12,6 +12,30 @@ An update site is built and published for every commit:
   * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/master/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/master/nightly/full)
   * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/master/nightly/full/org.obeonetwork.capella.update.full.zip)
 
+## Nightly Capella 7.0.x
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-7.0.x/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-7.0.x/nightly/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-7.0.x/nightly/full/org.obeonetwork.capella.update.full.zip)
+
+## 7.0.0
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.0_M2Doc3.3.4/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.0_M2Doc3.3.4/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.0_M2Doc3.3.4/full/org.obeonetwork.capella.update.full.zip)
+
+## Nightly Capella 6.1.x
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-6.1.x/nightly/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-6.1.x/nightly/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/capella-6.1.x/nightly/full/org.obeonetwork.capella.update.full.zip)
+
+## 6.1.0
+
+* Update site (Extensions and dependencies):
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/6.1.0_M2Doc3.3.2/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/6.1.0_M2Doc3.3.2/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/6.1.0_M2Doc3.3.2/full/org.obeonetwork.capella.update.full.zip)
+
 ## Nightly Capella 6.0.x
 
 * Update site (Extensions and dependencies):
