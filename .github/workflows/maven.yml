@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+    - name: upate
+      run: |
+        sudo apt-get update
+        sudo apt-get install apt-utils maven -y
+
     - name: Environment
       run: |
         echo GITHUB_WORKSPACE $GITHUB_WORKSPACE
@@ -31,10 +36,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
 
-    - name: Install metacity and xvfb
+    - name: Install metacity, xvfb, and ttf-mscorefonts-installer
       uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with:
-        packages: xvfb metacity
+        packages: xvfb metacity ttf-mscorefonts-installer
         version: cache-apt-pkgs-${{ matrix.profile }}
 
     - name: Build with Maven
