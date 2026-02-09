@@ -41,10 +41,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
 
-    - name: Install metacity, xvfb, and ttf-mscorefonts-installer fonts-freefont-ttf
+    - name: Install metacity, xvfb, and fonts
       uses: awalsh128/cache-apt-pkgs-action@v1.4.3
       with:
-        packages: xvfb metacity ttf-mscorefonts-installer
+        packages: xvfb metacity ttf-mscorefonts-installer fonts-freefont-ttf ubuntu-restricted-extras xfonts-base xfonts-scalable fonts-dejavu-core fonts-dejavu-extra fonts-dejavu-mono fonts-ubuntu
         version: cache-apt-pkgs-${{ matrix.profile }}
 
     - name: Build with Maven
