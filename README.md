@@ -21,8 +21,8 @@ An update site is built and published for every commit:
 ## 7.0.1
 
 * Update site (Extensions and dependencies):
-  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.1_M2Doc4.0.0/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.1_M2Doc4.0.0/full)
-  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.1_M2Doc4.0.0/full/org.obeonetwork.capella.update.full.zip)
+  * [https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.1_M2Doc4.0.1/full](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.1_M2Doc4.0.1/full)
+  * [zip](https://s3-eu-west-1.amazonaws.com/obeo-networkaggregation-releases/capella-extensions/7.0.1_M2Doc4.0.1/full/org.obeonetwork.capella.update.full.zip)
 
 ## 7.0.0
 
