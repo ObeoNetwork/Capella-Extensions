@@ -2193,6 +2193,23 @@ public class SemanticBrowserServices {
 
     // @formatter:off
     @Documentation(
+        value = "Returns the Sequence of physical links for the given Component.",
+        params = {
+            @Param(name = "value", value = "the Component")
+        },
+        result = "the Sequence of physical links for the given Component",
+        examples = {
+            @Example(expression = "myComponent.getPhysicalLinks()", result = "the Sequence of physical links for the given Component"),
+        }
+    )
+    // @formatter:on
+    public List<PhysicalLink> getPhysicalLinks(Component value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalComponentPhysicalLinks()
+                .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
         value = "Returns the Sequence of allocating physical link for the given ComponentExchange.",
         params = {
             @Param(name = "value", value = "the ComponentExchange")
