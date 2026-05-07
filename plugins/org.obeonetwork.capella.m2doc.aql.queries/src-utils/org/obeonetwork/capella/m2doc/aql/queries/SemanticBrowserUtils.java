@@ -217,6 +217,7 @@ public class SemanticBrowserUtils {
 	    "org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinksInvolvedInPhysicalPaths",
 	    "org.polarsys.capella.core.semantic.queries.basic.queries.CategoryPhysicalLink",
 	    "org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPathInvolvedPhysicalPath",
+	    "org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalComponentPhysicalLinks",
 	    "org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPath_PhysicalLinks",
 	    "org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPath_RealisedConnection",
 	    "org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPathInvolvingPhysicalPath",
