@@ -55,12 +55,18 @@
                 <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/In-Flight Entertainment System.afm" tofile="${tempFolder}/In-Flight Entertainment System.afm"/>
                 <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/In-Flight Entertainment System.capella" tofile="${tempFolder}/In-Flight Entertainment System.capella"/>
                 <copy file="${testsPluginFolder}/resources/IFE/LA-Complete/LA-Complete.aird" tofile="${tempFolder}/In-Flight Entertainment System.aird"/>
+                <copy todir="${tempFolder}" >  
+                  <fileset dir="${testsPluginFolder}/resources/IFE/LA-Complete/">  
+                    <include name="images/**"/>
+                  </fileset>
+                </copy>
 
                 <zip destfile="${basedir}/zips/m2docife.zip">
                   <fileset dir="${tempFolder}">
                     <include name="**"/>
                   </fileset>
                 </zip>
+                <delete dir="${tempFolder}"/>
               </target>
             </configuration>
           </execution>

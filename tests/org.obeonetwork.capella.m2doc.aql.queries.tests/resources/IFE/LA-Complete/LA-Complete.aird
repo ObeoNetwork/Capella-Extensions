@@ -45,7 +45,7 @@
         <description xmi:type="description_1:SequenceDiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Component%20Exchanges%20Scenario']"/>
         <target xmi:type="org.polarsys.capella.core.data.interaction:Scenario" href="In-Flight%20Entertainment%20System.capella#2d18447b-6c5a-45f7-8149-245290242bab"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yYiSd3jqEea__MYrXGSERA" name="[FS] Determine Passenger Service Availability" repPath="#_uRslYLEOEeSk6sURco8jXw" changeId="1672988576810">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yYiSd3jqEea__MYrXGSERA" name="[FS] Determine Passenger Service Availability" repPath="#_uRslYLEOEeSk6sURco8jXw" changeId="1781791746267">
         <description xmi:type="description_1:SequenceDiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Functional%20Scenario']"/>
         <target xmi:type="org.polarsys.capella.core.data.interaction:Scenario" href="In-Flight%20Entertainment%20System.capella#ef6ce369-4a17-4655-aa96-66b3b69c7315"/>
       </ownedRepresentationDescriptors>
@@ -93,11 +93,11 @@
         <description xmi:type="description_1:SequenceDiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Component%20Exchanges%20Scenario']"/>
         <target xmi:type="org.polarsys.capella.core.data.interaction:Scenario" href="In-Flight%20Entertainment%20System.capella#24e49b35-c557-4e4f-a2a7-516009925532"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yYiShXjqEea__MYrXGSERA" name="[CDB] In-Flight Entertainment Dictionary" repPath="#_I_i0sLZ4EeS6m7-8Vqqevw" changeId="1672988576810">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yYiShXjqEea__MYrXGSERA" name="[CDB] In-Flight Entertainment Dictionary" repPath="#_I_i0sLZ4EeS6m7-8Vqqevw" changeId="1781791749879">
         <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.information:DataPkg" href="In-Flight%20Entertainment%20System.capella#cb5ad07d-09e4-491d-8aa8-66653e05b478"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yYiShnjqEea__MYrXGSERA" name="[CDB] Play Video Movie - Logical" repPath="#_nlZU8LZ-EeS6m7-8Vqqevw" changeId="1672988576810">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_yYiShnjqEea__MYrXGSERA" name="[CDB] Play Video Movie - Logical" repPath="#_nlZU8LZ-EeS6m7-8Vqqevw" changeId="1781791750219">
         <description xmi:type="description_2:DiagramDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']"/>
         <target xmi:type="org.polarsys.capella.core.data.information:DataPkg" href="In-Flight%20Entertainment%20System.capella#18343c7c-2223-46bc-a55d-c77e1d7c5caf"/>
       </ownedRepresentationDescriptors>
@@ -73386,7 +73386,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zQ9Ea_LyEeyLJcrwrmlbrg"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_eS80UbEPEeSk6sURco8jXw" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eS80UrEPEeSk6sURco8jXw" x="-43" width="10" height="10"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eS80UrEPEeSk6sURco8jXw" x="-43" y="400" width="10" height="10"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_fZciQLEPEeSk6sURco8jXw" type="3001" element="_kgHeMIoOEeaQmcRqIfTB6w">
               <children xmi:type="notation:Node" xmi:id="_fZciQ7EPEeSk6sURco8jXw" visible="false" type="5001">
@@ -81283,70 +81283,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zCLeWrafEeS6m7-8Vqqevw" id="(0.725,0.19672131147540983)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_zCLeW7afEeS6m7-8Vqqevw" id="(0.7843137254901961,0.0)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_2CP9ELafEeS6m7-8Vqqevw" type="4001" element="_krgO0IoOEeaQmcRqIfTB6w" source="_LXm4abZ4EeS6m7-8Vqqevw" target="_LXwpZ7Z4EeS6m7-8Vqqevw">
-          <children xmi:type="notation:Node" xmi:id="_2CP9FLafEeS6m7-8Vqqevw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DXiYI_LMEeyLJcrwrmlbrg" x="-36" y="27" width="174" height="28"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_2CP9FrafEeS6m7-8Vqqevw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rV_qufLLEeyLJcrwrmlbrg" x="10" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_2CP9GLafEeS6m7-8Vqqevw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rV_quvLLEeyLJcrwrmlbrg" x="-10" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_2CP9EbafEeS6m7-8Vqqevw" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_2CP9ErafEeS6m7-8Vqqevw" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2CP9E7afEeS6m7-8Vqqevw" points="[0, 0, 78, -129]$[0, 71, 78, -58]$[-88, 71, -10, -58]$[-88, 129, -10, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2CP9GrafEeS6m7-8Vqqevw" id="(0.5800000000000001,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2CP9G7afEeS6m7-8Vqqevw" id="(0.7407407407407407,0.0)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_0IhtELZ4EeS6m7-8Vqqevw" type="4001" element="_krZhIIoOEeaQmcRqIfTB6w" source="_LXwpS7Z4EeS6m7-8Vqqevw" target="_LXm4abZ4EeS6m7-8Vqqevw">
-          <children xmi:type="notation:Node" xmi:id="_0IhtFLZ4EeS6m7-8Vqqevw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DXjmQPLMEeyLJcrwrmlbrg" x="13" y="-16"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_0Iq3ALZ4EeS6m7-8Vqqevw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rV_qvPLLEeyLJcrwrmlbrg" x="5" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_0Iq3ArZ4EeS6m7-8Vqqevw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rV_qvfLLEeyLJcrwrmlbrg" x="1" y="17"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_0IhtEbZ4EeS6m7-8Vqqevw" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_0IhtErZ4EeS6m7-8Vqqevw" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0IhtE7Z4EeS6m7-8Vqqevw" points="[-3, 0, -46, -96]$[-3, 47, -46, -49]$[74, 47, 31, -49]$[74, 96, 31, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Iq3BLZ4EeS6m7-8Vqqevw" id="(0.43095142513046975,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0Iq3BbZ4EeS6m7-8Vqqevw" id="(0.3654,0.0)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_LX5zMrZ4EeS6m7-8Vqqevw" type="4001" element="_krHNQIoOEeaQmcRqIfTB6w" source="_LXwpRLZ4EeS6m7-8Vqqevw" target="_LXwpYLZ4EeS6m7-8Vqqevw">
-          <children xmi:type="notation:Node" xmi:id="_LX5zNrZ4EeS6m7-8Vqqevw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DXi_MPLMEeyLJcrwrmlbrg" x="20" y="27"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_LX5zOLZ4EeS6m7-8Vqqevw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LX5zObZ4EeS6m7-8Vqqevw" x="1" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_LX5zOrZ4EeS6m7-8Vqqevw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LX5zO7Z4EeS6m7-8Vqqevw" x="3" y="21"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_LX5zM7Z4EeS6m7-8Vqqevw" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_LX5zNLZ4EeS6m7-8Vqqevw" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LX5zNbZ4EeS6m7-8Vqqevw" points="[0, 1, -1, -176]$[0, 177, -1, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_M7CZ5LZ4EeS6m7-8Vqqevw" id="(0.11287793952967526,0.9787234042553191)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_M7CZ5bZ4EeS6m7-8Vqqevw" id="(0.5,0.0)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_LX5zPrZ4EeS6m7-8Vqqevw" type="4001" element="_krSMYIoOEeaQmcRqIfTB6w" source="_LXwpRLZ4EeS6m7-8Vqqevw" target="_LXwpZ7Z4EeS6m7-8Vqqevw">
-          <children xmi:type="notation:Node" xmi:id="_LX5zQrZ4EeS6m7-8Vqqevw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DXi_MfLMEeyLJcrwrmlbrg" x="4" y="-23"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_LX5zRLZ4EeS6m7-8Vqqevw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rV_qtvLLEeyLJcrwrmlbrg" x="4" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_LX5zRrZ4EeS6m7-8Vqqevw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rV_qt_LLEeyLJcrwrmlbrg" x="-1" y="32"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_LX5zP7Z4EeS6m7-8Vqqevw" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_LX5zQLZ4EeS6m7-8Vqqevw" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_LX5zQbZ4EeS6m7-8Vqqevw" points="[0, 1, -124, -180]$[0, 115, -124, -66]$[113, 115, -11, -66]$[113, 177, -11, -4]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_M7CZ5rZ4EeS6m7-8Vqqevw" id="(0.4353863381858902,0.9787234042553191)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_M7CZ57Z4EeS6m7-8Vqqevw" id="(0.4642857142857143,0.0975609756097561)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_zXyzsLZ4EeS6m7-8Vqqevw" type="4001" element="_krWd0IoOEeaQmcRqIfTB6w" source="_LXwpS7Z4EeS6m7-8Vqqevw" target="_LXwpRLZ4EeS6m7-8Vqqevw">
           <children xmi:type="notation:Node" xmi:id="_zXyztLZ4EeS6m7-8Vqqevw" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DXi_M_LMEeyLJcrwrmlbrg" x="-20" y="-26"/>
@@ -81379,6 +81315,70 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Wfx02rafEeS6m7-8Vqqevw" id="(0.5377358490566038,0.3114754098360656)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Wfx027afEeS6m7-8Vqqevw" id="(0.45977011494252873,0.0)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_RqWRUGsfEfGS8rzupsGG6w" type="4001" element="_RqRY0GsfEfGS8rzupsGG6w" source="_LXwpYLZ4EeS6m7-8Vqqevw" target="_LXwpRLZ4EeS6m7-8Vqqevw">
+          <children xmi:type="notation:Node" xmi:id="_RqaiwGsfEfGS8rzupsGG6w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqaiwWsfEfGS8rzupsGG6w" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqaiwmsfEfGS8rzupsGG6w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rqaiw2sfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqaixGsfEfGS8rzupsGG6w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqaixWsfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_RqWRUWsfEfGS8rzupsGG6w" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_RqWRUmsfEfGS8rzupsGG6w" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RqWRU2sfEfGS8rzupsGG6w" points="[0, 0, -31, 220]$[31, -220, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Rqc_AGsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Rqc_AWsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Rqc_AmsfEfGS8rzupsGG6w" type="4001" element="_RqR_5GsfEfGS8rzupsGG6w" source="_LXm4abZ4EeS6m7-8Vqqevw" target="_LXwpS7Z4EeS6m7-8Vqqevw">
+          <children xmi:type="notation:Node" xmi:id="_Rqc_BmsfEfGS8rzupsGG6w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rqc_B2sfEfGS8rzupsGG6w" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqdmEGsfEfGS8rzupsGG6w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqdmEWsfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqdmEmsfEfGS8rzupsGG6w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqdmE2sfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Rqc_A2sfEfGS8rzupsGG6w" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Rqc_BGsfEfGS8rzupsGG6w" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Rqc_BWsfEfGS8rzupsGG6w" points="[0, 0, 16, 140]$[-16, -140, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RqdmFGsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RqdmFWsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_RqdmFmsfEfGS8rzupsGG6w" type="4001" element="_RqR_7WsfEfGS8rzupsGG6w" source="_LXwpZ7Z4EeS6m7-8Vqqevw" target="_LXwpRLZ4EeS6m7-8Vqqevw">
+          <children xmi:type="notation:Node" xmi:id="_RqdmGmsfEfGS8rzupsGG6w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqdmG2sfEfGS8rzupsGG6w" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqdmHGsfEfGS8rzupsGG6w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqdmHWsfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqdmHmsfEfGS8rzupsGG6w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqdmH2sfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_RqdmF2sfEfGS8rzupsGG6w" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_RqdmGGsfEfGS8rzupsGG6w" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RqdmGWsfEfGS8rzupsGG6w" points="[0, 0, 119, 220]$[-119, -220, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RqeNIGsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RqeNIWsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_RqeNImsfEfGS8rzupsGG6w" type="4001" element="_RqSm-GsfEfGS8rzupsGG6w" source="_LXwpZ7Z4EeS6m7-8Vqqevw" target="_LXm4abZ4EeS6m7-8Vqqevw">
+          <children xmi:type="notation:Node" xmi:id="_RqeNJmsfEfGS8rzupsGG6w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqeNJ2sfEfGS8rzupsGG6w" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqeNKGsfEfGS8rzupsGG6w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqeNKWsfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_RqeNKmsfEfGS8rzupsGG6w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RqeNK2sfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_RqeNI2sfEfGS8rzupsGG6w" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_RqeNJGsfEfGS8rzupsGG6w" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RqeNJWsfEfGS8rzupsGG6w" points="[0, 0, -51, 190]$[51, -190, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RqeNLGsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RqeNLWsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_9bfOgF0yEeWkZ_o8eLtPuQ" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -81403,7 +81403,7 @@
         <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Class']/@subNodeMappings[name='DT_Property']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0fLZ4EeS6m7-8Vqqevw" name="Passenger" outgoingEdges="_kreZoIoOEeaQmcRqIfTB6w _krgO0IoOEeaQmcRqIfTB6w" incomingEdges="_krZhIIoOEeaQmcRqIfTB6w">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0fLZ4EeS6m7-8Vqqevw" name="Passenger" outgoingEdges="_kreZoIoOEeaQmcRqIfTB6w _RqR_5GsfEfGS8rzupsGG6w" incomingEdges="_RqSm-GsfEfGS8rzupsGG6w">
       <target xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#69bc8e28-37ec-4b2b-b47d-0cfb9ea8e645"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#69bc8e28-37ec-4b2b-b47d-0cfb9ea8e645"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -81430,7 +81430,7 @@
         <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Class']/@subNodeMappings[name='DT_Property']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0grZ4EeS6m7-8Vqqevw" name="Cabin" outgoingEdges="_krHNQIoOEeaQmcRqIfTB6w _krSMYIoOEeaQmcRqIfTB6w" incomingEdges="_krWd0IoOEeaQmcRqIfTB6w">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0grZ4EeS6m7-8Vqqevw" name="Cabin" incomingEdges="_krWd0IoOEeaQmcRqIfTB6w _RqRY0GsfEfGS8rzupsGG6w _RqR_7WsfEfGS8rzupsGG6w">
       <target xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#8a3c3a57-1ff3-4d9e-845e-0e142c1ca7dc"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#8a3c3a57-1ff3-4d9e-845e-0e142c1ca7dc"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -81441,7 +81441,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Class']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0iLZ4EeS6m7-8Vqqevw" name="Aircraft" outgoingEdges="_krWd0IoOEeaQmcRqIfTB6w _krZhIIoOEeaQmcRqIfTB6w _krb9YIoOEeaQmcRqIfTB6w">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0iLZ4EeS6m7-8Vqqevw" name="Aircraft" outgoingEdges="_krWd0IoOEeaQmcRqIfTB6w _krb9YIoOEeaQmcRqIfTB6w" incomingEdges="_RqR_5GsfEfGS8rzupsGG6w">
       <target xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#67bd0af1-6242-4dec-aeef-3f54a7d8ba47"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#67bd0af1-6242-4dec-aeef-3f54a7d8ba47"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -81463,7 +81463,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Class']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0mrZ4EeS6m7-8Vqqevw" name="Speaker" incomingEdges="_krHNQIoOEeaQmcRqIfTB6w">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0mrZ4EeS6m7-8Vqqevw" name="Speaker" outgoingEdges="_RqRY0GsfEfGS8rzupsGG6w">
       <target xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#4bb53659-1f4f-4fc0-9eb6-8e6d7bec1415"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#4bb53659-1f4f-4fc0-9eb6-8e6d7bec1415"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -81474,7 +81474,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Class']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0oLZ4EeS6m7-8Vqqevw" name="Screen" incomingEdges="_krSMYIoOEeaQmcRqIfTB6w _krVPsIoOEeaQmcRqIfTB6w _krgO0IoOEeaQmcRqIfTB6w">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_LWQ0oLZ4EeS6m7-8Vqqevw" name="Screen" outgoingEdges="_RqR_7WsfEfGS8rzupsGG6w _RqSm-GsfEfGS8rzupsGG6w" incomingEdges="_krVPsIoOEeaQmcRqIfTB6w">
       <target xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#e3b6bcb8-d453-489f-afb1-3c7811acad55"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#e3b6bcb8-d453-489f-afb1-3c7811acad55"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -81520,34 +81520,6 @@
         <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Enumeration']/@subNodeMappings[name='DT_EnumerationLiteral']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_krHNQIoOEeaQmcRqIfTB6w" name="has" sourceNode="_LWQ0grZ4EeS6m7-8Vqqevw" targetNode="_LWQ0mrZ4EeS6m7-8Vqqevw" endLabel="[1..*] ">
-      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#0945715c-8c26-495b-ab84-8dd5f86ce7cb"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#0945715c-8c26-495b-ab84-8dd5f86ce7cb"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#bb86410b-c79c-45bb-8b0e-1ecd5c21e18c"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#87021491-c269-4df5-aeb4-1103a67a06d4"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_rVtW0PLLEeyLJcrwrmlbrg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
-        <customFeatures>routingStyle</customFeatures>
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.16/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_rVtW0fLLEeyLJcrwrmlbrg" showIcon="false"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_rVtW0_LLEeyLJcrwrmlbrg"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_rVtW0vLLEeyLJcrwrmlbrg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_krSMYIoOEeaQmcRqIfTB6w" name="has" sourceNode="_LWQ0grZ4EeS6m7-8Vqqevw" targetNode="_LWQ0oLZ4EeS6m7-8Vqqevw" endLabel="[1..*] ">
-      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#13f103e4-9abd-4b3d-bf89-3f1179a6123a"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#13f103e4-9abd-4b3d-bf89-3f1179a6123a"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#dfa7195b-5160-42d3-a3b0-c70100e053a3"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#183a0789-bb60-4597-87a5-28c98ce1b600"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_rVuk8PLLEeyLJcrwrmlbrg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
-        <customFeatures>routingStyle</customFeatures>
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.16/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_rVuk8fLLEeyLJcrwrmlbrg" showIcon="false"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_rVuk8_LLEeyLJcrwrmlbrg"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_rVuk8vLLEeyLJcrwrmlbrg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
-    </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_krVPsIoOEeaQmcRqIfTB6w" name="contains" sourceNode="_LWQ0cLZ4EeS6m7-8Vqqevw" targetNode="_LWQ0oLZ4EeS6m7-8Vqqevw">
       <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#e5bb2184-5036-4be1-b292-686444f0a580"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#e5bb2184-5036-4be1-b292-686444f0a580"/>
@@ -81573,20 +81545,6 @@
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_rVvzEfLLEeyLJcrwrmlbrg" showIcon="false"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_rVvzE_LLEeyLJcrwrmlbrg"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_rVvzEvLLEeyLJcrwrmlbrg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_krZhIIoOEeaQmcRqIfTB6w" name="transports" sourceNode="_LWQ0iLZ4EeS6m7-8Vqqevw" targetNode="_LWQ0fLZ4EeS6m7-8Vqqevw" endLabel="[1..*] ">
-      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#e7110273-d206-4ed1-8ea4-ea190fae610b"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#e7110273-d206-4ed1-8ea4-ea190fae610b"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#5c2368b4-6524-4dfb-95d7-f3782c99db41"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#1100bd27-bba2-4f69-916f-abb11b501f12"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_rVsIsPLLEeyLJcrwrmlbrg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
-        <customFeatures>routingStyle</customFeatures>
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.16/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_rVsIsfLLEeyLJcrwrmlbrg" showIcon="false"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_rVsIs_LLEeyLJcrwrmlbrg"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_rVsIsvLLEeyLJcrwrmlbrg" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
     </ownedDiagramElements>
@@ -81618,17 +81576,55 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_krgO0IoOEeaQmcRqIfTB6w" name="watches / plays with" sourceNode="_LWQ0fLZ4EeS6m7-8Vqqevw" targetNode="_LWQ0oLZ4EeS6m7-8Vqqevw">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RqRY0GsfEfGS8rzupsGG6w" name="has" sourceNode="_LWQ0mrZ4EeS6m7-8Vqqevw" targetNode="_LWQ0grZ4EeS6m7-8Vqqevw" beginLabel="[1..*] ">
+      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#0945715c-8c26-495b-ab84-8dd5f86ce7cb"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#0945715c-8c26-495b-ab84-8dd5f86ce7cb"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#bb86410b-c79c-45bb-8b0e-1ecd5c21e18c"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#87021491-c269-4df5-aeb4-1103a67a06d4"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RqRY0WsfEfGS8rzupsGG6w" sourceArrow="InputArrow" targetArrow="FillDiamond" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.9/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_RqRY0msfEfGS8rzupsGG6w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RqRY1GsfEfGS8rzupsGG6w"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_RqRY02sfEfGS8rzupsGG6w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RqR_5GsfEfGS8rzupsGG6w" name="transports" sourceNode="_LWQ0fLZ4EeS6m7-8Vqqevw" targetNode="_LWQ0iLZ4EeS6m7-8Vqqevw" beginLabel="[1..*] ">
+      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#e7110273-d206-4ed1-8ea4-ea190fae610b"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#e7110273-d206-4ed1-8ea4-ea190fae610b"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#5c2368b4-6524-4dfb-95d7-f3782c99db41"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#1100bd27-bba2-4f69-916f-abb11b501f12"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RqR_5WsfEfGS8rzupsGG6w" sourceArrow="InputArrow" targetArrow="FillDiamond" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.9/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_RqR_5msfEfGS8rzupsGG6w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RqR_6GsfEfGS8rzupsGG6w"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_RqR_52sfEfGS8rzupsGG6w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RqR_7WsfEfGS8rzupsGG6w" name="has" sourceNode="_LWQ0oLZ4EeS6m7-8Vqqevw" targetNode="_LWQ0grZ4EeS6m7-8Vqqevw" beginLabel="[1..*] ">
+      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#13f103e4-9abd-4b3d-bf89-3f1179a6123a"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#13f103e4-9abd-4b3d-bf89-3f1179a6123a"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#dfa7195b-5160-42d3-a3b0-c70100e053a3"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#183a0789-bb60-4597-87a5-28c98ce1b600"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RqSm8GsfEfGS8rzupsGG6w" sourceArrow="InputArrow" targetArrow="FillDiamond" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.9/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_RqSm8WsfEfGS8rzupsGG6w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RqSm82sfEfGS8rzupsGG6w"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_RqSm8msfEfGS8rzupsGG6w" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RqSm-GsfEfGS8rzupsGG6w" name="watches / plays with" sourceNode="_LWQ0oLZ4EeS6m7-8Vqqevw" targetNode="_LWQ0fLZ4EeS6m7-8Vqqevw">
       <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#b6564e56-0a50-4427-abb2-10f049f47d41"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#b6564e56-0a50-4427-abb2-10f049f47d41"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#d6847ad1-961e-4f48-819b-faed9aab278d"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#3c9604e6-329e-4706-97e3-321858d334bb"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_rVq6kPLLEeyLJcrwrmlbrg" routingStyle="manhattan" strokeColor="0,0,0">
-        <customFeatures>routingStyle</customFeatures>
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.0/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_rVq6kfLLEeyLJcrwrmlbrg" showIcon="false"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_rVq6k_LLEeyLJcrwrmlbrg"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_rVq6kvLLEeyLJcrwrmlbrg" showIcon="false"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RqSm-WsfEfGS8rzupsGG6w" sourceArrow="InputArrow" targetArrow="NoDecoration" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.1/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_RqSm-msfEfGS8rzupsGG6w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RqSm_GsfEfGS8rzupsGG6w"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_RqSm-2sfEfGS8rzupsGG6w" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
     </ownedDiagramElements>
@@ -81957,22 +81953,6 @@
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_pMd0I7hlEeSGCoMr1pYtYQ" points="[18, 37, 9, -118]$[18, 133, 9, -22]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_pMd0KrhlEeSGCoMr1pYtYQ" id="(0.5,0.5)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_0LX-LrZ-EeS6m7-8Vqqevw" type="4001" element="_ks7yMIoOEeaQmcRqIfTB6w" source="_wusbyLZ-EeS6m7-8Vqqevw" target="_0LO0K7Z-EeS6m7-8Vqqevw">
-          <children xmi:type="notation:Node" xmi:id="_0LX-MrZ-EeS6m7-8Vqqevw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GsJHAvLNEeyLJcrwrmlbrg" x="-45" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_0LX-NLZ-EeS6m7-8Vqqevw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EbhIM_LNEeyLJcrwrmlbrg" x="-16" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_0LX-NrZ-EeS6m7-8Vqqevw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EbhINPLNEeyLJcrwrmlbrg" x="-74" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_0LX-L7Z-EeS6m7-8Vqqevw" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_0LX-MLZ-EeS6m7-8Vqqevw" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_0LX-MbZ-EeS6m7-8Vqqevw" points="[21, 36, -791, -125]$[21, 164, -791, 3]$[689, 164, -123, 3]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0LX-OLZ-EeS6m7-8Vqqevw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_0LX-ObZ-EeS6m7-8Vqqevw" id="(0.5,0.8905696009747182)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_CTDvwLaSEeS6m7-8Vqqevw" type="4001" element="_ksmbAIoOEeaQmcRqIfTB6w" source="_wusbyLZ-EeS6m7-8Vqqevw" target="_6NjBMLaREeS6m7-8Vqqevw">
           <children xmi:type="notation:Node" xmi:id="_CTDvxLaSEeS6m7-8Vqqevw" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GsJHAfLNEeyLJcrwrmlbrg" x="18" y="-10"/>
@@ -82164,6 +82144,22 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_n0i--rhlEeSGCoMr1pYtYQ" id="(0.5,1.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_n0i--7hlEeSGCoMr1pYtYQ" id="(0.5,0.5)"/>
         </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Rtu8gGsfEfGS8rzupsGG6w" type="4001" element="_RttHVGsfEfGS8rzupsGG6w" source="_0LO0K7Z-EeS6m7-8Vqqevw" target="_wusbyLZ-EeS6m7-8Vqqevw">
+          <children xmi:type="notation:Node" xmi:id="_Rtu8hGsfEfGS8rzupsGG6w" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rtu8hWsfEfGS8rzupsGG6w" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Rtu8hmsfEfGS8rzupsGG6w" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rtu8h2sfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Rtu8iGsfEfGS8rzupsGG6w" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Rtu8iWsfEfGS8rzupsGG6w" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Rtu8gWsfEfGS8rzupsGG6w" jumpLinkStatus="Above" jumpLinkType="Tunnel"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Rtu8gmsfEfGS8rzupsGG6w" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Rtu8g2sfEfGS8rzupsGG6w" points="[0, 0, 810, 116]$[-810, -116, 0, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RtvjkGsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RtvjkWsfEfGS8rzupsGG6w" id="(0.5,0.5)"/>
+        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_9bfOgl0yEeWkZ_o8eLtPuQ" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -82262,7 +82258,7 @@
         <actualMapping xmi:type="description_2:NodeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Class']/@subNodeMappings[name='DT_Property']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wt804LZ-EeS6m7-8Vqqevw" name="Control Command" outgoingEdges="_ksmbAIoOEeaQmcRqIfTB6w _ks7yMIoOEeaQmcRqIfTB6w _ktCf4IoOEeaQmcRqIfTB6w" incomingEdges="_ksnCEIoOEeaQmcRqIfTB6w">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_wt804LZ-EeS6m7-8Vqqevw" name="Control Command" outgoingEdges="_ksmbAIoOEeaQmcRqIfTB6w _ktCf4IoOEeaQmcRqIfTB6w" incomingEdges="_ksnCEIoOEeaQmcRqIfTB6w _RttHVGsfEfGS8rzupsGG6w">
       <target xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#2a07f10a-8c7b-4065-8d35-bf2b540c8348"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#2a07f10a-8c7b-4065-8d35-bf2b540c8348"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -82327,7 +82323,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:ContainerMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@containerMappings[name='DT_Class']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_0KfNMLZ-EeS6m7-8Vqqevw" name="Movie" outgoingEdges="_kslz8IoOEeaQmcRqIfTB6w _ktADoIoOEeaQmcRqIfTB6w _ktDuAIoOEeaQmcRqIfTB6w" incomingEdges="_ksOAgIoOEeaQmcRqIfTB6w _ksPOoooOEeaQmcRqIfTB6w _ks7yMIoOEeaQmcRqIfTB6w _ks9nYIoOEeaQmcRqIfTB6w">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_0KfNMLZ-EeS6m7-8Vqqevw" name="Movie" outgoingEdges="_kslz8IoOEeaQmcRqIfTB6w _ktADoIoOEeaQmcRqIfTB6w _ktDuAIoOEeaQmcRqIfTB6w _RttHVGsfEfGS8rzupsGG6w" incomingEdges="_ksOAgIoOEeaQmcRqIfTB6w _ksPOoooOEeaQmcRqIfTB6w _ks9nYIoOEeaQmcRqIfTB6w">
       <target xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#6c858859-acc3-4f31-a6fc-0aee4f8c07d8"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Class" href="In-Flight%20Entertainment%20System.capella#6c858859-acc3-4f31-a6fc-0aee4f8c07d8"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -82650,20 +82646,6 @@
       </ownedStyle>
       <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Generalization']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ks7yMIoOEeaQmcRqIfTB6w" name=" " sourceNode="_wt804LZ-EeS6m7-8Vqqevw" targetNode="_0KfNMLZ-EeS6m7-8Vqqevw" endLabel="movie">
-      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#8768d20a-5360-480b-939b-0d9ad037e869"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#8768d20a-5360-480b-939b-0d9ad037e869"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#e57c09c1-5384-47e3-9a55-661c40433fc8"/>
-      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#b6b905e5-aa94-4612-ae68-02e956e5fd0a"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_EbGRcPLNEeyLJcrwrmlbrg" routingStyle="manhattan" strokeColor="0,0,0">
-        <customFeatures>routingStyle</customFeatures>
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.0/@style"/>
-        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_EbGRcfLNEeyLJcrwrmlbrg" showIcon="false"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_EbGRc_LNEeyLJcrwrmlbrg"/>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_EbGRcvLNEeyLJcrwrmlbrg" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
-    </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" uid="_ks9nYIoOEeaQmcRqIfTB6w" name=" " sourceNode="_oKTjYLZ_EeS6m7-8Vqqevw" targetNode="_0KfNMLZ-EeS6m7-8Vqqevw" endLabel="movie">
       <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#5c672ee8-f8e2-46ab-bf2c-e1f05ce3c965"/>
       <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#5c672ee8-f8e2-46ab-bf2c-e1f05ce3c965"/>
@@ -82731,6 +82713,19 @@
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_EbIGo_LNEeyLJcrwrmlbrg" showIcon="false"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_EbIGpfLNEeyLJcrwrmlbrg"/>
         <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_EbIGpPLNEeyLJcrwrmlbrg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_RttHVGsfEfGS8rzupsGG6w" name=" " sourceNode="_0KfNMLZ-EeS6m7-8Vqqevw" targetNode="_wt804LZ-EeS6m7-8Vqqevw" beginLabel="movie">
+      <target xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#8768d20a-5360-480b-939b-0d9ad037e869"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Association" href="In-Flight%20Entertainment%20System.capella#8768d20a-5360-480b-939b-0d9ad037e869"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#e57c09c1-5384-47e3-9a55-661c40433fc8"/>
+      <semanticElements xmi:type="org.polarsys.capella.core.data.information:Property" href="In-Flight%20Entertainment%20System.capella#b6b905e5-aa94-4612-ae68-02e956e5fd0a"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" uid="_RttHVWsfEfGS8rzupsGG6w" sourceArrow="InputArrow" targetArrow="NoDecoration" strokeColor="0,0,0">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']/@conditionnalStyles.1/@style"/>
+        <beginLabelStyle xmi:type="diagram:BeginLabelStyle" uid="_RttHVmsfEfGS8rzupsGG6w" showIcon="false"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_RttHWGsfEfGS8rzupsGG6w"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" uid="_RttHV2sfEfGS8rzupsGG6w" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_2:EdgeMapping" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Class%20Diagram%20Blank']/@defaultLayer/@edgeMappings[name='DT_Association']"/>
     </ownedDiagramElements>
