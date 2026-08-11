@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2021 Obeo.
+ * Copyright (c) 2021, 2026 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -55,7 +55,9 @@ import org.polarsys.capella.core.data.capellacore.PropertyValueGroup;
 import org.polarsys.capella.core.data.capellacore.Trace;
 import org.polarsys.capella.core.data.capellacore.Type;
 import org.polarsys.capella.core.data.cs.AbstractPathInvolvedElement;
+import org.polarsys.capella.core.data.cs.AbstractPhysicalLinkEnd;
 import org.polarsys.capella.core.data.cs.Component;
+import org.polarsys.capella.core.data.cs.DeployableElement;
 import org.polarsys.capella.core.data.cs.ExchangeItemAllocation;
 import org.polarsys.capella.core.data.cs.Interface;
 import org.polarsys.capella.core.data.cs.InterfaceImplementation;
@@ -97,12 +99,23 @@ import org.polarsys.capella.core.data.information.Collection;
 import org.polarsys.capella.core.data.information.ExchangeItem;
 import org.polarsys.capella.core.data.information.ExchangeItemElement;
 import org.polarsys.capella.core.data.information.ExchangeItemInstance;
+import org.polarsys.capella.core.data.information.MultiplicityElement;
 import org.polarsys.capella.core.data.information.Operation;
 import org.polarsys.capella.core.data.information.Parameter;
 import org.polarsys.capella.core.data.information.Port;
 import org.polarsys.capella.core.data.information.Property;
+import org.polarsys.capella.core.data.information.Union;
+import org.polarsys.capella.core.data.information.UnionProperty;
+import org.polarsys.capella.core.data.information.Unit;
 import org.polarsys.capella.core.data.information.communication.CommunicationLink;
+import org.polarsys.capella.core.data.information.datatype.DataType;
+import org.polarsys.capella.core.data.information.datatype.PhysicalQuantity;
+import org.polarsys.capella.core.data.information.datavalue.BinaryExpression;
 import org.polarsys.capella.core.data.information.datavalue.DataValue;
+import org.polarsys.capella.core.data.information.datavalue.EnumerationLiteral;
+import org.polarsys.capella.core.data.information.datavalue.LiteralBooleanValue;
+import org.polarsys.capella.core.data.information.datavalue.NumericValue;
+import org.polarsys.capella.core.data.information.datavalue.UnaryExpression;
 import org.polarsys.capella.core.data.interaction.AbstractCapability;
 import org.polarsys.capella.core.data.interaction.AbstractCapabilityExtend;
 import org.polarsys.capella.core.data.interaction.AbstractCapabilityGeneralization;
@@ -123,6 +136,7 @@ import org.polarsys.capella.core.data.oa.OperationalProcess;
 import org.polarsys.capella.core.data.oa.Role;
 import org.polarsys.capella.core.data.pa.PhysicalComponent;
 import org.polarsys.capella.core.data.pa.PhysicalFunction;
+import org.polarsys.capella.core.data.pa.deployment.PartDeploymentLink;
 import org.polarsys.kitalpha.emde.model.Element;
 
 /**
@@ -6659,7 +6673,7 @@ public class SemanticBrowserServices {
         }
     )
     // @formatter:on
-    // AbstractInformationFlow and FunctionalExchange
+    // TODO AbstractInformationFlow and FunctionalExchange
     public List<Object> getAllocatingExchanges(ExchangeItem value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.EIActiveInConnectionsAndExchanges()
                 .compute(value));
@@ -6875,4 +6889,446 @@ public class SemanticBrowserServices {
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of involving operational capabilities for the given OperationalActivity.",
+        params = {
+            @Param(name = "value", value = "the OperationalActivity")
+        },
+        result = "the Sequence of involving operational capabilities for the given OperationalActivity",
+        examples = {
+            @Example(expression = "myOperationalActivity.getInvolvingOperationalCapabilities()", result = "the Sequence of involving operational capabilities for the given OperationalActivity"),
+        }
+    )
+    // @formatter:on
+    public List<OperationalCapability> getInvolvingOperationalCapabilities(OperationalActivity value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalActivityInvolvingCapabilities()
+                        .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of related operational activities for the given StateFragment.",
+        params = {
+            @Param(name = "value", value = "the StateFragment")
+        },
+        result = "the Sequence of related operational activities for the given StateFragment",
+        examples = {
+            @Example(expression = "myStateFragment.getRelatedOperationalActivities()", result = "the Sequence of related operational activities for the given StateFragment"),
+        }
+    )
+    // @formatter:on
+    public List<AbstractFunction> getRelatedOperationalActivities(StateFragment value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.StateFragmentRelatedOperationalActivities()
+                        .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of referenced properties for the given ExchangeItemElement.",
+        params = {
+            @Param(name = "value", value = "the ExchangeItemElement")
+        },
+        result = "the Sequence of referenced properties for the given ExchangeItemElement",
+        examples = {
+            @Example(expression = "myExchangeItemElement.getReferencedProperties()", result = "the Sequence of referenced properties for the given ExchangeItemElement"),
+        }
+    )
+    // @formatter:on
+    public List<Property> getReferencedProperties(ExchangeItemElement value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.ExchangeItemElementReferencedProperties()
+                        .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of parent for the given ExchangeItemAllocation.",
+        params = {
+            @Param(name = "value", value = "the ExchangeItemAllocation")
+        },
+        result = "the Sequence of parent for the given ExchangeItemAllocation",
+        examples = {
+            @Example(expression = "myExchangeItemAllocation.getParent()", result = "the Sequence of parent for the given ExchangeItemAllocation"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getParent(ExchangeItemAllocation value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of parent for the given EnumerationLiteral.",
+        params = {
+            @Param(name = "value", value = "the EnumerationLiteral")
+        },
+        result = "the Sequence of parent for the given EnumerationLiteral",
+        examples = {
+            @Example(expression = "myEnumerationLiteral.getParent()", result = "the Sequence of parent for the given EnumerationLiteral"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getParent(EnumerationLiteral value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
+    }
+
+    public List<DataValue> getDomainValue(EnumerationLiteral value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.EnumerationLiteralDomainValue()
+                .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of parent for the given LiteralBooleanValue.",
+        params = {
+            @Param(name = "value", value = "the LiteralBooleanValue")
+        },
+        result = "the Sequence of parent for the given LiteralBooleanValue",
+        examples = {
+            @Example(expression = "myLiteralBooleanValue.getParent()", result = "the Sequence of parent for the given LiteralBooleanValue"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getParent(LiteralBooleanValue value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
+    }
+
+    public List<DataValue> getLeftOperand(BinaryExpression value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.BinaryExpressionLeftOperand()
+                .compute(value));
+    }
+
+    public List<DataValue> getRightOperand(BinaryExpression value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.BinaryExpressionRightOperand()
+                .compute(value));
+    }
+
+    public List<DataValue> getOperand(UnaryExpression value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.UnaryExpressionOperand().compute(value));
+    }
+
+    public List<DataValue> getDefaultValue(MultiplicityElement value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementDefaultValue()
+                .compute(value));
+    }
+
+    public List<NumericValue> getMaxCard(MultiplicityElement value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMaxCard()
+                .compute(value));
+    }
+
+    public List<NumericValue> getMaxLength(MultiplicityElement value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMaxLength()
+                .compute(value));
+    }
+
+    public List<DataValue> getMax(MultiplicityElement value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMax().compute(value));
+    }
+
+    public List<NumericValue> getMinCard(MultiplicityElement value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMinCard()
+                .compute(value));
+    }
+
+    public List<NumericValue> getMinLength(MultiplicityElement value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMinLength()
+                .compute(value));
+    }
+
+    public List<DataValue> getMin(MultiplicityElement value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMin().compute(value));
+    }
+
+    public List<DataValue> getNull(MultiplicityElement value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementNull().compute(value));
+    }
+
+    // TODO AbstractEnumerationValue and NumericValue
+    public List<EObject> getMinValue(DataType value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMinValue().compute(value));
+    }
+
+    // TODO AbstractEnumerationValue or NumericValue
+    public List<EObject> getMaxValue(DataType value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMaxValue().compute(value));
+    }
+
+    public List<DataValue> getNullValue(DataType value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsNullValue()
+                .compute(value));
+    }
+
+    public List<DataType> getDomainType(DataType value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsDomainType()
+                .compute(value));
+    }
+
+    public List<NumericValue> getMaxLength(DataType value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMaxLength()
+                .compute(value));
+    }
+
+    public List<NumericValue> getMinLength(DataType value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMinLength()
+                .compute(value));
+    }
+
+    public List<Component> getConnectedNodeComponents(PhysicalLink value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinkEndsOwningComponents()
+                .compute(value));
+    }
+
+    public List<AbstractPhysicalLinkEnd> getEnds(PhysicalLink value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinkEnds().compute(value));
+    }
+
+    public List<PhysicalLink> getPhysicalLinks(PhysicalPort value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPortPhysicalLinks()
+                .compute(value));
+    }
+
+    public List<Entity> getConnectedEntities(CommunicationMean value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Connection_connectedEntities()
+                .compute(value));
+    }
+
+    public List<AbstractFunction> getConnectedFunctions(FunctionalExchange value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Connection_connectedFunctions()
+                .compute(value));
+    }
+
+    public List<AbstractFunction> getConnectedOperationalActivities(FunctionalExchange value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.Connection_connectedOperationalActivities()
+                        .compute(value));
+    }
+
+    public List<AbstractType> getInvolvedNodeComponents(PhysicalPath value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPath_PhysicalComponents()
+                .compute(value));
+    }
+
+    public List<InvolvedElement> getExternalReferencedOperationalProcesses(AbstractCapability value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalCapability_ExternalReferencedOperationalProcesses()
+                        .compute(value));
+    }
+
+    public List<InvolvedElement> getExternalReferencedFunctionalChains(AbstractCapability value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.AbstractCapability_ExternalReferencedFunctionalChains()
+                        .compute(value));
+    }
+
+    public List<Scenario> getExternalReferencedScenarios(AbstractCapability value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.AbstractCapability_ExternalReferencedScenarios()
+                        .compute(value));
+    }
+
+    public List<DeployableElement> getDeployedPart(PartDeploymentLink value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PartDeploymentLink_deployedPart()
+                .compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of parent for the given Operation.",
+        params = {
+            @Param(name = "value", value = "the Operation")
+        },
+        result = "the Sequence of parent for the given Operation",
+        examples = {
+            @Example(expression = "myOperation.getParent()", result = "the Sequence of parent for the given Operation"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getParent(Operation value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
+    }
+
+    public List<Parameter> getParameters(Operation value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationParameters().compute(value));
+    }
+
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of parent for the given Parameter.",
+        params = {
+            @Param(name = "value", value = "the Parameter")
+        },
+        result = "the Sequence of parent for the given Parameter",
+        examples = {
+            @Example(expression = "myParameter.getParent()", result = "the Sequence of parent for the given Parameter"),
+        }
+    )
+    // @formatter:on
+    public List<EObject> getParent(Parameter value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
+    }
+
+    public List<UnionProperty> getDiscriminant(Union value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.UnionDiscriminant().compute(value));
+    }
+
+    public List<UnionProperty> getDefaultProperty(Union value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.UnionDefaultProperty().compute(value));
+    }
+
+    public List<Property> getProperties(org.polarsys.capella.core.data.information.Class value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.ClassProperties().compute(value));
+    }
+
+    public List<Operation> getOperations(org.polarsys.capella.core.data.information.Class value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.ClassOperations().compute(value));
+    }
+
+    public List<Property> getProperties(Collection value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CollectionProperties().compute(value));
+    }
+
+    public List<Operation> getOperations(Collection value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CollectionOperations().compute(value));
+    }
+
+    public List<DataType> getIndexes(Collection value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.CollectionIndexes().compute(value));
+    }
+
+    public List<DataType> getRealizedDatatypes(DataType value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeRealizedInformation()
+                .compute(value));
+    }
+
+    public List<DataType> getRealizingDatatypes(DataType value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeRealizingInformation()
+                .compute(value));
+    }
+
+    public List<DataValue> getDefaultValue(DataType value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeDefaultValue().compute(value));
+    }
+
+    public List<Unit> getUnit(PhysicalQuantity value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalQuantityUnit().compute(value));
+    }
+
+    public List<Unit> getUnit(NumericValue value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.NumericValueUnit().compute(value));
+    }
+
+    public List<Type> getType(DataValue value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataValueType().compute(value));
+    }
+
+    public List<PhysicalQuantity> getPhysicalQuantities(Unit value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.UnitReferencingPhysicalQuantities()
+                .compute(value));
+    }
+
+    public List<NumericValue> getNumericValues(Unit value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.UnitReferencingNumericValues()
+                .compute(value));
+    }
+
+    public List<AbstractFunction> getInvolvedOperationalActivities(FunctionalChain value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessFlatOperationalActivities()
+                        .compute(value));
+    }
+
+    public List<FunctionalExchange> getInvolvedExchanges(FunctionalChain value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainFlatExchanges()
+                .compute(value));
+    }
+
+    public List<FunctionalExchange> getInvolvedInteractions(FunctionalChain value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessFlatInteractions()
+                        .compute(value));
+    }
+
+    public List<InvolvedElement> getStartingFunctions(FunctionalChain value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainStartingFunctions()
+                .compute(value));
+    }
+
+    public List<InvolvedElement> getStartingOperationalActivities(FunctionalChain value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessStartingOperationalActivities()
+                        .compute(value));
+    }
+
+    public List<InvolvedElement> getEndingFunctions(FunctionalChain value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainEndingFunctions()
+                .compute(value));
+    }
+
+    public List<InvolvedElement> getEndingOperationalActivities(FunctionalChain value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessEndingOperationalActivities()
+                        .compute(value));
+    }
+
+    public List<FunctionalChainInvolvement> getExternalReferencedFunctionalChains(FunctionalChain value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChain_ExternalReferencedFunctionalChains()
+                        .compute(value));
+    }
+
+    public List<FunctionalChainInvolvement> getExternalReferencedOperationalProcesses(FunctionalChain value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcess_ExternalReferencedOperationalProcesses()
+                        .compute(value));
+    }
+
+    // TODO AbstractType and AbstractInstance
+    public List<Object> getRepresentedInstances(Scenario value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RepresentedInstances()
+                .compute(value));
+    }
+
+    public List<SequenceMessage> getInvokedMessages(Scenario value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_InvokedMessages().compute(value));
+    }
+
+    public List<AbstractState> getRelatedStates(Scenario value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RelatedStates().compute(value));
+    }
+
+    public List<AbstractFunction> getRelatedFunctions(Scenario value) {
+        return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RelatedFunctions()
+                .compute(value));
+    }
+
+    public List<AbstractFunction> getRelatedOperationalActivities(Scenario value) {
+        return castList(
+                new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RelatedOperationalActivities()
+                        .compute(value));
+    }
 }
