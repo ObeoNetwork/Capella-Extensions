@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella M2Doc Extension SDK" sequenceNumber="1779455555">
+<target name="Capella M2Doc Extension SDK" sequenceNumber="1786372320">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -48,12 +48,7 @@
       <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
       <unit id="com.ibm.icu" version="0.0.0"/>
       <unit id="org.eclipse.viatra.query.runtime.feature.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.xtext.xbase.lib.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.jgit.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.egit.source.feature.group" version="0.0.0"/>
-      <unit id="org.apache.log4j" version="0.0.0"/>
       <unit id="org.apache.commons.lang" version="0.0.0"/>
-      <unit id="com.google.guava" version="0.0.0"/>
       <unit id="org.eclipse.platform.sdk" version="0.0.0"/>
       <unit id="org.eclipse.equinox.core.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.core.runtime" version="0.0.0"/>
@@ -89,11 +84,27 @@
       <repository id="Mylyn-3.26" location="https://download.eclipse.org/mylyn/releases/3.26/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.slf4j.api" version="0.0.0"/>
-      <unit id="ch.qos.logback.slf4j" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.xbase.lib.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
+      <repository id="xtext" location="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.34.0/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.emf.mwe2.language.sdk.feature.group" version="0.0.0"/>
+      <repository id="mwe" location="https://download.eclipse.org/modeling/emft/mwe/updates/releases/2.17.0/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.jgit.source.feature.group" version="6.6.1.202309021850-r"/>
+      <unit id="org.eclipse.egit.source.feature.group" version="6.6.1.202309021850-r"/>
+      <repository id="egit" location="https://archive.eclipse.org/egit/updates-6.6.1"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="slf4j.api" version="0.0.0"/>
       <unit id="ch.qos.logback.classic" version="0.0.0"/>
       <unit id="ch.qos.logback.core" version="0.0.0"/>
-      <repository id="Orbit-2023-03" location="https://download.eclipse.org/tools/orbit/downloads/drops/R20230302014618/repository/"/>
+      <unit id="org.apache.aries.spifly.dynamic.bundle" version="0.0.0"/>
+      <unit id="org.apache.log4j" version="0.0.0"/>
+      <unit id="com.google.guava" version="0.0.0"/>
+      <repository id="orbit" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/release/4.40.0"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.sirius.doc.feature.feature.group" version="0.0.0"/>
@@ -104,9 +115,13 @@
       <unit id="org.eclipse.sirius.interpreter.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.acceleo.ui.interpreter.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.aql.source.feature.group" version="0.0.0"/>
-      <unit id="org.eclipse.acceleo.query.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.sirius.runtime.ide.ui.acceleo.source.feature.group" version="0.0.0"/>
-      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/7.4.5/2023-03/"/>
+      <unit id="org.eclipse.sirius.diagram.elk.feature.source.feature.group" version="0.0.0"/>
+      <repository id="sirius" location="https://download.eclipse.org/sirius/updates/releases/7.4.14/2023-03"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.acceleo.query.source.feature.group" version="7.0.0.202402190857"/>
+      <repository id="acceleo" location="https://download.eclipse.org/acceleo/updates/releases/3.7/R202402190857/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.kitalpha.ad.runtime.feature.source.feature.group" version="0.0.0"/>
@@ -130,7 +145,7 @@
       <unit id="org.polarsys.kitalpha.richtext.widget.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.richtext.widget.ext.feature.source.feature.group" version="0.0.0"/>
       <unit id="org.polarsys.kitalpha.transposer.feature.source.feature.group" version="0.0.0"/>
-      <unit id="org.polarsys.kitalpha.sirius.rotativeimage.feature.feature.group" version="0.0.0"/>
+      <unit id="org.polarsys.kitalpha.sirius.rotativeimage.feature.source.feature.group" version="0.0.0"/>
       <repository id="kitalpha-runtime-core-master" location="https://download.eclipse.org/kitalpha/updates/releases/runtime/7.0.1/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -169,7 +184,7 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.polarsys.capella.core.feature.feature.group" version="0.0.0"/>
-      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/7.0.1/org.polarsys.capella.rcp.site/"/>
+      <repository id="site_Capella" location="https://download.eclipse.org/capella/core/updates/releases/7.1.0/org.polarsys.capella.rcp.site/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.kohsuke.args4j" version="2.0.21.v201301150030"/>
@@ -184,10 +199,6 @@
       <unit id="org.eclipse.emf.cdo.sdk.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.net4j.feature.group" version="0.0.0"/>
       <repository id="CDO" location="https://download.eclipse.org/modeling/emf/cdo/drops/R20230307-0126/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.xtext.sdk.feature.group" version="2.30.0.v20230227-1344"/>
-      <repository id="XText" location="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.30.0/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.obeonetwork.m2doc.feature.feature.group" version="0.0.0"/>
