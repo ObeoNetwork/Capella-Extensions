@@ -6977,6 +6977,18 @@ public class SemanticBrowserServices {
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of domain value for the given EnumerationLiteral.",
+        params = {
+            @Param(name = "value", value = "the EnumerationLiteral")
+        },
+        result = "the Sequence of domain value for the given EnumerationLiteral",
+        examples = {
+            @Example(expression = "myEnumerationLiteral.getDomainValue()", result = "the Sequence of domain value for the given EnumerationLiteral"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getDomainValue(EnumerationLiteral value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.EnumerationLiteralDomainValue()
                 .compute(value));
@@ -6999,146 +7011,482 @@ public class SemanticBrowserServices {
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of left operand for the given BinaryExpression.",
+        params = {
+            @Param(name = "value", value = "the BinaryExpression")
+        },
+        result = "the Sequence of left operand for the given BinaryExpression",
+        examples = {
+            @Example(expression = "myBinaryExpression.getLeftOperand()", result = "the Sequence of left operand for the given BinaryExpression"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getLeftOperand(BinaryExpression value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.BinaryExpressionLeftOperand()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of right operand for the given BinaryExpression.",
+        params = {
+            @Param(name = "value", value = "the BinaryExpression")
+        },
+        result = "the Sequence of right operand for the given BinaryExpression",
+        examples = {
+            @Example(expression = "myBinaryExpression.getRightOperand()", result = "the Sequence of right operand for the given BinaryExpression"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getRightOperand(BinaryExpression value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.BinaryExpressionRightOperand()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of operand for the given UnaryExpression.",
+        params = {
+            @Param(name = "value", value = "the UnaryExpression")
+        },
+        result = "the Sequence of operand for the given UnaryExpression",
+        examples = {
+            @Example(expression = "myUnaryExpression.getOperand()", result = "the Sequence of operand for the given UnaryExpression"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getOperand(UnaryExpression value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.UnaryExpressionOperand().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of default value for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of default value for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getDefaultValue()", result = "the Sequence of default value for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getDefaultValue(MultiplicityElement value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementDefaultValue()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of max card for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of max card for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getMaxCard()", result = "the Sequence of max card for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<NumericValue> getMaxCard(MultiplicityElement value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMaxCard()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of max length for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of max length for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getMaxLength()", result = "the Sequence of max length for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<NumericValue> getMaxLength(MultiplicityElement value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMaxLength()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of max for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of max for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getMax()", result = "the Sequence of max for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getMax(MultiplicityElement value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMax().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of min card for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of min card for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getMinCard()", result = "the Sequence of min card for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<NumericValue> getMinCard(MultiplicityElement value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMinCard()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of min length for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of min length for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getMinLength()", result = "the Sequence of min length for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<NumericValue> getMinLength(MultiplicityElement value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMinLength()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of min for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of min for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getMin()", result = "the Sequence of min for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getMin(MultiplicityElement value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementMin().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of null for the given MultiplicityElement.",
+        params = {
+            @Param(name = "value", value = "the MultiplicityElement")
+        },
+        result = "the Sequence of null for the given MultiplicityElement",
+        examples = {
+            @Example(expression = "myMultiplicityElement.getNull()", result = "the Sequence of null for the given MultiplicityElement"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getNull(MultiplicityElement value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.MultiplicityElementNull().compute(value));
     }
 
     // TODO AbstractEnumerationValue and NumericValue
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of min value for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of min value for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getMinValue()", result = "the Sequence of min value for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<EObject> getMinValue(DataType value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMinValue().compute(value));
     }
 
     // TODO AbstractEnumerationValue or NumericValue
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of max value for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of max value for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getMaxValue()", result = "the Sequence of max value for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<EObject> getMaxValue(DataType value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMaxValue().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of null value for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of null value for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getNullValue()", result = "the Sequence of null value for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getNullValue(DataType value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsNullValue()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of domain type for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of domain type for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getDomainType()", result = "the Sequence of domain type for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<DataType> getDomainType(DataType value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsDomainType()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of max length for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of max length for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getMaxLength()", result = "the Sequence of max length for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<NumericValue> getMaxLength(DataType value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMaxLength()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of min length for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of min length for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getMinLength()", result = "the Sequence of min length for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<NumericValue> getMinLength(DataType value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeElementsMinLength()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of connected node components for the given PhysicalLink.",
+        params = {
+            @Param(name = "value", value = "the PhysicalLink")
+        },
+        result = "the Sequence of connected node components for the given PhysicalLink",
+        examples = {
+            @Example(expression = "myPhysicalLink.getConnectedNodeComponents()", result = "the Sequence of connected node components for the given PhysicalLink"),
+        }
+    )
+    // @formatter:on
     public List<Component> getConnectedNodeComponents(PhysicalLink value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinkEndsOwningComponents()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of ends for the given PhysicalLink.",
+        params = {
+            @Param(name = "value", value = "the PhysicalLink")
+        },
+        result = "the Sequence of ends for the given PhysicalLink",
+        examples = {
+            @Example(expression = "myPhysicalLink.getEnds()", result = "the Sequence of ends for the given PhysicalLink"),
+        }
+    )
+    // @formatter:on
     public List<AbstractPhysicalLinkEnd> getEnds(PhysicalLink value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalLinkEnds().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of physical links for the given PhysicalPort.",
+        params = {
+            @Param(name = "value", value = "the PhysicalPort")
+        },
+        result = "the Sequence of physical links for the given PhysicalPort",
+        examples = {
+            @Example(expression = "myPhysicalPort.getPhysicalLinks()", result = "the Sequence of physical links for the given PhysicalPort"),
+        }
+    )
+    // @formatter:on
     public List<PhysicalLink> getPhysicalLinks(PhysicalPort value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPortPhysicalLinks()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of connected entities for the given CommunicationMean.",
+        params = {
+            @Param(name = "value", value = "the CommunicationMean")
+        },
+        result = "the Sequence of connected entities for the given CommunicationMean",
+        examples = {
+            @Example(expression = "myCommunicationMean.getConnectedEntities()", result = "the Sequence of connected entities for the given CommunicationMean"),
+        }
+    )
+    // @formatter:on
     public List<Entity> getConnectedEntities(CommunicationMean value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Connection_connectedEntities()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of connected functions for the given FunctionalExchange.",
+        params = {
+            @Param(name = "value", value = "the FunctionalExchange")
+        },
+        result = "the Sequence of connected functions for the given FunctionalExchange",
+        examples = {
+            @Example(expression = "myFunctionalExchange.getConnectedFunctions()", result = "the Sequence of connected functions for the given FunctionalExchange"),
+        }
+    )
+    // @formatter:on
     public List<AbstractFunction> getConnectedFunctions(FunctionalExchange value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Connection_connectedFunctions()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of connected operational activities for the given FunctionalExchange.",
+        params = {
+            @Param(name = "value", value = "the FunctionalExchange")
+        },
+        result = "the Sequence of connected operational activities for the given FunctionalExchange",
+        examples = {
+            @Example(expression = "myFunctionalExchange.getConnectedOperationalActivities()", result = "the Sequence of connected operational activities for the given FunctionalExchange"),
+        }
+    )
+    // @formatter:on
     public List<AbstractFunction> getConnectedOperationalActivities(FunctionalExchange value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.Connection_connectedOperationalActivities()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of involved node components for the given PhysicalPath.",
+        params = {
+            @Param(name = "value", value = "the PhysicalPath")
+        },
+        result = "the Sequence of involved node components for the given PhysicalPath",
+        examples = {
+            @Example(expression = "myPhysicalPath.getInvolvedNodeComponents()", result = "the Sequence of involved node components for the given PhysicalPath"),
+        }
+    )
+    // @formatter:on
     public List<AbstractType> getInvolvedNodeComponents(PhysicalPath value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalPath_PhysicalComponents()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of external referenced operational processes for the given AbstractCapability.",
+        params = {
+            @Param(name = "value", value = "the AbstractCapability")
+        },
+        result = "the Sequence of external referenced operational processes for the given AbstractCapability",
+        examples = {
+            @Example(expression = "myAbstractCapability.getExternalReferencedOperationalProcesses()", result = "the Sequence of external referenced operational processes for the given AbstractCapability"),
+        }
+    )
+    // @formatter:on
     public List<InvolvedElement> getExternalReferencedOperationalProcesses(AbstractCapability value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalCapability_ExternalReferencedOperationalProcesses()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of external referenced functional chains for the given AbstractCapability.",
+        params = {
+            @Param(name = "value", value = "the AbstractCapability")
+        },
+        result = "the Sequence of external referenced functional chains for the given AbstractCapability",
+        examples = {
+            @Example(expression = "myAbstractCapability.getExternalReferencedFunctionalChains()", result = "the Sequence of external referenced functional chains for the given AbstractCapability"),
+        }
+    )
+    // @formatter:on
     public List<InvolvedElement> getExternalReferencedFunctionalChains(AbstractCapability value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.AbstractCapability_ExternalReferencedFunctionalChains()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of external referenced scenarios for the given AbstractCapability.",
+        params = {
+            @Param(name = "value", value = "the AbstractCapability")
+        },
+        result = "the Sequence of external referenced scenarios for the given AbstractCapability",
+        examples = {
+            @Example(expression = "myAbstractCapability.getExternalReferencedScenarios()", result = "the Sequence of external referenced scenarios for the given AbstractCapability"),
+        }
+    )
+    // @formatter:on
     public List<Scenario> getExternalReferencedScenarios(AbstractCapability value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.AbstractCapability_ExternalReferencedScenarios()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of deployed part for the given PartDeploymentLink.",
+        params = {
+            @Param(name = "value", value = "the PartDeploymentLink")
+        },
+        result = "the Sequence of deployed part for the given PartDeploymentLink",
+        examples = {
+            @Example(expression = "myPartDeploymentLink.getDeployedPart()", result = "the Sequence of deployed part for the given PartDeploymentLink"),
+        }
+    )
+    // @formatter:on
     public List<DeployableElement> getDeployedPart(PartDeploymentLink value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.PartDeploymentLink_deployedPart()
                 .compute(value));
@@ -7161,6 +7509,18 @@ public class SemanticBrowserServices {
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of parameters for the given Operation.",
+        params = {
+            @Param(name = "value", value = "the Operation")
+        },
+        result = "the Sequence of parameters for the given Operation",
+        examples = {
+            @Example(expression = "myOperation.getParameters()", result = "the Sequence of parameters for the given Operation"),
+        }
+    )
+    // @formatter:on
     public List<Parameter> getParameters(Operation value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.OperationParameters().compute(value));
@@ -7183,122 +7543,410 @@ public class SemanticBrowserServices {
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CapellaElementParent().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of discriminant for the given Union.",
+        params = {
+            @Param(name = "value", value = "the Union")
+        },
+        result = "the Sequence of discriminant for the given Union",
+        examples = {
+            @Example(expression = "myUnion.getDiscriminant()", result = "the Sequence of discriminant for the given Union"),
+        }
+    )
+    // @formatter:on
     public List<UnionProperty> getDiscriminant(Union value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.UnionDiscriminant().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of default property for the given Union.",
+        params = {
+            @Param(name = "value", value = "the Union")
+        },
+        result = "the Sequence of default property for the given Union",
+        examples = {
+            @Example(expression = "myUnion.getDefaultProperty()", result = "the Sequence of default property for the given Union"),
+        }
+    )
+    // @formatter:on
     public List<UnionProperty> getDefaultProperty(Union value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.UnionDefaultProperty().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of properties for the given Class.",
+        params = {
+            @Param(name = "value", value = "the Class")
+        },
+        result = "the Sequence of properties for the given Class",
+        examples = {
+            @Example(expression = "myClass.getProperties()", result = "the Sequence of properties for the given Class"),
+        }
+    )
+    // @formatter:on
     public List<Property> getProperties(org.polarsys.capella.core.data.information.Class value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.ClassProperties().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of operations for the given Class.",
+        params = {
+            @Param(name = "value", value = "the Class")
+        },
+        result = "the Sequence of operations for the given Class",
+        examples = {
+            @Example(expression = "myClass.getOperations()", result = "the Sequence of operations for the given Class"),
+        }
+    )
+    // @formatter:on
     public List<Operation> getOperations(org.polarsys.capella.core.data.information.Class value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.ClassOperations().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of properties for the given Collection.",
+        params = {
+            @Param(name = "value", value = "the Collection")
+        },
+        result = "the Sequence of properties for the given Collection",
+        examples = {
+            @Example(expression = "myCollection.getProperties()", result = "the Sequence of properties for the given Collection"),
+        }
+    )
+    // @formatter:on
     public List<Property> getProperties(Collection value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CollectionProperties().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of operations for the given Collection.",
+        params = {
+            @Param(name = "value", value = "the Collection")
+        },
+        result = "the Sequence of operations for the given Collection",
+        examples = {
+            @Example(expression = "myCollection.getOperations()", result = "the Sequence of operations for the given Collection"),
+        }
+    )
+    // @formatter:on
     public List<Operation> getOperations(Collection value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CollectionOperations().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of indexes for the given Collection.",
+        params = {
+            @Param(name = "value", value = "the Collection")
+        },
+        result = "the Sequence of indexes for the given Collection",
+        examples = {
+            @Example(expression = "myCollection.getIndexes()", result = "the Sequence of indexes for the given Collection"),
+        }
+    )
+    // @formatter:on
     public List<DataType> getIndexes(Collection value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.CollectionIndexes().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of realized datatypes for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of realized datatypes for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getRealizedDatatypes()", result = "the Sequence of realized datatypes for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<DataType> getRealizedDatatypes(DataType value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeRealizedInformation()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of realizing datatypes for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of realizing datatypes for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getRealizingDatatypes()", result = "the Sequence of realizing datatypes for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<DataType> getRealizingDatatypes(DataType value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeRealizingInformation()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of default value for the given DataType.",
+        params = {
+            @Param(name = "value", value = "the DataType")
+        },
+        result = "the Sequence of default value for the given DataType",
+        examples = {
+            @Example(expression = "myDataType.getDefaultValue()", result = "the Sequence of default value for the given DataType"),
+        }
+    )
+    // @formatter:on
     public List<DataValue> getDefaultValue(DataType value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.DataTypeDefaultValue().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of unit for the given PhysicalQuantity.",
+        params = {
+            @Param(name = "value", value = "the PhysicalQuantity")
+        },
+        result = "the Sequence of unit for the given PhysicalQuantity",
+        examples = {
+            @Example(expression = "myPhysicalQuantity.getUnit()", result = "the Sequence of unit for the given PhysicalQuantity"),
+        }
+    )
+    // @formatter:on
     public List<Unit> getUnit(PhysicalQuantity value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.PhysicalQuantityUnit().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of unit for the given NumericValue.",
+        params = {
+            @Param(name = "value", value = "the NumericValue")
+        },
+        result = "the Sequence of unit for the given NumericValue",
+        examples = {
+            @Example(expression = "myNumericValue.getUnit()", result = "the Sequence of unit for the given NumericValue"),
+        }
+    )
+    // @formatter:on
     public List<Unit> getUnit(NumericValue value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.NumericValueUnit().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of type for the given DataValue.",
+        params = {
+            @Param(name = "value", value = "the DataValue")
+        },
+        result = "the Sequence of type for the given DataValue",
+        examples = {
+            @Example(expression = "myDataValue.getType()", result = "the Sequence of type for the given DataValue"),
+        }
+    )
+    // @formatter:on
     public List<Type> getType(DataValue value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.DataValueType().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of physical quantities for the given Unit.",
+        params = {
+            @Param(name = "value", value = "the Unit")
+        },
+        result = "the Sequence of physical quantities for the given Unit",
+        examples = {
+            @Example(expression = "myUnit.getPhysicalQuantities()", result = "the Sequence of physical quantities for the given Unit"),
+        }
+    )
+    // @formatter:on
     public List<PhysicalQuantity> getPhysicalQuantities(Unit value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.UnitReferencingPhysicalQuantities()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of numeric values for the given Unit.",
+        params = {
+            @Param(name = "value", value = "the Unit")
+        },
+        result = "the Sequence of numeric values for the given Unit",
+        examples = {
+            @Example(expression = "myUnit.getNumericValues()", result = "the Sequence of numeric values for the given Unit"),
+        }
+    )
+    // @formatter:on
     public List<NumericValue> getNumericValues(Unit value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.UnitReferencingNumericValues()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of involved operational activities for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of involved operational activities for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getInvolvedOperationalActivities()", result = "the Sequence of involved operational activities for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<AbstractFunction> getInvolvedOperationalActivities(FunctionalChain value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessFlatOperationalActivities()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of involved exchanges for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of involved exchanges for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getInvolvedExchanges()", result = "the Sequence of involved exchanges for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<FunctionalExchange> getInvolvedExchanges(FunctionalChain value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainFlatExchanges()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of involved interactions for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of involved interactions for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getInvolvedInteractions()", result = "the Sequence of involved interactions for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<FunctionalExchange> getInvolvedInteractions(FunctionalChain value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessFlatInteractions()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of starting functions for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of starting functions for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getStartingFunctions()", result = "the Sequence of starting functions for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<InvolvedElement> getStartingFunctions(FunctionalChain value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainStartingFunctions()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of starting operational activities for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of starting operational activities for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getStartingOperationalActivities()", result = "the Sequence of starting operational activities for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<InvolvedElement> getStartingOperationalActivities(FunctionalChain value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessStartingOperationalActivities()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of ending functions for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of ending functions for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getEndingFunctions()", result = "the Sequence of ending functions for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<InvolvedElement> getEndingFunctions(FunctionalChain value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChainEndingFunctions()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of ending operational activities for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of ending operational activities for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getEndingOperationalActivities()", result = "the Sequence of ending operational activities for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<InvolvedElement> getEndingOperationalActivities(FunctionalChain value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcessEndingOperationalActivities()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of external referenced functional chains for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of external referenced functional chains for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getExternalReferencedFunctionalChains()", result = "the Sequence of external referenced functional chains for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<FunctionalChainInvolvement> getExternalReferencedFunctionalChains(FunctionalChain value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.FunctionalChain_ExternalReferencedFunctionalChains()
                         .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of external referenced operational processes for the given FunctionalChain.",
+        params = {
+            @Param(name = "value", value = "the FunctionalChain")
+        },
+        result = "the Sequence of external referenced operational processes for the given FunctionalChain",
+        examples = {
+            @Example(expression = "myFunctionalChain.getExternalReferencedOperationalProcesses()", result = "the Sequence of external referenced operational processes for the given FunctionalChain"),
+        }
+    )
+    // @formatter:on
     public List<FunctionalChainInvolvement> getExternalReferencedOperationalProcesses(FunctionalChain value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.OperationalProcess_ExternalReferencedOperationalProcesses()
@@ -7306,26 +7954,86 @@ public class SemanticBrowserServices {
     }
 
     // TODO AbstractType and AbstractInstance
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of represented instances for the given Scenario.",
+        params = {
+            @Param(name = "value", value = "the Scenario")
+        },
+        result = "the Sequence of represented instances for the given Scenario",
+        examples = {
+            @Example(expression = "myScenario.getRepresentedInstances()", result = "the Sequence of represented instances for the given Scenario"),
+        }
+    )
+    // @formatter:on
     public List<Object> getRepresentedInstances(Scenario value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RepresentedInstances()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of invoked messages for the given Scenario.",
+        params = {
+            @Param(name = "value", value = "the Scenario")
+        },
+        result = "the Sequence of invoked messages for the given Scenario",
+        examples = {
+            @Example(expression = "myScenario.getInvokedMessages()", result = "the Sequence of invoked messages for the given Scenario"),
+        }
+    )
+    // @formatter:on
     public List<SequenceMessage> getInvokedMessages(Scenario value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_InvokedMessages().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of related states for the given Scenario.",
+        params = {
+            @Param(name = "value", value = "the Scenario")
+        },
+        result = "the Sequence of related states for the given Scenario",
+        examples = {
+            @Example(expression = "myScenario.getRelatedStates()", result = "the Sequence of related states for the given Scenario"),
+        }
+    )
+    // @formatter:on
     public List<AbstractState> getRelatedStates(Scenario value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RelatedStates().compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of related functions for the given Scenario.",
+        params = {
+            @Param(name = "value", value = "the Scenario")
+        },
+        result = "the Sequence of related functions for the given Scenario",
+        examples = {
+            @Example(expression = "myScenario.getRelatedFunctions()", result = "the Sequence of related functions for the given Scenario"),
+        }
+    )
+    // @formatter:on
     public List<AbstractFunction> getRelatedFunctions(Scenario value) {
         return castList(new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RelatedFunctions()
                 .compute(value));
     }
 
+    // @formatter:off
+    @Documentation(
+        value = "Returns the Sequence of related operational activities for the given Scenario.",
+        params = {
+            @Param(name = "value", value = "the Scenario")
+        },
+        result = "the Sequence of related operational activities for the given Scenario",
+        examples = {
+            @Example(expression = "myScenario.getRelatedOperationalActivities()", result = "the Sequence of related operational activities for the given Scenario"),
+        }
+    )
+    // @formatter:on
     public List<AbstractFunction> getRelatedOperationalActivities(Scenario value) {
         return castList(
                 new org.polarsys.capella.core.semantic.queries.basic.queries.Scenario_RelatedOperationalActivities()
