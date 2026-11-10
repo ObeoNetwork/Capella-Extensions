@@ -11,7 +11,7 @@
 
   <groupId>org.obeonetwork.capella.extensions</groupId>
   <artifactId>parent</artifactId>
-  <version>7.1.0-SNAPSHOT</version>
+  <version>7.2.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <prerequisites>
@@ -124,8 +124,8 @@
           <version>${tycho-version}</version>
           <configuration>
             <encoding>UTF-8</encoding>
-            <source>1.8</source>
-            <target>1.8</target>
+            <source>21</source>
+            <target>21</target>
           </configuration>
         </plugin>
         <plugin>

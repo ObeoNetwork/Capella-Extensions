@@ -1,6 +1,65 @@
 
+=== PROPERTIES ===
+version: 5.0.1
+metamodels: 
+http://www.eclipse.org/sirius/1.1.0
+http://www.eclipse.org/sirius/description/1.1.0
+http://www.eclipse.org/sirius/description/audit/1.1.0
+http://www.eclipse.org/sirius/description/style/1.1.0
+http://www.eclipse.org/sirius/description/tool/1.1.0
+http://www.eclipse.org/sirius/description/validation/1.1.0
+http://www.eclipse.org/sirius/diagram/1.1.0
+http://www.eclipse.org/sirius/diagram/description/1.1.0
+http://www.eclipse.org/sirius/diagram/description/concern/1.1.0
+http://www.eclipse.org/sirius/diagram/description/filter/1.1.0
+http://www.eclipse.org/sirius/diagram/description/style/1.1.0
+http://www.eclipse.org/sirius/diagram/description/tool/1.1.0
+http://www.eclipse.org/sirius/diagram/sequence/2.0.0
+http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0
+http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0
+http://www.eclipse.org/sirius/diagram/sequence/ordering/2.0.0
+http://www.eclipse.org/sirius/diagram/sequence/template/2.0.0
+http://www.eclipse.org/sirius/dsl/formatdata/1.1.0
+http://www.eclipse.org/sirius/table/1.1.0
+http://www.eclipse.org/sirius/table/description/1.1.0
+http://www.eclipse.org/sirius/tree/1.0.0
+http://www.eclipse.org/sirius/tree/description/1.0.0
+http://www.polarsys.org/capella/common/activity/7.0.0
+http://www.polarsys.org/capella/common/behavior/7.0.0
+http://www.polarsys.org/capella/common/core/7.0.0
+http://www.polarsys.org/capella/common/libraries/7.0.0
+http://www.polarsys.org/capella/common/re/7.0.0
+http://www.polarsys.org/capella/core/common/7.0.0
+http://www.polarsys.org/capella/core/core/7.0.0
+http://www.polarsys.org/capella/core/cs/7.0.0
+http://www.polarsys.org/capella/core/ctx/7.0.0
+http://www.polarsys.org/capella/core/epbs/7.0.0
+http://www.polarsys.org/capella/core/fa/7.0.0
+http://www.polarsys.org/capella/core/information/7.0.0
+http://www.polarsys.org/capella/core/information/communication/7.0.0
+http://www.polarsys.org/capella/core/information/datatype/7.0.0
+http://www.polarsys.org/capella/core/information/datavalue/7.0.0
+http://www.polarsys.org/capella/core/interaction/7.0.0
+http://www.polarsys.org/capella/core/la/7.0.0
+http://www.polarsys.org/capella/core/modeller/7.0.0
+http://www.polarsys.org/capella/core/oa/7.0.0
+http://www.polarsys.org/capella/core/pa/7.0.0
+http://www.polarsys.org/capella/core/pa/deployment/7.0.0
+http://www.polarsys.org/capella/core/sharedmodel/7.0.0
+http://www.polarsys.org/kitalpha/ad/sirius/1.0.0
+imports: 
+org.obeonetwork.capella.m2doc.aql.queries.M2DocGenServices
 === HEADER ===
 
+  
+  table
+    row
+      
+        Specification File of 
+        [query: .aqlFeatureAccess(self, 'name')]
+      
+    
+  
   table
     row
       
@@ -21,6 +80,11 @@
   
 === FOOTER ===
 
+  
+  
+  content control
+  
+  
   
   content control
   

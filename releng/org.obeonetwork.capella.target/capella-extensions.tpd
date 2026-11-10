@@ -10,15 +10,15 @@
  *******************************************************************************/
 target "Capella M2Doc Extension"
 
+environment JavaSE-21
 with requirements
 
-include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/4.0.x/releng/org.obeonetwork.m2doc.targetplatforms/capella-7.1.0/m2doc-capella-7.1.0.tpd"
+include "https://raw.githubusercontent.com/ObeoNetwork/M2Doc/refs/heads/master/releng/org.obeonetwork.m2doc.targetplatforms/capella-2026.9.0/m2doc-capella-2026.9.0.tpd"
 
-location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/4.0.2/repository/" {
+location "https://s3-eu-west-1.amazonaws.com/obeo-m2doc-releases/master/nightly/repository" {
 	org.obeonetwork.m2doc.feature.feature.group lazy
 	org.obeonetwork.m2doc.sirius.feature.feature.group lazy
 	org.obeonetwork.m2doc.ui.feature.feature.group lazy
-	org.obeonetwork.m2doc.ui.jdt.feature.feature.group lazy
 	org.obeonetwork.m2doc.html.feature.feature.group lazy
 	org.obeonetwork.m2doc.launcher.feature.feature.group lazy
 	org.obeonetwork.m2doc.tests lazy

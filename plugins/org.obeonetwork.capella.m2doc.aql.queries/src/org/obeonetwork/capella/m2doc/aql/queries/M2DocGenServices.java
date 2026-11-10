@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2017, 2025 Obeo.
+ * Copyright (c) 2017, 2026 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -100,9 +100,11 @@ public class M2DocGenServices extends AbstractServiceProvider {
          *            the method that realizes the service
          * @param serviceInstance
          *            the instance on which the service must be called
+         * @param forWorkspace
+         *            tells if the {@link IService} will be used in a workspace
          */
-        private ExtensionsService(Method serviceMethod, Object serviceInstance) {
-            super(serviceMethod, serviceInstance);
+        private ExtensionsService(Method serviceMethod, Object serviceInstance, boolean forWorkspace) {
+            super(serviceMethod, serviceInstance, forWorkspace);
         }
 
         @Override
@@ -691,13 +693,13 @@ public class M2DocGenServices extends AbstractServiceProvider {
     }
 
     @Override
-    protected IService getService(Method publicMethod) {
-        final IService result;
+    protected IService<Method> getService(Method publicMethod, boolean forWorkspace) {
+        final IService<Method> result;
 
         if ("getExtensions".equals(publicMethod.getName())) {
-            result = new ExtensionsService(publicMethod, this);
+            result = new ExtensionsService(publicMethod, this, forWorkspace);
         } else {
-            result = new JavaMethodService(publicMethod, this);
+            result = new JavaMethodService(publicMethod, this, forWorkspace);
         }
 
         return result;

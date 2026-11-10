@@ -1,5 +1,5 @@
 /*******************************************************************************
- *  Copyright (c) 2019 Obeo. 
+ *  Copyright (c) 2019, 2026 Obeo. 
  *  All rights reserved. This program and the accompanying materials
  *  are made available under the terms of the Eclipse Public License v2.0
  *  which accompanies this distribution, and is available at
@@ -14,13 +14,17 @@ package org.obeonetwork.capella.aql.queries.tests;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
+import org.apache.commons.collections4.map.HashedMap;
 import org.eclipse.emf.ecore.EPackage;
 import org.junit.Test;
 import org.obeonetwork.m2doc.ide.M2DocPlugin;
 import org.obeonetwork.m2doc.services.TokenRegistry;
-import org.obeonetwork.m2doc.util.IClassProvider;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.FrameworkUtil;
 
 /**
  * Capella token tests.
@@ -44,13 +48,19 @@ public class CapellaTokenTest {
 
 	@Test
 	public void services() {
-		final IClassProvider classProvider = M2DocPlugin.getClassProvider();
+		BundleContext bundleContext = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
+		Map<String, Bundle> bundleMap = new HashedMap<String, Bundle>();
+		for (Bundle bundle : bundleContext.getBundles()) {
+			bundleMap.put(bundle.getSymbolicName(), bundle);
+		}
 		for (Entry<String, List<String>> entry : TokenRegistry.INSTANCE.getServices("Capella").entrySet()) {
 			final String bundleName = entry.getKey();
 			for (String className : entry.getValue()) {
 				try {
-					final Class<?> cls = classProvider.getClass(className, bundleName);
-					assertNotNull(className + " in bundle " + bundleName, cls);
+					Bundle bundle = bundleMap.get(bundleName);
+					assertNotNull("bundle " + bundleName + " not found", bundleName);
+					Class<?> cls = bundle.loadClass(className);
+					assertNotNull(className + " in bundle " + bundleName + " not found", cls);
 				} catch (ClassNotFoundException e) {
 					System.err.println("can't load service class: " + className);
 				}

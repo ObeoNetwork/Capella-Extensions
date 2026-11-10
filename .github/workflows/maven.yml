@@ -27,13 +27,13 @@ jobs:
     - name: Set up Maven
       uses: stCarolas/setup-maven@v5.1
       with:
-        maven-version: 3.9.6
+        maven-version: 3.9.11
 
-    - name: Set up JDK 17
-      uses: actions/setup-java@v5.7.0
+    - name: Set up JDK 21
+      uses: actions/setup-java@v6.2.0
       with:
         distribution: 'temurin'
-        java-version: 17
+        java-version: 21
     - uses: actions/cache@v6.1.0
       with:
         path: ~/.m2/repository
@@ -42,7 +42,7 @@ jobs:
           ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
 
     - name: Install metacity, xvfb
-      uses: awalsh128/cache-apt-pkgs-action@v1.4.3
+      uses: awalsh128/cache-apt-pkgs-action@v1.6.3
       with:
         packages: xvfb metacity
         version: cache-apt-pkgs-${{ matrix.profile }}

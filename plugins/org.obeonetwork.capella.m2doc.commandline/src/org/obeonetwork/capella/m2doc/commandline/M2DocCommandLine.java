@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2020, 2023 Obeo.
+ * Copyright (c) 2020, 2026 Obeo.
  * All rights reserved. This program and the accompanying materials
  * are made available under the terms of the Eclipse Public License v2.0
  * which accompanies this distribution, and is available at
@@ -15,7 +15,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
+import org.eclipse.acceleo.query.AQLUtils;
+import org.eclipse.acceleo.query.ide.QueryPlugin;
+import org.eclipse.acceleo.query.runtime.impl.namespace.JavaLoader;
+import org.eclipse.acceleo.query.runtime.namespace.ILoader;
+import org.eclipse.acceleo.query.runtime.namespace.IQualifiedNameResolver;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
@@ -34,23 +40,25 @@ import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.obeonetwork.m2doc.genconf.GenconfUtils;
 import org.obeonetwork.m2doc.genconf.Generation;
 import org.obeonetwork.m2doc.generator.DocumentGenerationException;
-import org.obeonetwork.m2doc.ide.M2DocPlugin;
+import org.obeonetwork.m2doc.generator.M2DocEvaluationEnvironment;
+import org.obeonetwork.m2doc.ide.services.namespace.EclipseM2DocDocumentTemplateLoader;
 import org.obeonetwork.m2doc.launcher.internal.CLIUtils;
 import org.obeonetwork.m2doc.parser.DocumentParserException;
+import org.obeonetwork.m2doc.util.M2DocUtils;
 import org.polarsys.capella.core.commandline.core.CommandLineArgumentHelper;
 import org.polarsys.capella.core.commandline.core.CommandLineException;
 import org.polarsys.capella.core.commandline.core.ui.AbstractWorkbenchCommandLine;
 
 /**
- * Command line to launch the
+ * Command line to launch the M2Doc generation.
  */
 public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 
 	private String[] genconfs = new String[1];
 
 	/**
-	* 
-	*/
+	 * Constructor.
+	 */
 	public M2DocCommandLine() {
 		super();
 	}
@@ -61,17 +69,11 @@ public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 		super.printHelp();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public void checkArgs(IApplicationContext context_p) throws CommandLineException {
 		super.checkArgs(context_p);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 */
 	@Override
 	public boolean execute(IApplicationContext context_p) {
 
@@ -132,10 +134,27 @@ public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 
 		monitor.beginTask("Generating .docx documents", loadedGenConfs.size());
 		for (Generation generation : loadedGenConfs) {
+			final List<Exception> exceptions = new ArrayList<Exception>();
+			final Map<String, String> options = GenconfUtils.getOptions(generation);
+			final ResourceSet resourceSetForModel = AQLUtils.createResourceSetForModels(exceptions, generation,
+					new ResourceSetImpl(), options);
 			try {
 
 				System.out.println("Input: " + generation.eResource().getURI());
-				List<URI> generated = GenconfUtils.generate(generation, M2DocPlugin.getClassProvider(), monitor);
+				final URI templateURI = GenconfUtils.getResolvedURI(generation,
+						URI.createURI(generation.getTemplateFileName(), false));
+				final IQualifiedNameResolver resolver = QueryPlugin.getPlugin().createResolver(templateURI,
+						this.getClass().getClassLoader(), resourceSetForModel.getPackageRegistry(),
+						M2DocUtils.QUALIFIER_SEPARATOR, false);
+				final M2DocEvaluationEnvironment m2docEnv = GenconfUtils.createM2DocEvaluationEnvironment(generation,
+						resolver, resourceSetForModel);
+
+				resolver.addLoader(new EclipseM2DocDocumentTemplateLoader(m2docEnv, new BasicMonitor(),
+						M2DocUtils.QUALIFIER_SEPARATOR));
+				final ILoader javaLoader = new JavaLoader(M2DocUtils.QUALIFIER_SEPARATOR, false);
+				resolver.addLoader(javaLoader);
+
+				List<URI> generated = GenconfUtils.generate(generation, m2docEnv, options, monitor);
 				for (URI uri : generated) {
 					System.out.println("Output: " + uri.toString());
 				}
@@ -168,11 +187,6 @@ public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 		return !somethingWentWrong;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @throws CommandLineException
-	 */
 	@Override
 	public void prepare(IApplicationContext context_p) throws CommandLineException {
 		super.prepare(context_p);
@@ -182,9 +196,6 @@ public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 		Display display = PlatformUI.createDisplay();
 		PlatformUI.createAndRunWorkbench(display, new WorkbenchAdvisor() {
 
-			/**
-			 * {@inheritDoc}
-			 */
 			@Override
 			public boolean openWindows() {
 				return false;
@@ -201,7 +212,6 @@ public class M2DocCommandLine extends AbstractWorkbenchCommandLine {
 	/**
 	 * Validate arguments which are mandatory only in some circumstances.
 	 */
-
 	private Collection<URI> validateArguments() {
 		Collection<URI> result = new ArrayList<URI>();
 
