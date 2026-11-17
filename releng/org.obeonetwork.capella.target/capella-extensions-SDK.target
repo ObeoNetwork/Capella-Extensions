@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
-<target name="Capella M2Doc Extension SDK" sequenceNumber="1794215555">
+<target name="Capella M2Doc Extension SDK" sequenceNumber="1794927292">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.gmf.runtime.notation.sdk.feature.group" version="0.0.0"/>
@@ -50,7 +50,7 @@
       <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
       <unit id="com.ibm.icu" version="0.0.0"/>
       <unit id="jakarta.inject.jakarta.inject-api" version="0.0.0"/>
-      <unit id="org.apache.commons.lang" version="0.0.0"/>
+      <unit id="org.apache.commons.lang3" version="0.0.0"/>
       <unit id="org.eclipse.jgit.source" version="0.0.0"/>
       <unit id="org.eclipse.egit.source.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.xtext.xbase.lib.feature.group" version="0.0.0"/>
@@ -114,10 +114,10 @@
       <repository id="Orbit-2026-06" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2026-06"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="bcprov" version="1.86.0"/>
-      <unit id="bcpg" version="1.86.0"/>
-      <unit id="bcpkix" version="1.86.0"/>
-      <unit id="bcutil" version="1.86.0"/>
+      <unit id="bcprov" version="1.87.0"/>
+      <unit id="bcpg" version="1.87.0"/>
+      <unit id="bcpkix" version="1.87.0"/>
+      <unit id="bcutil" version="1.87.0"/>
       <repository id="Orbit-2026-12" location="https://download.eclipse.org/tools/orbit/simrel/orbit-aggregation/2026-12"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
