@@ -5,6 +5,9 @@ name: Java CI with Maven
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   build:
 
@@ -23,6 +26,8 @@ jobs:
         echo GITHUB_SHA $GITHUB_SHA
         echo GITHUB_EVENT_NAME $GITHUB_EVENT_NAME
     - uses: actions/checkout@v7.0.1
+      with:
+        persist-credentials: false
 
     - name: Set up Maven
       uses: stCarolas/setup-maven@v5.1
